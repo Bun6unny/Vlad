@@ -21,6 +21,21 @@
     if ($mysqli->connect_errno) {
         echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
+
+    // Выполните запрос к таблице
+    $sql = "SELECT * FROM News";
+    $result = $mysqli->query($sql);
+
+    // Проверка на наличие данных
+    if ($result->num_rows > 0) {
+        // Вывод данных каждой строки
+        while ($row = $result->fetch_assoc()) {
+            echo "Заголовок: " . $row["Head"] . "<br>";
+            echo "Содержание: " . $row["Content"] . "<br>";
+        }
+    } else {
+        echo "Нет данных";
+    }
     ?>
 
     <div class="header">
