@@ -10,6 +10,35 @@
 </head>
 <body>
 
+    <?php
+    // Подключение к базе данных
+    $mysqli = new mysqli("localhost", "2is-b11", "dTav2z8hny", "2is-b11_2is-b11");
+
+    // Проверка подключения
+    if ($mysqli->connect_error) {
+        die("Ошибка подключения: " . $mysqli->connect_error);
+    }
+
+    // SQL-запрос
+    $sql = "SELECT * FROM ваша_таблица";
+    $result = $mysqli->query($sql);
+
+    // Проверка наличия данных
+    if ($result->num_rows > 0) {
+        // Вывод данных
+        while ($row = $result->fetch_assoc()) {
+            echo "Заголовок: " . $row["Head"] . "<br>";
+            echo "Содержание: " . $row["Content"] . "<br>";
+            // Другие поля...
+        }
+    } else {
+        echo "Нет данных";
+    }
+
+    // Закрытие соединения
+    $mysqli->close();
+    ?>
+
     <div class="header">
         <div class="header-left">
             <a href="#" style="margin-left: 0%;">Главная</a>
