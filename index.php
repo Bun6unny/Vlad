@@ -12,28 +12,57 @@
 
     <div class="header">
         <div class="header-left">
-            Главная
-            Новости
-            О нас
-            Обратная связь
+            <a href="#" style="margin-left: 0%;">Главная</a>
+            <a href="#">Новости</a>
+            <a href="#">О нас</a>
+            <a href="#" style="margin-right: 0%;">Обратная связь</a>
         </div>
         <div class="header-right">
-            Авторизация
-            Регистрация
+            <a href="#">Авторизация</a>
+            <a href="#" style="margin-right: 10%;">Регистрация</a>
         </div>
     </div>
 
+    <div class="menu">
+        <button class="menu-left-button">
+            <img style="max-height: 70%; width: auto; height: auto;" src="img/candy.png">
+            <div>Конфеты</div>
+        </button>
+        <button class="menu-button">
+            <img style="max-height: 70%; width: auto; height: auto;" src="img/cola.png">
+            <div>Напитки</div>
+        </button>
+        <button class="menu-button">
+            <img style="max-height: 70%; width: auto; height: auto;" src="img/chock.png">
+            <div>Шоколад</div>
+        </button>
+        <button class="menu-button">
+            <img style="max-height: 70%; width: auto; height: auto;" src="img/marm.png">
+            <div>Мармелад</div>
+        </button>
+        <button class="menu-right-button">
+            <img style="max-height: 70%; width: auto; height: auto;" src="img/cokie.png">
+            <div>Печенье</div>
+        </button>
+    </div>
+
     <div class="slider">
-    <div id="carouselExample" class="carousel slide w-100 h-80">
+    <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="img/1.jpg" class="d-block w-90 h-100 d-flex m-auto rounded">
+            <img src="img/1.png" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
             </div>
             <div class="carousel-item">
-            <img src="img/2.jpg" class="d-block w-80 h-100 d-flex m-auto rounded">
+            <img src="img/2.png" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
             </div>
             <div class="carousel-item">
-            <img src="img/3.jpg" class="d-block w-80 h-100 d-flex m-auto rounded">
+            <img src="img/3.png" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            </div>
+            <div class="carousel-item">
+            <img src="img/4.png" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            </div>
+            <div class="carousel-item">
+            <img src="img/5.png" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -45,6 +74,21 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    </div>
+
+    <div class="footer" style="margin-top:1%;">
+        <div class="footer-left">
+        ФИО: Ходырев Владислав Вадимович<br>
+        Группа: 2-ИС (б) Курс: 3<br>
+        Специальность: Информационные системы и программирование
+        </div>
+        <div class="footer-right">
+            <img src="img/set1.png" style="max-height: 60%; width: auto; height: auto; margin-right:2%;">
+            <img src="img/set2.png" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%;">
+            <img src="img/set3.png" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%;">
+            <img src="img/set4.png" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%;">
+            <img src="img/set5.png" style="max-height: 60%; width: auto; height: auto; margin-left:2%;">
+        </div>
     </div>
 
 </body>
