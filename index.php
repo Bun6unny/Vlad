@@ -47,7 +47,7 @@
         </div>
         <div class="header-right">
             <a href="#">Авторизация</a>
-            <a href="#" style="margin-right: 10%;">Регистрация</a>
+            <a href="#" style="margin-right: 10%;">Регистрация ЖОПААА</a>
         </div>
     </div>
 
