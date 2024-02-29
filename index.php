@@ -10,34 +10,6 @@
 </head>
 <body>
 
-    <?php
-    $host = 'localhost';
-    $username = '2is-b11_2is-b11';
-    $password = 'dTav2z8hny';
-    $database = '2is-b11_2is-b11';
-
-    $mysqli = new mysqli($host, $username, $password, $database);
-
-    if ($mysqli->connect_errno) {
-        echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-    }
-
-    // Выполните запрос к таблице
-    $sql = "SELECT * FROM News";
-    $result = $mysqli->query($sql);
-
-    // Проверка на наличие данных
-    if ($result->num_rows > 0) {
-        // Вывод данных каждой строки
-        while ($row = $result->fetch_assoc()) {
-            echo "Заголовок: " . $row["Head"] . "<br>";
-            echo "Содержание: " . $row["Content"] . "<br>";
-        }
-    } else {
-        echo "Нет данных";
-    }
-    ?>
-
     <div class="header">
         <div class="header-left">
             <a href="#" style="margin-left: 0%;">Главная</a>
