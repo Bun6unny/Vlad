@@ -14,7 +14,7 @@
     <div class="header">
         <div class="header-left">
             <a href="#" style="margin-left: 0%;">Главная</a>
-            <a href="#">Новости</a>
+            <a href="#">Кролик</a>
             <a href="#">О нас</a>
             <a href="#" style="margin-right: 0%;">Обратная связь</a>
         </div>
