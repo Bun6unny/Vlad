@@ -54,11 +54,11 @@
         </div>
         <button class="top-menu-button" style="margin-left:2%;">
             Личный кабинет<br>
-            <img src="img/but3.png" style="max-width:90%; max-height:90%; margin-top:1%;">
+            <img src="img/but3.png" style="max-width:80%; max-height:80%; margin-top:1%;">
         </button>
         <button class="top-menu-button" style="margin-left:2%;">
             Корзина<br>
-            <img src="img/but2.png" style="max-height:90%; max-width:90%; margin-top:6%;">
+            <img src="img/but2.png" style="max-height:60%; max-width:60%; margin-top:4%;">
         </button>
     </div>
 
