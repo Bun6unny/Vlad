@@ -54,33 +54,33 @@
         </div>
         <button class="top-menu-button" style="margin-left:2%;">
             Личный кабинет<br>
-            <img src="img/but3.png" style="max-width:80%; max-height:80%; margin-top:1%;">
+            <img src="img/but3.png" style="max-width:60%; max-height:60%; margin-top:1%;">
         </button>
         <button class="top-menu-button" style="margin-left:2%;">
             Корзина<br>
-            <img src="img/but2.png" style="max-height:60%; max-width:60%; margin-top:4%;">
+            <img src="img/but2.png" style="max-height:60%; max-width:60%; margin-top:3%;">
         </button>
     </div>
 
     <div class="menu">
         <button class="menu-left-button">
-            <img style="max-height: 70%; width: auto; height: auto;" src="img/candy.png">
+            <img style="max-height: 70%; max-width: 95%;" src="img/candy.png">
             <div>Конфеты</div>
         </button>
         <button class="menu-button">
-            <img style="max-height: 70%; width: auto; height: auto;" src="img/cola.png">
+            <img style="max-height: 70%; max-width: 95%;" src="img/cola.png">
             <div>Напитки</div>
         </button>
         <button class="menu-button">
-            <img style="max-height: 70%; width: auto; height: auto;" src="img/chock.png">
+            <img style="max-height: 70%; max-width: 95%;" src="img/chock.png">
             <div>Шоколад</div>
         </button>
         <button class="menu-button">
-            <img style="max-height: 70%; width: auto; height: auto;" src="img/marm.png">
+            <img style="max-height: 70%; max-width: 95%;" src="img/marm.png">
             <div>Мармелад</div>
         </button>
         <button class="menu-right-button">
-            <img style="max-height: 70%; width: auto; height: auto;" src="img/cokie.png">
+            <img style="max-height: 70%; max-width: 95%;" src="img/cokie.png">
             <div>Печенье</div>
         </button>
     </div>
@@ -137,6 +137,26 @@
         </div>
         <div class="candy-right" style="width: 40%; height: 65%;">
             Помимо великолепного вкуса, мы также обеспечиваем безупречное качество и сервис. Наша команда стремится сделать ваше покупательное путешествие приятным и незабываемым. Мы уверены, что каждый, кто попробует наши сладости, найдет что-то особенное и уникальное для себя.
+        </div>
+    </div>
+
+    <div class="maps-spot">
+        <div class="map-block" style="margin-right:10%;">
+            <div class="place-up">
+                <img src="img/onix.png" style="max-width:95%;max-height:95%; margin-top:3%;">
+            </div>
+            <div class="place-down">
+                Телефон: +7 (922) 342-20-76<br>
+                Почта: pozitivnishred2017@gmail.com
+            </div>
+        </div>
+        <div class="map-block">
+            <div class="map-up">
+                Мы на карте
+            </div>
+            <div id="map1" style="position:relative;overflow:hidden;">
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=56.221003%2C58.003263&mode=whatshere&whatshere%5Bpoint%5D=56.221003%2C58.003263&whatshere%5Bzoom%5D=17&z=17" width="96%" height="76%" frameborder="1" allowfullscreen="true" style="border-radius: 0.5vw; margin-left:2%;"></iframe>
+            </div>
         </div>
     </div>
 
