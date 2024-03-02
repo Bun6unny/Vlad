@@ -115,15 +115,33 @@
     </div> -->
 
     <?php
-        // Вывод новостных блоков
-        foreach ($news as $item) {
+        // foreach ($news as $item) {
+        //     echo "<div class='news'>";
+        //     echo "<div class='news-spot'>";
+        //     echo "<div class='news-block'>";
+        //     echo "{$item['Head']}";
+        //     echo "{$item['Content']}";
+        //     echo "</div>";
+        //     echo "</div>";
+        //     echo "</div>";
+        // }
+        for ($i = 0; $i < count($news); $i += 2) {
             echo "<div class='news'>";
             echo "<div class='news-spot'>";
             echo "<div class='news-block'>";
-            echo "{$item['Head']}";
-            echo "{$item['Content']}";
+            echo "<h2>{$news[$i]['Head']}</h2>";
+            echo "<p>{$news[$i]['Content']}</p>";
             echo "</div>";
             echo "</div>";
+            // Проверяем, есть ли еще одна новость для второго места
+            if ($i + 1 < count($news)) {
+                echo "<div class='news-spot'>";
+                echo "<div class='news-block'>";
+                echo "<h2>{$news[$i + 1]['Head']}</h2>";
+                echo "<p>{$news[$i + 1]['Content']}</p>";
+                echo "</div>";
+                echo "</div>";
+            }
             echo "</div>";
         }
     ?>
