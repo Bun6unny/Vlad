@@ -91,7 +91,11 @@
             while ($row = $result->fetch_assoc()) {
                 $news[] = $row;
             }
+        } else {
+            echo "Извините, новостей нет";
         }
+
+        
 
         // Закрываем соединение с базой данных
         $mysqli->close();
