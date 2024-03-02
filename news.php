@@ -88,8 +88,10 @@
                 $news[] = $row;
             }
 
+            // Проверка количества новостей
             $num_news = count($news);
 
+            // Вывод новостей
             for ($i = 0; $i < $num_news; $i += 2) {
                 echo "<div class='news'>";
                 echo "<div class='news-spot'>";
@@ -110,12 +112,12 @@
                 echo "</div>";
             }
 
+            // Добавление блока "space" если на странице 1 или 2 новости
             if ($num_news <= 2) {
                 echo "<div class='space'></div>";
             }
         } else {
-            echo "Извините, новостей нет"
-            echo "<div class='space'></div>";
+            echo "Извините, новостей нет<div class='space'></div>";
         }
 
         $mysqli->close();
