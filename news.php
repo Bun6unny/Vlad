@@ -116,13 +116,33 @@
                             </div>
                         </div>";
 
-                if ($i + 1 < $num_news) {
-                    echo "<div class='news-spot'>";
-                    echo "<div class='news-block'>";
-                    echo "<h2>{$news[$i + 1]['Head']}</h2>";
-                    echo "<p>{$news[$i + 1]['Content']}</p>";
-                    echo "</div>";
-                    echo "</div>";
+            //     if ($i + 1 < $num_news) {
+            //         echo "<div class='news-spot'>";
+            //         echo "<div class='news-block'>";
+            //         echo "<h2>{$news[$i + 1]['Head']}</h2>";
+            //         echo "<p>{$news[$i + 1]['Content']}</p>";
+            //         echo "</div>";
+            //         echo "</div>";
+            //     }
+            //     echo "</div>";
+            // }
+
+            if ($i + 1 < $num_news) {
+                    echo "<div class='news'>
+                    <div class='news-spot'>
+                        <div class='news-block'>
+                            <div class='news-name'>{$news[$i + 1]['Head']}</div>
+                            <div class='news-content'>
+                                <div class='news-image'>
+                                    <img src='{$news[$i + 1]['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>
+                                </div>
+                                <div class='news-text'>
+                                    {$news[$i + 1]['Content']}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>";
                 }
                 echo "</div>";
             }
