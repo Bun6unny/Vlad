@@ -78,76 +78,55 @@
             echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
         }
 
-        // Выполните запрос к таблице
         $sql = "SELECT * FROM News";
         $result = $mysqli->query($sql);
 
-        // Создание переменной для хранения новостей
         $news = array();
 
-        // Проверка на наличие данных
         if ($result->num_rows > 0) {
-            // Сохраняем новости в массив
             while ($row = $result->fetch_assoc()) {
                 $news[] = $row;
+            }
+
+            // Проверка количества новостей
+            $num_news = count($news);
+
+            // Вывод новостей
+            for ($i = 0; $i < $num_news; $i += 2) {
+                echo "<div class='news'>";
+                echo "<div class='news-spot'>";
+                echo "<div class='news-block'>";
+                echo "<h2>{$news[$i]['Head']}</h2>";
+                echo "<p>{$news[$i]['Content']}</p>";
+                echo "</div>";
+                echo "</div>";
+
+                if ($i + 1 < $num_news) {
+                    echo "<div class='news-spot'>";
+                    echo "<div class='news-block'>";
+                    echo "<h2>{$news[$i + 1]['Head']}</h2>";
+                    echo "<p>{$news[$i + 1]['Content']}</p>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+                echo "</div>";
+            }
+
+            // Добавление блока "space" если на странице 1 или 2 новости
+            if ($num_news <= 2) {
+                echo "<div class='news'>";
+                echo "<div class='news-spot'>";
+                echo "<div class='news-block'>";
+                echo "<p>Space</p>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
             }
         } else {
             echo "Извините, новостей нет";
         }
 
-        
-
-        // Закрываем соединение с базой данных
         $mysqli->close();
-    ?>
-
-    <!-- <div class="news">
-        <div class="news-spot">
-            <div class="news-block"></div>
-        </div>
-        <div class="news-spot">
-            <div class="news-block"></div>
-        </div>
-    </div>
-    <div class="news">
-        <div class="news-spot">
-            <div class="news-block"></div>
-        </div>
-        <div class="news-spot">
-            <div class="news-block"></div>
-        </div>
-    </div> -->
-
-    <?php
-        // foreach ($news as $item) {
-        //     echo "<div class='news'>";
-        //     echo "<div class='news-spot'>";
-        //     echo "<div class='news-block'>";
-        //     echo "{$item['Head']}";
-        //     echo "{$item['Content']}";
-        //     echo "</div>";
-        //     echo "</div>";
-        //     echo "</div>";
-        // }
-        for ($i = 0; $i < count($news); $i += 2) {
-            echo "<div class='news'>";
-            echo "<div class='news-spot'>";
-            echo "<div class='news-block'>";
-            echo "<h2>{$news[$i]['Head']}</h2>";
-            echo "<p>{$news[$i]['Content']}</p>";
-            echo "</div>";
-            echo "</div>";
-            // Проверяем, есть ли еще одна новость для второго места
-            if ($i + 1 < count($news)) {
-                echo "<div class='news-spot'>";
-                echo "<div class='news-block'>";
-                echo "<h2>{$news[$i + 1]['Head']}</h2>";
-                echo "<p>{$news[$i + 1]['Content']}</p>";
-                echo "</div>";
-                echo "</div>";
-            }
-            echo "</div>";
-        }
     ?>
 
     <div class="footer" style="margin-top:1%;">
