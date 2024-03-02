@@ -67,93 +67,72 @@
     </div>
 
     <?php
-        $host = 'localhost';
-        $username = '2is-b11_2is-b11';
-        $password = 'dTav2z8hny';
-        $database = '2is-b11_2is-b11';
+    $host = 'localhost';
+    $username = '2is-b11_2is-b11';
+    $password = 'dTav2z8hny';
+    $database = '2is-b11_2is-b11';
 
-        $mysqli = new mysqli($host, $username, $password, $database);
+    $mysqli = new mysqli($host, $username, $password, $database);
 
-        if ($mysqli->connect_errno) {
-            echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    if ($mysqli->connect_errno) {
+        echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    }
+
+    $sql = "SELECT * FROM News";
+    $result = $mysqli->query($sql);
+
+    $news = array();
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $news[] = $row;
         }
 
-        $sql = "SELECT * FROM News";
-        $result = $mysqli->query($sql);
+        $num_news = count($news);
 
-        $news = array();
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $news[] = $row;
-            }
-
-            $num_news = count($news);
-
-            // for ($i = 0; $i < $num_news; $i += 2) {
-            //     echo "<div class='news'>";
-            //     echo "<div class='news-spot'>";
-            //     echo "<div class='news-block'>";
-            //     echo "<h2>{$news[$i]['Head']}</h2>";
-            //     echo "<p>{$news[$i]['Content']}</p>";
-            //     echo "</div>";
-            //     echo "</div>";
-
-            for ($i = 0; $i < $num_news; $i += 2) {
-                echo "<div class='news'>
-                            <div class='news-spot'>
-                                <div class='news-block'>
-                                    <div class='news-name'>{$news[$i]['Head']}</div>
-                                    <div class='news-content'>
-                                        <div class='news-image'>
-                                            <img src='{$news[$i]['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>
-                                        </div>
-                                        <div class='news-text'>
-                                            {$news[$i]['Content']}
-                                        </div>
+        // Вывод новостей
+        for ($i = 0; $i < $num_news; $i += 2) {
+            echo "<div class='news'>
+                        <div class='news-spot'>
+                            <div class='news-block'>
+                                <div class='news-name'>{$news[$i]['Head']}</div>
+                                <div class='news-content'>
+                                    <div class='news-image'>
+                                        <img src='{$news[$i]['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>
+                                    </div>
+                                    <div class='news-text'>
+                                        {$news[$i]['Content']}
                                     </div>
                                 </div>
                             </div>
                         </div>";
 
-            //     if ($i + 1 < $num_news) {
-            //         echo "<div class='news-spot'>";
-            //         echo "<div class='news-block'>";
-            //         echo "<h2>{$news[$i + 1]['Head']}</h2>";
-            //         echo "<p>{$news[$i + 1]['Content']}</p>";
-            //         echo "</div>";
-            //         echo "</div>";
-            //     }
-            //     echo "</div>";
-            // }
-
+            // Проверяем, есть ли следующая новость
             if ($i + 1 < $num_news) {
-                    echo "
-                    <div class='news-spot'>
-                        <div class='news-block'>
-                            <div class='news-name'>{$news[$i + 1]['Head']}</div>
-                            <div class='news-content'>
-                                <div class='news-image'>
-                                    <img src='{$news[$i + 1]['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>
-                                </div>
-                                <div class='news-text'>
-                                    {$news[$i + 1]['Content']}
+                echo "<div class='news-spot'>
+                            <div class='news-block'>
+                                <div class='news-name'>{$news[$i + 1]['Head']}</div>
+                                <div class='news-content'>
+                                    <div class='news-image'>
+                                        <img src='{$news[$i + 1]['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>
+                                    </div>
+                                    <div class='news-text'>
+                                        {$news[$i + 1]['Content']}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>";
-                }
-                echo "</div>";
+                        </div>";
             }
-
-            if ($num_news <= 2) {
-                echo "<div class='space'></div>";
-            }
-        } else {
-            echo "Извините, новостей нет<div class='space'></div>";
         }
 
-        $mysqli->close();
+        if ($num_news <= 2) {
+            echo "<div class='space'></div>";
+        }
+    } else {
+        echo "Извините, новостей нет<div class='space'></div>";
+    }
+
+    $mysqli->close();
     ?>
 
     <div class='news'>
