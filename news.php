@@ -114,13 +114,7 @@
 
             // Добавление блока "space" если на странице 1 или 2 новости
             if ($num_news <= 2) {
-                echo "<div class='news'>";
-                echo "<div class='news-spot'>";
-                echo "<div class='news-block'>";
-                echo "<p>Space</p>";
-                echo "</div>";
-                echo "</div>";
-                echo "</div>";
+                echo "<div class='space'></div>";
             }
         } else {
             echo "Извините, новостей нет";
