@@ -120,8 +120,8 @@
             echo "<div class='news'>";
             echo "<div class='news-spot'>";
             echo "<div class='news-block'>";
-            echo "<h2>{$item['Head']}</h2>";
-            echo "<p>{$item['Content']}</p>";
+            echo "{$item['Head']}";
+            echo "{$item['Content']}";
             echo "</div>";
             echo "</div>";
             echo "</div>";
