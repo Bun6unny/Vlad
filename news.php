@@ -67,73 +67,73 @@
     </div>
 
     <?php
-    $host = 'localhost';
-    $username = '2is-b11_2is-b11';
-    $password = 'dTav2z8hny';
-    $database = '2is-b11_2is-b11';
+        $host = 'localhost';
+        $username = '2is-b11_2is-b11';
+        $password = 'dTav2z8hny';
+        $database = '2is-b11_2is-b11';
 
-    $mysqli = new mysqli($host, $username, $password, $database);
+        $mysqli = new mysqli($host, $username, $password, $database);
 
-    if ($mysqli->connect_errno) {
-        echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-    }
-
-    $sql = "SELECT * FROM News";
-    $result = $mysqli->query($sql);
-
-    $news = array();
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $news[] = $row;
+        if ($mysqli->connect_errno) {
+            echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
         }
 
-        $num_news = count($news);
+        $sql = "SELECT * FROM News";
+        $result = $mysqli->query($sql);
 
-        for ($i = 0; $i < $num_news; $i += 2) {
-            echo "<div class='news'>";
-            
-            echo "<div class='news-spot'>";
-            echo "<div class='news-block'>";
-            echo "<div class='news-name'>{$news[$i]['Head']}</div>";
-            echo "<div class='news-content'>";
-            echo "<div class='news-image'>";
-            echo "<img src='{$news[$i]['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>";
-            echo "</div>";
-            echo "<div class='news-text'>";
-            echo "{$news[$i]['Content']}";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
+        $news = array();
 
-            if ($i + 1 < $num_news) {
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $news[] = $row;
+            }
+
+            $num_news = count($news);
+
+            for ($i = 0; $i < $num_news; $i += 2) {
+                echo "<div class='news'>";
+                
                 echo "<div class='news-spot'>";
                 echo "<div class='news-block'>";
-                echo "<div class='news-name'>{$news[$i + 1]['Head']}</div>";
+                echo "<div class='news-name'>{$news[$i]['Head']}</div>";
                 echo "<div class='news-content'>";
                 echo "<div class='news-image'>";
-                echo "<img src='{$news[$i + 1]['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>";
+                echo "<img src='{$news[$i]['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>";
                 echo "</div>";
                 echo "<div class='news-text'>";
-                echo "{$news[$i + 1]['Content']}";
+                echo "{$news[$i]['Content']}";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
+                echo "</div>";
+
+                if ($i + 1 < $num_news) {
+                    echo "<div class='news-spot'>";
+                    echo "<div class='news-block'>";
+                    echo "<div class='news-name'>{$news[$i + 1]['Head']}</div>";
+                    echo "<div class='news-content'>";
+                    echo "<div class='news-image'>";
+                    echo "<img src='{$news[$i + 1]['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>";
+                    echo "</div>";
+                    echo "<div class='news-text'>";
+                    echo "{$news[$i + 1]['Content']}";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+
                 echo "</div>";
             }
 
-            echo "</div>";
+            if ($num_news <= 2) {
+                echo "<div class='space'></div>";
+            }
+        } else {
+            echo "<div style='width:100%;height:50%;font-size:3vw;display: flex;align-items: center;justify-content: center;font-weight: bold;'>Извините, новостей нет</div>";
         }
 
-        if ($num_news <= 2) {
-            echo "<div class='space'></div>";
-        }
-    } else {
-        echo "Извините, новостей нет<div class='space'></div>";
-    }
-
-    $mysqli->close();
+        $mysqli->close();
     ?>
 
     <div class="footer" style="margin-top:1%;">
