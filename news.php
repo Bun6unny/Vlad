@@ -128,7 +128,7 @@
             // }
 
             if ($i + 1 < $num_news) {
-                    echo "<div class='news'>
+                    echo "
                     <div class='news-spot'>
                         <div class='news-block'>
                             <div class='news-name'>{$news[$i + 1]['Head']}</div>
@@ -141,8 +141,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>";
+                    </div>";
                 }
                 echo "</div>";
             }
