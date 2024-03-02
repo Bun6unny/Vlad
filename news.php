@@ -90,11 +90,9 @@
 
         $num_news = count($news);
 
-        // Вывод новостей
         for ($i = 0; $i < $num_news; $i += 2) {
             echo "<div class='news'>";
             
-            // Вывод первой новости
             echo "<div class='news-spot'>";
             echo "<div class='news-block'>";
             echo "<div class='news-name'>{$news[$i]['Head']}</div>";
@@ -109,9 +107,7 @@
             echo "</div>";
             echo "</div>";
 
-            // Проверка наличия второй новости
             if ($i + 1 < $num_news) {
-                // Вывод второй новости
                 echo "<div class='news-spot'>";
                 echo "<div class='news-block'>";
                 echo "<div class='news-name'>{$news[$i + 1]['Head']}</div>";
@@ -127,10 +123,9 @@
                 echo "</div>";
             }
 
-            echo "</div>"; // Закрытие блока news
+            echo "</div>";
         }
 
-        // Добавление блока "space" если на странице от 0 до 2 новостей
         if ($num_news <= 2) {
             echo "<div class='space'></div>";
         }
