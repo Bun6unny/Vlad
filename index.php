@@ -25,7 +25,7 @@
     </div>
 
     <div class="top-menu" style="margin-top:1%;">
-        <img src="img/ss.png" style="max-height:90%;max-width:auto;">
+        <img src="img/ss.png" style="max-height:90%;max-width:90%;">
         <div class="top-menu-one">
             <div class="top-menu-part">
                 +7 (922) 342-20-76
@@ -89,19 +89,19 @@
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="img/1.png" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            <img src="img/1.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
             </div>
             <div class="carousel-item">
-            <img src="img/2.png" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            <img src="img/2.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
             </div>
             <div class="carousel-item">
-            <img src="img/3.png" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            <img src="img/3.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
             </div>
             <div class="carousel-item">
-            <img src="img/4.png" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            <img src="img/4.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
             </div>
             <div class="carousel-item">
-            <img src="img/5.png" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            <img src="img/5.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -143,7 +143,7 @@
     <div class="maps-spot">
         <div class="map-block" style="margin-right:10%;">
             <div class="place-up">
-                <img src="img/onix.png" style="max-width:95%;max-height:95%; margin-top:3%;">
+                <img src="img/onix.jpg" style="max-width:95%;max-height:95%; margin-top:3%;">
             </div>
             <div class="place-down">
                 Телефон: +7 (922) 342-20-76<br>
