@@ -136,22 +136,6 @@
     $mysqli->close();
     ?>
 
-    <div class='news'>
-        <div class='news-spot'>
-            <div class='news-block'>
-                <div class='news-name'>Новые вкусы в ассортименте!</div>
-                <div class='news-content'>
-                    <div class='news-image'>
-                        <img src='img/news1.png' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>
-                    </div>
-                    <div class='news-text'>
-                        Мы рады представить вам пять уникальных вкусов конфет, которые покорят ваш вкусовой рецептор. От свежести лимона до таинственности черники - наши новинки удивят вас своим разнообразием и качеством. Погрузитесь в мир сладких вкусов с нами!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
         ФИО: Ходырев Владислав Вадимович<br>
