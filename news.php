@@ -88,18 +88,33 @@
                 $news[] = $row;
             }
 
-            // Проверка количества новостей
             $num_news = count($news);
 
-            // Вывод новостей
+            // for ($i = 0; $i < $num_news; $i += 2) {
+            //     echo "<div class='news'>";
+            //     echo "<div class='news-spot'>";
+            //     echo "<div class='news-block'>";
+            //     echo "<h2>{$news[$i]['Head']}</h2>";
+            //     echo "<p>{$news[$i]['Content']}</p>";
+            //     echo "</div>";
+            //     echo "</div>";
+
             for ($i = 0; $i < $num_news; $i += 2) {
-                echo "<div class='news'>";
-                echo "<div class='news-spot'>";
-                echo "<div class='news-block'>";
-                echo "<h2>{$news[$i]['Head']}</h2>";
-                echo "<p>{$news[$i]['Content']}</p>";
-                echo "</div>";
-                echo "</div>";
+                echo "<div class='news'>
+                            <div class='news-spot'>
+                                <div class='news-block'>
+                                    <div class='news-name'>{$news[$i]['Head']}</div>
+                                    <div class='news-content'>
+                                        <div class='news-image'>
+                                            <img src='{$news[$i]['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>
+                                        </div>
+                                        <div class='news-text'>
+                                            {$news[$i]['Content']}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>";
 
                 if ($i + 1 < $num_news) {
                     echo "<div class='news-spot'>";
@@ -112,7 +127,6 @@
                 echo "</div>";
             }
 
-            // Добавление блока "space" если на странице 1 или 2 новости
             if ($num_news <= 2) {
                 echo "<div class='space'></div>";
             }
@@ -122,6 +136,22 @@
 
         $mysqli->close();
     ?>
+
+    <div class='news'>
+        <div class='news-spot'>
+            <div class='news-block'>
+                <div class='news-name'>Новые вкусы в ассортименте!</div>
+                <div class='news-content'>
+                    <div class='news-image'>
+                        <img src='img/news1.png' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'>
+                    </div>
+                    <div class='news-text'>
+                        Мы рады представить вам пять уникальных вкусов конфет, которые покорят ваш вкусовой рецептор. От свежести лимона до таинственности черники - наши новинки удивят вас своим разнообразием и качеством. Погрузитесь в мир сладких вкусов с нами!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
