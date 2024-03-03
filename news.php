@@ -15,7 +15,7 @@
     <div class="header">
         <div class="header-left">
             <a href="#" onclick="Main()" style="margin-left: 0%;">Главная</a>
-            <a href="#">Новости</a>
+            <a href="#" onclick="News()">Новости</a>
             <a href="#">О нас</a>
             <a href="#" style="margin-right: 0%;">Обратная связь</a>
         </div>
