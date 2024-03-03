@@ -82,9 +82,11 @@
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        echo "<h1>{$row['Head']}</h1>";
+        echo "<div class='top-name'>{$row['Head']}</div>";
+        echo "<div class='open-news'>";
         echo "<img src='{$row['Image']}' alt='Изображение новости'>";
         echo "<p>{$row['Content']}</p>";
+        echo "</div>";
     } else {
         echo "<p>Новость не найдена</p>";
     }
