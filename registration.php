@@ -68,62 +68,75 @@
     </div>
 
     <?php
-$host = 'localhost';
-$username = '2is-b11_2is-b11';
-$password = 'dTav2z8hny';
-$database = '2is-b11_2is-b11';
+    // Подключение к базе данных
+    $host = 'localhost';
+    $username = '2is-b11_2is-b11';
+    $password = 'dTav2z8hny';
+    $database = '2is-b11_2is-b11';
 
-$mysqli = new mysqli($host, $username, $password, $database);
+    $mysqli = new mysqli($host, $username, $password, $database);
 
-if ($mysqli->connect_errno) {
-    echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-    exit();
-}
+    if ($mysqli->connect_errno) {
+        echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    }
 
-$login = $_POST['login'];
-$email = $_POST['email'];
-$password = $_POST['password'];
+    // Проверка, была ли отправлена форма
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Получение данных из формы
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        
+        // Защита от SQL-инъекций
+        $name = $mysqli->real_escape_string($name);
+        $email = $mysqli->real_escape_string($email);
+        $password = $mysqli->real_escape_string($password);
+        
+        // Хеширование пароля
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        
+        // Вставка данных в таблицу Users
+        $sql = "INSERT INTO Users (login, mail, password) VALUES ('$name', '$email', '$hashed_password')";
+        
+        if ($mysqli->query($sql)) {
+            // Редирект на страницу login.php
+            header("Location: login.php");
+            exit();
+        } else {
+            echo "Ошибка: " . $mysqli->error;
+        }
+    }
 
-// Защита от SQL-инъекций
-$stmt = $mysqli->prepare("INSERT INTO Users (Login, Password, Mail) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $login, $password, $email);
-
-if ($stmt->execute()) {
-    echo "Пользователь успешно зарегистрирован";
-} else {
-    echo "Ошибка: " . $stmt->error;
-}
-
-$stmt->close();
-$mysqli->close();
-?>
-
+    // Закрытие соединения с базой данных
+    $mysqli->close();
+    ?>
+    
     <div class="reg">
         <div class="reg-left">Введите ваше имя (Логин):</div>
         <div class="reg-right">
-            <input type="text" id="loginInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+            <input type="text" style="padding-left:1%;" class="reg-input" placeholder="...">
         </div>
     </div>
     <div class="reg">
         <div class="reg-left">Введите вашу почту:</div>
         <div class="reg-right">
-            <input type="text" id="emailInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+            <input type="text" style="padding-left:1%;" class="reg-input" placeholder="...">
         </div>
     </div>
     <div class="reg">
         <div class="reg-left">Придумайте пароль:</div>
         <div class="reg-right">
-            <input type="text" id="passwordInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+            <input type="text" style="padding-left:1%;" class="reg-input" placeholder="...">
         </div>
     </div>
     <div class="reg">
         <div class="reg-left">Повторите пароль:</div>
         <div class="reg-right">
-            <input type="text" id="confirmPasswordInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+            <input type="text" style="padding-left:1%;" class="reg-input" placeholder="...">
         </div>
     </div>
     <div class="reg">
-        <button class="reg-button" onclick="register();">Зарегистрироваться</button>
+        <button class="reg-button">Зарегистрироваться</button>
     </div>
     <div class="reg">
         <div class="already">Уже есть аккаунт? Авторизируйтесь:</div>
