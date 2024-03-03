@@ -453,3 +453,17 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.back-to-news {
+    width: 25%;
+    height: 40%;
+    background-color: #EC7088;
+    font-size: 0.9vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom-left-radius: 5vw;
+    border-top-left-radius: 5vw;
+    margin-left: 3%;
+}
