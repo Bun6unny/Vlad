@@ -26,7 +26,7 @@
     </div>
 
     <div class="top-menu" style="margin-top:1%;">
-        <img src="img/ss.png" style="max-height:90%;max-width:90%;">
+        <img src="img/ss.png" onclick="Main()" style="max-height:90%;max-width:90%;cursor:pointer;">
         <div class="top-menu-one">
             <div class="top-menu-part">
                 +7 (922) 342-20-76
@@ -38,7 +38,7 @@
                 <div class="search">
                     <input type="text" placeholder="Выполнить поиск по сайту..." class="search-left">
                     <div class="search-right">
-                        <img src="img/search.png" style="max-width:95%;max-height:95%;">
+                        <img src="img/search.png" style="max-width:95%;max-height:95%;cursor:pointer;">
                     </div>
                 </div>
             </div>
