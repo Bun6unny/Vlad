@@ -462,7 +462,8 @@ body {
     color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    cursor: pointer;
     border-bottom-left-radius: 5vw;
     border-top-left-radius: 5vw;
     border-color: #EC7088;
