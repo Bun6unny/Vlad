@@ -92,7 +92,7 @@
 
             for ($i = 0; $i < $num_news; $i += 2) {
                 echo "<div class='news'>";       
-                echo "<a href='open_news.php?id={$news[$i]['id']}'><div class='news-spot'> style='text-decoration: none;color:black;'";
+                echo "<a style='text-decoration: none;color:black;' href='open_news.php?id={$news[$i]['id']}'><div class='news-spot'>";
                 echo "<div class='news-block'>";
                 echo "<div class='news-name'>{$news[$i]['Head']}</div>";
                 echo "<div class='news-content'>";
