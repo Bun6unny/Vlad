@@ -36,6 +36,7 @@
 
     <?php
     session_start();
+    var_dump($_SESSION);
     if (isset($_SESSION['user_id'])) {
         // Сессия установлена для пользователя
         echo "Сессия установлена для пользователя с ID: " . $_SESSION['user_id'];
