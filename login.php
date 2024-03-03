@@ -21,15 +21,15 @@
         </div>
         <div class="header-right">
             <?php
-            session_start();
-            if(isset($_SESSION['user_id'])) {
-                // Пользователь авторизован
-                echo '<a href="logout.php">Выход</a>';
-            } else {
-                // Пользователь не авторизован
-                echo '<a href="#" onclick="Login_But()">Авторизация</a>';
-                echo '<a href="#" onclick="Registration()" style="margin-right: 10%;">Регистрация</a>';
-            }
+                session_start();
+                if(isset($_SESSION['user_id'])) {
+                    // Пользователь авторизован
+                    echo '<a href="logout.php">Выход</a>';
+                } else {
+                    // Пользователь не авторизован
+                    echo '<a href="#" onclick="Login_But()">Авторизация</a>';
+                    echo '<a href="#" onclick="Registration()" style="margin-right: 10%;">Регистрация</a>';
+                }
             ?>
         </div>
     </div>
