@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <title>Sugar Shack</title>
     <link rel="icon" href="img/ss.ico" type="image/x-icon">
+    <script src="js/script.js"></script>
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 
     <div class="header">
         <div class="header-left">
-            <a href="#" style="margin-left: 0%;">Главная</a>
+            <a onclick="Main()" style="margin-left: 0%;">Главная</a>
             <a href="#">Новости</a>
             <a href="#">О нас</a>
             <a href="#" style="margin-right: 0%;">Обратная связь</a>
@@ -62,7 +63,7 @@
         </button>
     </div>
 
-    <div class="top-name">
+    <div class="top-name" style="width:97%;">
         Новости
     </div>
 
