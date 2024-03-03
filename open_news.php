@@ -84,8 +84,8 @@
         $row = $result->fetch_assoc();
         echo "<div class='top-name'>{$row['Head']}</div>";
         echo "<div class='open-news'>";
-        echo "<img src='{$row['Image']}' alt='Изображение новости' style='max-width:90%;max-height:90%;'>";
-        echo "{$row['Content']}";
+        echo "<div style='width:30%;height:80%;'><img src='{$row['Image']}' alt='Изображение новости' style='max-width:90%;max-height:90%;'></div>";
+        echo "<div class='open-news-text'>{$row['Content']}</div>";
         echo "</div>";
     } else {
         echo "<p>Новость не найдена</p>";
