@@ -14,7 +14,7 @@
     <div class="header">
         <div class="header-left">
             <a href="#" style="margin-left: 0%;">Главная</a>
-            <a href="#">Кролик</a>
+            <a href="#">Новости</a>
             <a href="#">О нас</a>
             <a href="#" style="margin-right: 0%;">Обратная связь</a>
         </div>
@@ -92,7 +92,7 @@
 
             for ($i = 0; $i < $num_news; $i += 2) {
                 echo "<div class='news'>";       
-                echo "<a href='open_news.php?id={$news[$i]['id']}'><div class='news-spot'>";
+                echo "<a href='open_news.php?id={$news[$i]['id']}'><div class='news-spot'> style='text-decoration: none;color:black;'";
                 echo "<div class='news-block'>";
                 echo "<div class='news-name'>{$news[$i]['Head']}</div>";
                 echo "<div class='news-content'>";
