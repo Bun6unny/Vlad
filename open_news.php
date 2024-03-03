@@ -87,7 +87,7 @@
         echo "<div style='width:21%;height:80%;display: flex;align-items: center;justify-content: center;'><img src='{$row['Image']}' alt='Изображение новости' style='max-width:90%;max-height:90%;border-radius:0.3vw;border:0.1vw solid #EC7088;'></div>";
         echo "<div class='open-news-text'>{$row['full']}</div>";
         echo "</div>";
-        echo "<div style='width:100%;height:15%;'>";
+        echo "<div style='width:100%;height:15%;display:flex;align-items: center;justify-content: center;'>";
         echo "<div class='open-news-left'></div>";
         echo "<div class='open-news-right'>{$row['Date']}</div>";
         echo "</div>";
