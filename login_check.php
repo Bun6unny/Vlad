@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     $user = $result->fetch_assoc(); // Получаем данные пользователя
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $login;
-    $_SESSION['user_id'] = $user['user_id']; // Устанавливаем user_id в сессию
+    $_SESSION['user_id'] = $user['id']; // Устанавливаем user_id в сессию
     echo json_encode(array("success" => true));
 } else {
     echo json_encode(array("success" => false, "message" => "Неправильный логин или пароль"));
