@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <title>Sugar Shack</title>
     <link rel="icon" href="img/ss.ico" type="image/x-icon">
+    <script src="js/script.js"></script>
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
