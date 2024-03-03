@@ -68,31 +68,35 @@
     </div>
 
     <?php
-        $host = 'localhost';
-        $username = '2is-b11_2is-b11';
-        $password = 'dTav2z8hny';
-        $database = '2is-b11_2is-b11';
+$host = 'localhost';
+$username = '2is-b11_2is-b11';
+$password = 'dTav2z8hny';
+$database = '2is-b11_2is-b11';
 
-        $mysqli = new mysqli($host, $username, $password, $database);
+$mysqli = new mysqli($host, $username, $password, $database);
 
-        if ($mysqli->connect_errno) {
-            echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-            exit();
-        }
+if ($mysqli->connect_errno) {
+    echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    exit();
+}
 
-        $login = $_POST['login'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+$login = $_POST['login'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
-        $sql = "INSERT INTO Users (Login, Password, Mail) VALUES ('$login', '$password', '$email')";
-        if ($mysqli->query($sql) === TRUE) {
-            echo "Пользователь успешно зарегистрирован";
-        } else {
-            echo "Ошибка: " . $sql . "<br>" . $mysqli->error;
-        }
+// Защита от SQL-инъекций
+$stmt = $mysqli->prepare("INSERT INTO Users (Login, Password, Mail) VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $login, $password, $email);
 
-        $mysqli->close();
-    ?>
+if ($stmt->execute()) {
+    echo "Пользователь успешно зарегистрирован";
+} else {
+    echo "Ошибка: " . $stmt->error;
+}
+
+$stmt->close();
+$mysqli->close();
+?>
 
     <div class="reg">
         <div class="reg-left">Введите ваше имя (Логин):</div>
@@ -119,7 +123,7 @@
         </div>
     </div>
     <div class="reg">
-        <button class="reg-button" onclick="register()">Зарегистрироваться</button>
+        <button class="reg-button" onclick="register(); return false;">Зарегистрироваться</button>
     </div>
     <div class="reg">
         <div class="already">Уже есть аккаунт? Авторизируйтесь:</div>
