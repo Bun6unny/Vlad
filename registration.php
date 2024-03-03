@@ -114,19 +114,19 @@
     <div class="reg">
         <div class="reg-left">Введите ваше имя (Логин):</div>
         <div class="reg-right">
-            <input type="text" style="padding-left:1%;" class="reg-input" placeholder="...">
+            <input type="text" name="name" style="padding-left:1%;" class="reg-input" placeholder="...">
         </div>
     </div>
     <div class="reg">
         <div class="reg-left">Введите вашу почту:</div>
         <div class="reg-right">
-            <input type="text" style="padding-left:1%;" class="reg-input" placeholder="...">
+            <input type="text" name="email" style="padding-left:1%;" class="reg-input" placeholder="...">
         </div>
     </div>
     <div class="reg">
         <div class="reg-left">Придумайте пароль:</div>
         <div class="reg-right">
-            <input type="text" style="padding-left:1%;" class="reg-input" placeholder="...">
+            <input type="text" name="password" style="padding-left:1%;" class="reg-input" placeholder="...">
         </div>
     </div>
     <div class="reg">
@@ -136,7 +136,7 @@
         </div>
     </div>
     <div class="reg">
-        <button class="reg-button">Зарегистрироваться</button>
+        <button class="reg-button" type="submit">Зарегистрироваться</button>
     </div>
     <div class="reg">
         <div class="already">Уже есть аккаунт? Авторизируйтесь:</div>
