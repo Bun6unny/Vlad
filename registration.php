@@ -92,7 +92,7 @@
     </div>
 </div>
 <div class="reg">
-    <button class="reg-button" onclick="register(); return false;">Зарегистрироваться</button>
+    <button class="reg-button" onclick="register()">Зарегистрироваться</button>
 </div>
 
 <script>
@@ -101,6 +101,12 @@ function register() {
     var email = document.getElementById("emailInput").value;
     var password = document.getElementById("passwordInput").value;
     var confirmPassword = document.getElementById("confirmPasswordInput").value;
+
+    // Проверка на заполненность всех полей
+    if (login === "" || email === "" || password === "" || confirmPassword === "") {
+        alert("Заполните все поля!");
+        return;
+    }
 
     // Проверка на совпадение паролей
     if (password !== confirmPassword) {
@@ -115,6 +121,9 @@ function register() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             alert(xhr.responseText); // Выводим ответ от сервера
+            if (xhr.responseText === "Пользователь успешно зарегистрирован") {
+                window.location.href = "login.php"; // Перенаправляем на страницу login.php
+            }
         }
     };
     xhr.send("login=" + login + "&email=" + email + "&password=" + password);
