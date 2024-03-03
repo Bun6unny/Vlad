@@ -438,7 +438,7 @@ body {
 }
 
 .open-news-left {
-    width: 40%;
+    width: 36%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -446,8 +446,8 @@ body {
 }
 
 .open-news-right {
-    font-size: 1.2vw;
-    width: 40%;
+    font-size: 1.4vw;
+    width: 36%;
     height: 100%;
     display: flex;
     align-items: center;
