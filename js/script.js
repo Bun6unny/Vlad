@@ -88,3 +88,22 @@ function sendData(login, email, password) {
     };
     xhr.send("login=" + login + "&email=" + email + "&password=" + password);
 }
+
+function login() {
+    var login = document.getElementById("loginInput").value;
+    var password = document.getElementById("passwordInput").value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "login_check.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            if (response.success) {
+                window.location.href = "user.php"; // Перенаправляем на страницу user.php
+            } else {
+                alert("Неправильный логин или пароль");
+            }
+        }
+    };
+    xhr.send("login=" + login + "&password=" + password);
+}

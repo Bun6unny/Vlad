@@ -97,7 +97,7 @@
     <div class="reg">
         <div class="already">Уже есть аккаунт? Авторизируйтесь:</div>
         <div class="to-login">
-            <button class="to-login-button" onclick="Login()">Авторизация</button>
+            <button class="to-login-button" onclick="Login_But()">Авторизация</button>
         </div>
     </div>
 
