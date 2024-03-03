@@ -70,17 +70,17 @@
     <div class="reg" style="height:17%;">
         <div class="reg-left">Логин:</div>
         <div class="reg-right" style="margin-right:22%;">
-            <input type="text" style="padding-left:1%;height:40%;" class="reg-input" placeholder="...">
+            <input type="text" id="loginInput" style="padding-left:1%;height:40%;" class="reg-input" placeholder="...">
         </div>
     </div>
     <div class="reg" style="height:17%;">
         <div class="reg-left">Пароль:</div>
         <div class="reg-right" style="margin-right:22%;">
-            <input type="text" style="padding-left:1%;height:40%;" class="reg-input" placeholder="...">
+            <input type="text" id="passwordInput" style="padding-left:1%;height:40%;" class="reg-input" placeholder="...">
         </div>
     </div>
     <div class="reg">
-        <button class="reg-button">Авторизоваться</button>
+        <button class="reg-button" onclick="login()">Авторизоваться</button>
     </div>
     <div class="reg">
         <div class="already">Нету аккаунта? Зарегистрируйтесь:</div>
@@ -88,6 +88,29 @@
             <button class="to-login-button" onclick="Registration()">Регистрация</button>
         </div>
     </div>
+
+    <script>
+        function login() {
+            var login = document.getElementById("loginInput").value;
+            var password = document.getElementById("passwordInput").value;
+
+            // Отправка данных на сервер
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "login_check.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        window.location.href = "user.php"; // Перенаправляем на страницу user.php
+                    } else {
+                        alert("Неправильный логин или пароль");
+                    }
+                }
+            };
+            xhr.send("login=" + login + "&password=" + password);
+        }
+    </script>
 
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
