@@ -449,6 +449,7 @@ body {
     font-size: 1.4vw;
     width: 36%;
     height: 100%;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
