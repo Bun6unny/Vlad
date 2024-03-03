@@ -13,7 +13,7 @@ function Registration() {
     window.location.href = url;
 }
 
-function Login() {
+function Login_But() {
     var url = "login.php";
     window.location.href = url;
 }

@@ -20,7 +20,7 @@
             <a href="#" onclick="Feedback()" style="margin-right: 0%;">Обратная связь</a>
         </div>
         <div class="header-right">
-            <a href="#" onclick="Login()">Авторизация</a>
+            <a href="#" onclick="Login_But()">Авторизация</a>
             <a href="#" onclick="Registration()" style="margin-right: 10%;">Регистрация</a>
         </div>
     </div>

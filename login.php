@@ -20,8 +20,17 @@
             <a href="#" onclick="Feedback()" style="margin-right: 0%;">Обратная связь</a>
         </div>
         <div class="header-right">
-            <a href="#" onclick="Login()">Авторизация</a>
-            <a href="#" onclick="Registration()" style="margin-right: 10%;">Регистрация</a>
+            <?php
+            session_start();
+            if(isset($_SESSION['user_id'])) {
+                // Пользователь авторизован
+                echo '<a href="logout.php">Выход</a>';
+            } else {
+                // Пользователь не авторизован
+                echo '<a href="#" onclick="Login_But()">Авторизация</a>';
+                echo '<a href="#" onclick="Registration()" style="margin-right: 10%;">Регистрация</a>';
+            }
+            ?>
         </div>
     </div>
 
