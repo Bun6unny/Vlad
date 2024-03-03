@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <title>Sugar Shack</title>
     <link rel="icon" href="img/ss.ico" type="image/x-icon">
-    <script src="js/script.js"></script>
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
@@ -92,10 +91,9 @@
             $num_news = count($news);
 
             for ($i = 0; $i < $num_news; $i += 2) {
-                echo "<div class='news' data-id='{$news[$i]['id']}'>";
-
-                echo "<div class='news-spot'>";
-                echo "<div class='news-block' data-id='{$news[$i]['id']}'>";
+                echo "<div class='news'>";       
+                echo "<a style='text-decoration: none;color:black;' href='open_news.php?id={$news[$i]['id']}'><div class='news-spot'>";
+                echo "<div class='news-block'>";
                 echo "<div class='news-name'>{$news[$i]['Head']}</div>";
                 echo "<div class='news-content'>";
                 echo "<div class='news-image'>";
@@ -105,12 +103,12 @@
                 echo "{$news[$i]['Content']}";
                 echo "</div>";
                 echo "</div>";
-                echo "</div>";
+                echo "</div></a>";
                 echo "</div>";
 
                 if ($i + 1 < $num_news) {
-                    echo "<div class='news-spot'>";
-                    echo "<div class='news-block' data-id='{$news[$i + 1]['id']}'>";
+                    echo "<a style='text-decoration: none;color:black;' href='open_news.php?id={$news[$i]['id']}'><div class='news-spot'>";
+                    echo "<div class='news-block'>";
                     echo "<div class='news-name'>{$news[$i + 1]['Head']}</div>";
                     echo "<div class='news-content'>";
                     echo "<div class='news-image'>";
@@ -120,7 +118,7 @@
                     echo "{$news[$i + 1]['Content']}";
                     echo "</div>";
                     echo "</div>";
-                    echo "</div>";
+                    echo "</div></a>";
                     echo "</div>";
                 }
 
