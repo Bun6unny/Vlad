@@ -123,7 +123,7 @@ $mysqli->close();
         </div>
     </div>
     <div class="reg">
-        <button class="reg-button" onclick="register(); return false;">Зарегистрироваться</button>
+        <button class="reg-button" onclick="register();">Зарегистрироваться</button>
     </div>
     <div class="reg">
         <div class="already">Уже есть аккаунт? Авторизируйтесь:</div>
