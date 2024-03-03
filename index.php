@@ -16,12 +16,12 @@
         <div class="header-left">
             <a href="#" onclick="Main()" style="margin-left: 0%;">Главная</a>
             <a href="#" onclick="News()">Новости</a>
-            <a href="#">О нас</a>
-            <a href="#" style="margin-right: 0%;">Обратная связь</a>
+            <a href="#" onclick="About()">О нас</a>
+            <a href="#" onclick="Feedback()" style="margin-right: 0%;">Обратная связь</a>
         </div>
         <div class="header-right">
-            <a href="#">Авторизация</a>
-            <a href="#" style="margin-right: 10%;">Регистрация</a>
+            <a href="#" onclick="Login()">Авторизация</a>
+            <a href="#" onclick="Registration()" style="margin-right: 10%;">Регистрация</a>
         </div>
     </div>
 
@@ -168,11 +168,11 @@
         Специальность: Информационные системы и программирование
         </div>
         <div class="footer-right">
-            <img src="img/set1.png" style="max-height: 60%; width: auto; height: auto; margin-right:2%;">
-            <img src="img/set2.png" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%;">
-            <img src="img/set3.png" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%;">
-            <img src="img/set4.png" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%;">
-            <img src="img/set5.png" style="max-height: 60%; width: auto; height: auto; margin-left:2%;">
+            <img src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
+            <img src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
         </div>
     </div>
 
