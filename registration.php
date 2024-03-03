@@ -101,65 +101,6 @@
         </div>
     </div>
 
-    <script>
-function register() {
-    var login = document.getElementById("loginInput").value;
-    var email = document.getElementById("emailInput").value;
-    var password = document.getElementById("passwordInput").value;
-    var confirmPassword = document.getElementById("confirmPasswordInput").value;
-
-    // Проверка на заполненность всех полей
-    if (login === "" || email === "" || password === "" || confirmPassword === "") {
-        alert("Заполните все поля!");
-        return;
-    }
-
-    // Проверка на совпадение паролей
-    if (password !== confirmPassword) {
-        alert("Пароли не совпадают");
-        return;
-    }
-
-    // Проверка на наличие символа @ в почте
-    if (!email.includes('@')) {
-        alert("Неправильная почта");
-        return;
-    }
-
-    // Проверка на занятость логина
-    var xhrCheckLogin = new XMLHttpRequest();
-    xhrCheckLogin.open("POST", "check_login.php", true);
-    xhrCheckLogin.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhrCheckLogin.onreadystatechange = function () {
-        if (xhrCheckLogin.readyState === 4 && xhrCheckLogin.status === 200) {
-            if (xhrCheckLogin.responseText === "exists") {
-                alert("Логин уже занят!");
-            } else {
-                // Логин свободен, отправляем данные на сервер
-                sendData(login, email, password);
-            }
-        }
-    };
-    xhrCheckLogin.send("login=" + login);
-}
-
-function sendData(login, email, password) {
-    // Отправка данных на сервер
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "register.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            alert(xhr.responseText); // Выводим ответ от сервера
-            if (xhr.responseText === "Пользователь успешно зарегистрирован") {
-                window.location.href = "login.php"; // Перенаправляем на страницу login.php
-            }
-        }
-    };
-    xhr.send("login=" + login + "&email=" + email + "&password=" + password);
-}
-</script>
-
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
         ФИО: Ходырев Владислав Вадимович<br>

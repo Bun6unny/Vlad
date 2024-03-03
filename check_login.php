@@ -19,9 +19,9 @@ $stmt->bind_param("s", $login);
 $stmt->execute();
 $result = $stmt->get_result();
 if ($result->num_rows > 0) {
-    echo "exists"; // Логин уже занят
+    echo "exists";
 } else {
-    echo "available"; // Логин свободен
+    echo "available";
 }
 
 $stmt->close();
