@@ -68,66 +68,69 @@
     </div>
     
     <div class="reg">
-    <div class="reg-left">Введите ваше имя (Логин):</div>
-    <div class="reg-right">
-        <input type="text" id="loginInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+        <div class="reg-left">Введите ваше имя (Логин):</div>
+        <div class="reg-right">
+            <input type="text" id="loginInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+        </div>
     </div>
-</div>
-<div class="reg">
-    <div class="reg-left">Введите вашу почту:</div>
-    <div class="reg-right">
-        <input type="text" id="emailInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+    <div class="reg">
+        <div class="reg-left">Введите вашу почту:</div>
+        <div class="reg-right">
+            <input type="text" id="emailInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+        </div>
     </div>
-</div>
-<div class="reg">
-    <div class="reg-left">Придумайте пароль:</div>
-    <div class="reg-right">
-        <input type="password" id="passwordInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+    <div class="reg">
+        <div class="reg-left">Придумайте пароль:</div>
+        <div class="reg-right">
+            <input type="password" id="passwordInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+        </div>
     </div>
-</div>
-<div class="reg">
-    <div class="reg-left">Повторите пароль:</div>
-    <div class="reg-right">
-        <input type="password" id="confirmPasswordInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+    <div class="reg">
+        <div class="reg-left">Повторите пароль:</div>
+        <div class="reg-right">
+            <input type="password" id="confirmPasswordInput" style="padding-left:1%;" class="reg-input" placeholder="...">
+        </div>
     </div>
-</div>
-<div class="reg">
-    <button class="reg-button" onclick="register()">Зарегистрироваться</button>
-</div>
+    <div class="reg">
+        <button class="reg-button" onclick="register()">Зарегистрироваться</button>
+    </div>
+    <div class="reg">
+        <div class="already">Уже есть аккаунт? Авторизируйтесь:</div>
+        <div class="to-login">
+            <button class="to-login-button" onclick="Login()">Авторизация</button>
+        </div>
+    </div>
 
 <script>
-function register() {
-    var login = document.getElementById("loginInput").value;
-    var email = document.getElementById("emailInput").value;
-    var password = document.getElementById("passwordInput").value;
-    var confirmPassword = document.getElementById("confirmPasswordInput").value;
+    function register() {
+        var login = document.getElementById("loginInput").value;
+        var email = document.getElementById("emailInput").value;
+        var password = document.getElementById("passwordInput").value;
+        var confirmPassword = document.getElementById("confirmPasswordInput").value;
 
-    // Проверка на заполненность всех полей
-    if (login === "" || email === "" || password === "" || confirmPassword === "") {
-        alert("Заполните все поля!");
-        return;
-    }
-
-    // Проверка на совпадение паролей
-    if (password !== confirmPassword) {
-        alert("Пароли не совпадают");
-        return;
-    }
-
-    // Отправка данных на сервер
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "register.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            alert(xhr.responseText); // Выводим ответ от сервера
-            if (xhr.responseText === "Пользователь успешно зарегистрирован") {
-                window.location.href = "login.php"; // Перенаправляем на страницу login.php
-            }
+        if (login === "" || email === "" || password === "" || confirmPassword === "") {
+            alert("Заполните все поля!");
+            return;
         }
-    };
-    xhr.send("login=" + login + "&email=" + email + "&password=" + password);
-}
+
+        if (password !== confirmPassword) {
+            alert("Пароли не совпадают");
+            return;
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "register.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                alert(xhr.responseText);
+                if (xhr.responseText === "Пользователь успешно зарегистрирован") {
+                    window.location.href = "login.php";
+                }
+            }
+        };
+        xhr.send("login=" + login + "&email=" + email + "&password=" + password);
+    }
 </script>
 
     <div class="footer" style="margin-top:1%;">

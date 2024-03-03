@@ -15,7 +15,6 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Защита от SQL-инъекций
     $stmt = $mysqli->prepare("INSERT INTO Users (Login, Password, Mail) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $login, $password, $email);
 
