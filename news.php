@@ -118,8 +118,8 @@
                     echo "{$news[$i + 1]['Content']}";
                     echo "</div>";
                     echo "</div>";
-                    echo "</div>";
                     echo "</div></a>";
+                    echo "</div>";
                 }
 
                 echo "</div>";
