@@ -16,16 +16,18 @@
     $login = $_POST['login'];
     $password = $_POST['password'];
 
+    // Хешируем введенный пароль
+    $hashed_password = md5($password); // Простой пример хеширования, лучше использовать более безопасные методы
+
     $sql = "SELECT * FROM Users WHERE Login = ? AND Password = ?";
     $stmt = $mysqli->prepare($sql);
-    $stmt->bind_param("ss", $login, $password);
+    $stmt->bind_param("ss", $login, $hashed_password); // Привязываем параметры
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         // Логин и пароль верные, создаем сессию
-        $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $login;
+        $_SESSION['user_id'] = $login; // Предполагая, что логин уникален и можно использовать как идентификатор пользователя
         echo json_encode(array("success" => true));
     } else {
         echo json_encode(array("success" => false, "message" => "Неправильный логин или пароль"));
