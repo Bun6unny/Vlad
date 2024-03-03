@@ -67,41 +67,59 @@
         Регистрация
     </div>
     
-    <form method="post" action="register_handler.php">
     <div class="reg">
-        <div class="reg-left">Введите ваше имя (Логин):</div>
-        <div class="reg-right">
-            <input type="text" name="name" style="padding-left:1%;" class="reg-input" placeholder="...">
-        </div>
+    <div class="reg-left">Введите ваше имя (Логин):</div>
+    <div class="reg-right">
+        <input type="text" id="loginInput" style="padding-left:1%;" class="reg-input" placeholder="...">
     </div>
-    <div class="reg">
-        <div class="reg-left">Введите вашу почту:</div>
-        <div class="reg-right">
-            <input type="text" name="email" style="padding-left:1%;" class="reg-input" placeholder="...">
-        </div>
+</div>
+<div class="reg">
+    <div class="reg-left">Введите вашу почту:</div>
+    <div class="reg-right">
+        <input type="text" id="emailInput" style="padding-left:1%;" class="reg-input" placeholder="...">
     </div>
-    <div class="reg">
-        <div class="reg-left">Придумайте пароль:</div>
-        <div class="reg-right">
-            <input type="text" name="password" style="padding-left:1%;" class="reg-input" placeholder="...">
-        </div>
+</div>
+<div class="reg">
+    <div class="reg-left">Придумайте пароль:</div>
+    <div class="reg-right">
+        <input type="password" id="passwordInput" style="padding-left:1%;" class="reg-input" placeholder="...">
     </div>
-    <div class="reg">
-        <div class="reg-left">Повторите пароль:</div>
-        <div class="reg-right">
-            <input type="text" style="padding-left:1%;" class="reg-input" placeholder="...">
-        </div>
+</div>
+<div class="reg">
+    <div class="reg-left">Повторите пароль:</div>
+    <div class="reg-right">
+        <input type="password" id="confirmPasswordInput" style="padding-left:1%;" class="reg-input" placeholder="...">
     </div>
-    <div class="reg">
-        <button class="reg-button" type="submit">Зарегистрироваться</button>
-    </div>
-    </form>
-    <div class="reg">
-        <div class="already">Уже есть аккаунт? Авторизируйтесь:</div>
-        <div class="to-login">
-            <button class="to-login-button" onclick="Login()">Авторизация</button>
-        </div>
-    </div>
+</div>
+<div class="reg">
+    <button class="reg-button" onclick="register(); return false;">Зарегистрироваться</button>
+</div>
+
+<script>
+function register() {
+    var login = document.getElementById("loginInput").value;
+    var email = document.getElementById("emailInput").value;
+    var password = document.getElementById("passwordInput").value;
+    var confirmPassword = document.getElementById("confirmPasswordInput").value;
+
+    // Проверка на совпадение паролей
+    if (password !== confirmPassword) {
+        alert("Пароли не совпадают");
+        return;
+    }
+
+    // Отправка данных на сервер
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "register.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            alert(xhr.responseText); // Выводим ответ от сервера
+        }
+    };
+    xhr.send("login=" + login + "&email=" + email + "&password=" + password);
+}
+</script>
 
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
