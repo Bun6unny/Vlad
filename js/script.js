@@ -36,3 +36,27 @@ function About() {
 function NewTab(url) {
     window.open(url, '_blank');
 }
+
+function register() {
+    var login = document.getElementById("loginInput").value;
+    var email = document.getElementById("emailInput").value;
+    var password = document.getElementById("passwordInput").value;
+    var confirmPassword = document.getElementById("confirmPasswordInput").value;
+
+    // Проверка на совпадение паролей
+    if (password !== confirmPassword) {
+        alert("Пароли не совпадают");
+        return;
+    }
+
+    // Отправка данных на сервер
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "register.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            alert(xhr.responseText); // Выводим ответ от сервера
+        }
+    };
+    xhr.send("login=" + login + "&email=" + email + "&password=" + password);
+}
