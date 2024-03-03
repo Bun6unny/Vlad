@@ -89,7 +89,7 @@
         echo "</div>";
         echo "<div style='width:100%;height:15%;display:flex;align-items: center;justify-content: center;'>";
         echo "<div class='open-news-left' style='width:35%;'>";
-        echo "<div class='back-to-news'>Назад</div>";
+        echo "<div class='back-to-news' onclick='News()'>Назад</div>";
         echo "</div>";
         echo "<div class='open-news-right' style='justify-content: flex-end;'>{$row['Date']}</div>";
         echo "</div>";

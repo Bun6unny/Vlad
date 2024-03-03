@@ -457,13 +457,19 @@ body {
 .back-to-news {
     width: 25%;
     height: 40%;
-    background-color: #EC7088;
-    font-size: 0.9vw;
+    background-color: #FAA7B7;
+    font-size: 1.4vw;
     color: white;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     border-bottom-left-radius: 5vw;
     border-top-left-radius: 5vw;
-    margin-left: 3%;
+    border-color: #EC7088;
+    border-width: 0.2vw;
+    font-weight: bold;
+}
+
+.back-to-news:hover {
+    background-color: #EC7088;
 }
