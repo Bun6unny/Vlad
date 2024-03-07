@@ -91,7 +91,7 @@
         echo "<div class='open-news-left' style='width:35%;'>";
         echo "<div class='back-to-news' onclick='News()'>Назад</div>";
         echo "</div>";
-        echo "<div class='open-news-right' style='justify-content: flex-end;'>{$row['Date']}</div>";
+        echo "<div class='open-news-right' style='justify-content: flex-end;'>Дата публикации:&nbsp{$row['Date']}</div>";
         echo "</div>";
     } else {
         echo "<p>Новость не найдена</p>";
