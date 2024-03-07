@@ -23,10 +23,8 @@
             <?php
                 session_start();
                 if(isset($_SESSION['user_id'])) {
-                    // Пользователь авторизован, показываем ссылку "Выход"
                     echo '<a href="logout.php">Выход</a>';
                 } else {
-                    // Пользователь не авторизован, показываем ссылки "Авторизация" и "Регистрация"
                     echo '<a href="#" onclick="Login_But()">Авторизация</a>';
                     echo '<a href="#" onclick="Registration()" style="margin-right: 10%;">Регистрация</a>';
                 }
@@ -125,16 +123,20 @@
     </div>
     </div>
 
+    <div class="title">О нас</div>
+
     <div class="candy-spot">
         <div class="candy-left">
             <img src="img/candy1.png" style="max-height: 100%; max-width: auto;">
         </div>
-        <div class="candy-right" style="width: 40%; height: 65%;">
+        <div class="candy-right" style="width: 40%; height: 65%;display:block;">
+            <div class="candy-title">Вкусные Шедевры</div>
             Наши сладости - это не просто продукты, это настоящее искусство в каждом кусочке! Мы гордимся своим качеством и тщательно подбираем лучшие ингредиенты для наших продуктов. Независимо от того, ищете ли вы что-то классическое или эксклюзивное, у нас есть все, чтобы порадовать ваш вкусовой рецептор.
         </div>
     </div>
     <div class="candy-spot">
-        <div class="candy-left" style="text-align:right; width: 40%; height: 65%;">
+        <div class="candy-left" style="text-align:right; width: 40%; height: 65%;display:block;">
+            <div class="candy-title">Разнообразие вкусов</div>
             Вдохновляйтесь нашим разнообразием и выбирайте то, что подходит вашему настроению и вкусу. От нежных шоколадных конфет до хрустящих карамелек, мы предлагаем бесконечные варианты сладких удовольствий. Дарите радость себе и своим близким с нашими вкусными подарками!
         </div>
         <div class="candy-right">
@@ -145,15 +147,22 @@
         <div class="candy-left">
             <img src="img/candy3.png" style="max-height: 100%; max-width: auto;">
         </div>
-        <div class="candy-right" style="width: 40%; height: 65%;">
+        <div class="candy-right" style="width: 40%; height: 65%;display:block;">
+            <div class="candy-title">Сладкая Роскошь</div>    
             Помимо великолепного вкуса, мы также обеспечиваем безупречное качество и сервис. Наша команда стремится сделать ваше покупательное путешествие приятным и незабываемым. Мы уверены, что каждый, кто попробует наши сладости, найдет что-то особенное и уникальное для себя.
         </div>
     </div>
 
+    <div class="action">
+        <button class="action-button" onclick="About()">Больше о нас</button>
+    </div>
+
+    <div class="title">Где нас найти</div>
+
     <div class="maps-spot">
         <div class="map-block" style="margin-right:10%;">
             <div class="place-up">
-                <img src="img/onix.jpg" style="max-width:95%;max-height:95%; margin-top:3%;">
+                <img src="img/onix.jpg" style="max-width:95%;max-height:95%; margin-top:3%;border:0.2vw solid #EC7088;border-radius:0.5vw">
             </div>
             <div class="place-down">
                 Телефон: +7 (922) 342-20-76<br>
@@ -165,7 +174,7 @@
                 Мы на карте
             </div>
             <div id="map1" style="position:relative;overflow:hidden;">
-                <iframe src="https://yandex.ru/map-widget/v1/?ll=56.221003%2C58.003263&mode=whatshere&whatshere%5Bpoint%5D=56.221003%2C58.003263&whatshere%5Bzoom%5D=17&z=17" width="96%" height="76%" frameborder="1" allowfullscreen="true" style="border-radius: 0.5vw; margin-left:2%;"></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=56.221003%2C58.003263&mode=whatshere&whatshere%5Bpoint%5D=56.221003%2C58.003263&whatshere%5Bzoom%5D=17&z=17" width="96%" height="76%" frameborder="1" allowfullscreen="true" style="border:0.2vw solid #EC7088;border-radius:0.5vw; margin-left:2%;"></iframe>
             </div>
         </div>
     </div>

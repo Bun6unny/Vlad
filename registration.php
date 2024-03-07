@@ -95,10 +95,7 @@
         <button class="reg-button" onclick="register()">Зарегистрироваться</button>
     </div>
     <div class="reg">
-        <div class="already">Уже есть аккаунт? Авторизируйтесь:</div>
-        <div class="to-login">
-            <button class="to-login-button" onclick="Login_But()">Авторизация</button>
-        </div>
+        <div class="already">Уже есть аккаунт?&nbsp<a href="login.php" style="color:#EC7088;">Авторизуйтесь</a>!</div>
     </div>
 
     <div class="footer" style="margin-top:1%;">
