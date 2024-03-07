@@ -104,6 +104,7 @@
                 echo "{$news[$i]['Content']}";
                 echo "</div>";
                 echo "</div>";
+                echo "ААА";
                 echo "</div></a>";
                 echo "</div>";
 
