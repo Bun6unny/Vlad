@@ -103,8 +103,8 @@
                 echo "<div class='news-text'>";
                 echo "{$news[$i]['Content']}";
                 echo "</div>";
-                echo "</div>";
                 echo "ААА";
+                echo "</div>";
                 echo "</div></a>";
                 echo "</div>";
 
