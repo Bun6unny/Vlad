@@ -446,7 +446,7 @@ body {
 
 .news-image {
     width: 40%;
-    height: 100%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -454,7 +454,7 @@ body {
 
 .news-text {
     width: 58%;
-    height: 100%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
