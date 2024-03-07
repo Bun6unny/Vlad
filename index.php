@@ -125,7 +125,7 @@
 
     <div class="title">О нас</div>
 
-    <div class="candy-spot">
+    <div class="candy-spot" style="margin-top:1%;">
         <div class="candy-left">
             <img src="img/candy1.png" style="max-height: 100%; max-width: auto;">
         </div>
