@@ -120,6 +120,7 @@
                     echo "{$news[$i + 1]['Content']}";
                     echo "</div>";
                     echo "</div>";
+                    echo "<div class='news-next'>Читать далее</div>";
                     echo "</div></a>";
                     echo "</div>";
                 }
