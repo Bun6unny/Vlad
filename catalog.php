@@ -123,6 +123,27 @@ if ($mysqli->connect_errno) {
 // Получение выбранной категории товаров
 $category = $_GET['category']; // Получаем значение параметра category из URL
 
+$categoryName = '';
+switch ($category) {
+    case 'candy':
+        $categoryName = 'Конфеты';
+        break;
+    case 'drinks':
+        $categoryName = 'Напитки';
+        break;
+    case 'chocolate':
+        $categoryName = 'Шоколад';
+        break;
+    case 'marmalade':
+        $categoryName = 'Мармелад';
+        break;
+    case 'cookies':
+        $categoryName = 'Печенье';
+        break;
+    default:
+        // Вывод сообщения об ошибке или редирект на страницу с выбором категории
+}
+
 // Формируем запрос в базу данных в зависимости от выбранной категории
 switch ($category) {
     case 'candy':
