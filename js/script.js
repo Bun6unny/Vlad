@@ -33,6 +33,10 @@ function About() {
     window.location.href = url;
 }
 
+function Catalog(category) {
+    window.location.href = 'catalog.php?category=' + category;
+}
+
 function NewTab(url) {
     window.open(url, '_blank');
 }
