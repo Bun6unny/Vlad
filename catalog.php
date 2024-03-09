@@ -71,136 +71,116 @@
     </div>
 
     <div class="menu">
-        <button class="menu-left-button" onclick="Catalog()">
+        <button class="menu-left-button" onclick="Catalog('candy')">
             <img style="max-height: 70%; max-width: 95%;" src="img/candy.png">
             <div>Конфеты</div>
         </button>
-        <button class="menu-button" onclick="Catalog()">
+        <button class="menu-button" onclick="Catalog('drinks')">
             <img style="max-height: 70%; max-width: 95%;" src="img/cola.png">
             <div>Напитки</div>
         </button>
-        <button class="menu-button" onclick="Catalog()">
+        <button class="menu-button" onclick="Catalog('chocolate')">
             <img style="max-height: 70%; max-width: 95%;" src="img/chock.png">
             <div>Шоколад</div>
         </button>
-        <button class="menu-button" onclick="Catalog()">
+        <button class="menu-button" onclick="Catalog('marmalade')"> 
             <img style="max-height: 70%; max-width: 95%;" src="img/marm.png">
             <div>Мармелад</div>
         </button>
-        <button class="menu-right-button" onclick="Catalog()">
+        <button class="menu-right-button" onclick="Catalog('cookies')">
             <img style="max-height: 70%; max-width: 95%;" src="img/cokie.png">
             <div>Печенье</div>
         </button>
     </div>
 
-    <style>
-        .sell-line {
-            width:100%;
-            height:20%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    <?php
+        $host = 'localhost';
+        $username = '2is-b11_2is-b11';
+        $password = 'dTav2z8hny';
+        $database = '2is-b11_2is-b11';
+
+        $mysqli = new mysqli($host, $username, $password, $database);
+
+        if ($mysqli->connect_errno) {
+            echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
         }
 
-        .sell-block {
-            width:25%;
-            height:90%;
+        $category = $_GET['category'];
+
+        $categoryName = '';
+        switch ($category) {
+            case 'candy':
+                $categoryName = 'Конфеты';
+                break;
+            case 'drinks':
+                $categoryName = 'Напитки';
+                break;
+            case 'chocolate':
+                $categoryName = 'Шоколад';
+                break;
+            case 'marmalade':
+                $categoryName = 'Мармелад';
+                break;
+            case 'cookies':
+                $categoryName = 'Печенье';
+                break;
+            default:
         }
-    </style>
 
-<?php
-$host = 'localhost';
-$username = '2is-b11_2is-b11';
-$password = 'dTav2z8hny';
-$database = '2is-b11_2is-b11';
-
-$mysqli = new mysqli($host, $username, $password, $database);
-
-if ($mysqli->connect_errno) {
-    echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
-
-// Получение выбранной категории товаров
-$category = $_GET['category']; // Получаем значение параметра category из URL
-
-$categoryName = '';
-switch ($category) {
-    case 'candy':
-        $categoryName = 'Конфеты';
-        break;
-    case 'drinks':
-        $categoryName = 'Напитки';
-        break;
-    case 'chocolate':
-        $categoryName = 'Шоколад';
-        break;
-    case 'marmalade':
-        $categoryName = 'Мармелад';
-        break;
-    case 'cookies':
-        $categoryName = 'Печенье';
-        break;
-    default:
-        // Вывод сообщения об ошибке или редирект на страницу с выбором категории
-}
-
-// Формируем запрос в базу данных в зависимости от выбранной категории
-switch ($category) {
-    case 'candy':
-        $sql = "SELECT * FROM Candy";
-        break;
-    case 'drinks':
-        $sql = "SELECT * FROM Drinks";
-        break;
-    case 'chocolate':
-        $sql = "SELECT * FROM Chocolate";
-        break;
-    case 'marmalade':
-        $sql = "SELECT * FROM Marmalade";
-        break;
-    case 'cookies':
-        $sql = "SELECT * FROM Cookies";
-        break;
-    default:
-        // Вывод сообщения об ошибке или редирект на страницу с выбором категории
-}
-
-$result = $mysqli->query($sql);
-
-if ($result->num_rows > 0) {
-    $num_rows = $result->num_rows;
-    echo "<h2>{$categoryName}: количество товаров - {$num_rows}</h2>";
-    echo "<div class='sell-container'>";
-    $count = 0;
-    while ($row = $result->fetch_assoc()) {
-        if ($count % 3 == 0) {
-            echo "<div class='sell-line'>";
+        switch ($category) {
+            case 'candy':
+                $sql = "SELECT * FROM Candy";
+                break;
+            case 'drinks':
+                $sql = "SELECT * FROM Drinks";
+                break;
+            case 'chocolate':
+                $sql = "SELECT * FROM Chocolate";
+                break;
+            case 'marmalade':
+                $sql = "SELECT * FROM Marmalade";
+                break;
+            case 'cookies':
+                $sql = "SELECT * FROM Cookies";
+                break;
+            default:
         }
-        echo "<div class='sell-block'>";
-        // Вывод информации о товаре
-        echo "<img src='{$row['Image']}' style='max-width:90%;max-height:90%;' alt='{$row['Name']}'>";
-        echo "<div>{$row['Name']}</div>";
-        echo "<div>{$row['Price']}</div>";
-        echo "</div>";
-        $count++;
-        if ($count % 3 == 0) {
-            echo "</div>"; // Закрываем строку
-        }
-    }
-    if ($count % 3 != 0) { // Если последняя строка не полная, добавляем пустые блоки
-        $empty_blocks = 3 - ($count % 3);
-        for ($i = 0; $i < $empty_blocks; $i++) {
-            echo "<div class='sell-block'></div>";
-        }
-        echo "</div>"; // Закрываем последнюю строку
-    }
-    echo "</div>"; // Закрываем контейнер .sell-container
-} else {
-    echo "<h2>{$categoryName}: товаров нет</h2>"; // Вывод сообщения о отсутствии товаров
-}
 
-$mysqli->close();
-?>
+        $result = $mysqli->query($sql);
+
+        if ($result->num_rows > 0) {
+            $num_rows = $result->num_rows;
+            echo "<h2>{$categoryName}: количество товаров - {$num_rows}</h2>";
+            echo "<div class='sell-container'>";
+            $count = 0;
+            while ($row = $result->fetch_assoc()) {
+                if ($count % 3 == 0) {
+                    echo "<div class='sell-line'>";
+                }
+                echo "<div class='sell-block'>";
+                echo "<img src='{$row['Image']}' style='max-width:90%;max-height:90%;' alt='{$row['Name']}'>";
+                echo "<div>{$row['Name']}</div>";
+                echo "<div>{$row['Price']}</div>";
+                echo "</div>";
+                $count++;
+                if ($count % 3 == 0) {
+                    echo "</div>";
+                }
+            }
+            if ($count % 3 != 0) {
+                $empty_blocks = 3 - ($count % 3);
+                for ($i = 0; $i < $empty_blocks; $i++) {
+                    echo "<div class='sell-block'></div>";
+                }
+                echo "</div>"; 
+            }
+            echo "</div>";
+        } else {
+            echo "<div class='no-items'>{$categoryName}: товаров нет</div>";
+        }
+
+        $mysqli->close();
+    ?>
 
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
