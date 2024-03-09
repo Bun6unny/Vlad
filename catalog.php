@@ -155,7 +155,7 @@ if ($result->num_rows > 0) {
         }
         echo "<div class='sell-block'>";
         // Вывод информации о товаре
-        echo "<img src='{$row['Image']}' alt='{$row['Name']}'>";
+        echo "<img src='{$row['Image']}' style='max-width:90%;max-height:90%;' alt='{$row['Name']}'>";
         echo "<div>{$row['Name']}</div>";
         echo "<div>{$row['Price']}</div>";
         echo "</div>";
