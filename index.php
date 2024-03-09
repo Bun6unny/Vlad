@@ -75,7 +75,7 @@
             <img style="max-height: 70%; max-width: 95%;" src="img/candy.png">
             <div>Конфеты</div>
         </button>
-        <button class="menu-button" onclick="Catalog('drink')">
+        <button class="menu-button" onclick="Catalog('drinks')">
             <img style="max-height: 70%; max-width: 95%;" src="img/cola.png">
             <div>Напитки</div>
         </button>
@@ -83,11 +83,11 @@
             <img style="max-height: 70%; max-width: 95%;" src="img/chock.png">
             <div>Шоколад</div>
         </button>
-        <button class="menu-button" onclick="Catalog('marmelade')"> 
+        <button class="menu-button" onclick="Catalog('marmalade')"> 
             <img style="max-height: 70%; max-width: 95%;" src="img/marm.png">
             <div>Мармелад</div>
         </button>
-        <button class="menu-right-button" onclick="Catalog('cookie')">
+        <button class="menu-right-button" onclick="Catalog('cookies')">
             <img style="max-height: 70%; max-width: 95%;" src="img/cokie.png">
             <div>Печенье</div>
         </button>
