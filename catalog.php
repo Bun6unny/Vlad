@@ -195,8 +195,10 @@ if ($result->num_rows > 0) {
         echo "</div>"; // Закрываем последнюю строку
     }
     echo "</div>"; // Закрываем контейнер .sell-container
-} else {
-    echo "<h2>Товаров нет</h2>";
+}
+
+if ($result->num_rows = 0) {
+    echo "12321";
 }
 
 $mysqli->close();
