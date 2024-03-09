@@ -147,6 +147,8 @@ switch ($category) {
 $result = $mysqli->query($sql);
 
 if ($result->num_rows > 0) {
+    $num_rows = $result->num_rows;
+    echo "<h2>{$categoryName}: {$num_rows} товаров</h2>";
     echo "<div class='sell-container'>";
     $count = 0;
     while ($row = $result->fetch_assoc()) {
