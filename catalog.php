@@ -184,7 +184,7 @@ if ($result->num_rows > 0) {
         echo "</div>";
         $count++;
         if ($count % 3 == 0) {
-            echo "</div>";
+            echo "</div>"; // Закрываем строку
         }
     }
     if ($count % 3 != 0) { // Если последняя строка не полная, добавляем пустые блоки
@@ -192,9 +192,9 @@ if ($result->num_rows > 0) {
         for ($i = 0; $i < $empty_blocks; $i++) {
             echo "<div class='sell-block'></div>";
         }
-        echo "</div>";
+        echo "</div>"; // Закрываем последнюю строку
     }
-    echo "</div>";
+    echo "</div>"; // Закрываем контейнер .sell-container
 } else {
     echo "<h2>{$categoryName}: товаров нет</h2>"; // Вывод сообщения о отсутствии товаров
 }
