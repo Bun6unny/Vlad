@@ -196,11 +196,7 @@ if ($result->num_rows > 0) {
     }
     echo "</div>"; // Закрываем контейнер .sell-container
 } else {
-    if (!empty($categoryName)) {
-        echo "<h2>{$categoryName}: товаров нет</h2>"; // Вывод сообщения о отсутствии товаров
-    } else {
-        echo "<h2>Товаров нет</h2>"; // Вывод сообщения о том, что категория не найдена
-    }
+    echo "<h2>Товаров нет</h2>";
 }
 
 $mysqli->close();
