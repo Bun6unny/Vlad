@@ -148,12 +148,27 @@ $result = $mysqli->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<div class='sell-container'>";
+    $count = 0;
     while ($row = $result->fetch_assoc()) {
+        if ($count % 3 == 0) {
+            echo "<div class='sell-line'>";
+        }
         echo "<div class='sell-block'>";
         // Вывод информации о товаре
-        echo "<img src='{$row['Image']}' style='max-width:100%;max=height:100%;' alt='{$row['Name']}'>";
+        echo "<img src='{$row['Image']}' alt='{$row['Name']}'>";
         echo "<div>{$row['Name']}</div>";
         echo "<div>{$row['Price']}</div>";
+        echo "</div>";
+        $count++;
+        if ($count % 3 == 0) {
+            echo "</div>";
+        }
+    }
+    if ($count % 3 != 0) { // Если последняя строка не полная, добавляем пустые блоки
+        $empty_blocks = 3 - ($count % 3);
+        for ($i = 0; $i < $empty_blocks; $i++) {
+            echo "<div class='sell-block'></div>";
+        }
         echo "</div>";
     }
     echo "</div>";
