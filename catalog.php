@@ -196,7 +196,7 @@ if ($result->num_rows > 0) {
     }
     echo "</div>";
 } else {
-    echo "<div style='width:100%;height:50%;font-size:3vw;display: flex;align-items: center;justify-content: center;font-weight: bold;'>Извините, товаров нет</div>";
+    echo "<h2>{$categoryName}: товаров нет</h2>"; // Вывод сообщения о отсутствии товаров
 }
 
 $mysqli->close();
