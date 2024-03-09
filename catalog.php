@@ -159,9 +159,7 @@
                 }
                 echo "<div class='sell-block'>";
                 echo "<div class='sell-item'>";
-                echo "<div class='sell-image'>";
                 echo "<img src='{$row['Image']}' style='max-width:90%;max-height:90%;' alt='{$row['Name']}'>";
-                echo "</div'>";
                 echo "<div>{$row['Name']}</div>";
                 echo "<div>{$row['Price']}</div>";
                 echo "</div>";
