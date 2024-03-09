@@ -195,7 +195,9 @@ if ($result->num_rows > 0) {
         echo "</div>"; // Закрываем последнюю строку
     }
     echo "</div>"; // Закрываем контейнер .sell-container
-} else {
+} 
+
+if ($result->num_rows > 0) {
     echo "<h2>{$categoryName}: товаров нет</h2>"; // Вывод сообщения о отсутствии товаров
 }
 
