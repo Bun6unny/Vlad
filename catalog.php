@@ -151,7 +151,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<div class='sell-block'>";
         // Вывод информации о товаре
-        echo "<img src='{$row['Image']}' alt='{$row['Name']}'>";
+        echo "<img src='{$row['Image']}' style='max-width:100%;max=height:100%;' alt='{$row['Name']}'>";
         echo "<div>{$row['Name']}</div>";
         echo "<div>{$row['Price']}</div>";
         echo "</div>";
