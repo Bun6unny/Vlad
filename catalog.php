@@ -93,47 +93,6 @@
         </button>
     </div>
 
-    <?php
-        // catalog.php
-
-        // Подключение к базе данных
-        $host = 'localhost';
-        $username = '2is-b11_2is-b11';
-        $password = 'dTav2z8hny';
-        $database = '2is-b11_2is-b11';
-
-        $mysqli = new mysqli($host, $username, $password, $database);
-
-        if ($mysqli->connect_errno) {
-            echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-        }
-
-        // Получение выбранной категории товаров
-        $category = $_GET['category']; // Получаем значение параметра category из URL
-
-        // Формируем запрос в базу данных в зависимости от выбранной категории
-        $query = "SELECT * FROM ";
-
-        switch ($category) {
-            case 'candy':
-                $query .= "Candy";
-                break;
-            case 'drinks':
-                $query .= "Drinks";
-                break;
-            // Добавьте обработку остальных категорий
-        }
-
-        // Выполняем запрос к базе данных
-        $result = $mysqli->query($query);
-
-        if (!$result) {
-            echo "Ошибка запроса: " . $mysqli->error;
-        }
-
-        $mysqli->close();
-    ?>
-
     <style>
         .sell-line {
             width:100%;
@@ -149,24 +108,61 @@
         }
     </style>
 
-    <?php
-        $count = 0;
-        while ($row = $result->fetch_assoc()) {
-            if ($count % 3 == 0) {
-                echo '<div class="sell-line">';
-            }
-            echo '<div class="sell-block">';
-            // Выводите содержимое блока товара (например, изображение, название, цена)
-            echo '<img src="' . $row['Image'] . '" alt="' . $row['Name'] . '">';
-            echo '<div>' . $row['Name'] . '</div>';
-            echo '<div>' . $row['Price'] . '</div>';
-            echo '</div>';
-            $count++;
-            if ($count % 3 == 0) {
-                echo '</div>';
-            }
-        }
-    ?>
+<?php
+$host = 'localhost';
+$username = '2is-b11_2is-b11';
+$password = 'dTav2z8hny';
+$database = '2is-b11_2is-b11';
+
+$mysqli = new mysqli($host, $username, $password, $database);
+
+if ($mysqli->connect_errno) {
+    echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+
+// Получение выбранной категории товаров
+$category = $_GET['category']; // Получаем значение параметра category из URL
+
+// Формируем запрос в базу данных в зависимости от выбранной категории
+switch ($category) {
+    case 'candy':
+        $sql = "SELECT * FROM Candy";
+        break;
+    case 'drinks':
+        $sql = "SELECT * FROM Drinks";
+        break;
+    case 'chocolate':
+        $sql = "SELECT * FROM Chocolate";
+        break;
+    case 'marmalade':
+        $sql = "SELECT * FROM Marmalade";
+        break;
+    case 'cookies':
+        $sql = "SELECT * FROM Cookies";
+        break;
+    default:
+        // Вывод сообщения об ошибке или редирект на страницу с выбором категории
+}
+
+$result = $mysqli->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<div class='sell-container'>";
+    while ($row = $result->fetch_assoc()) {
+        echo "<div class='sell-block'>";
+        // Вывод информации о товаре
+        echo "<img src='{$row['Image']}' alt='{$row['Name']}'>";
+        echo "<div>{$row['Name']}</div>";
+        echo "<div>{$row['Price']}</div>";
+        echo "</div>";
+    }
+    echo "</div>";
+} else {
+    echo "<div style='width:100%;height:50%;font-size:3vw;display: flex;align-items: center;justify-content: center;font-weight: bold;'>Извините, товаров нет</div>";
+}
+
+$mysqli->close();
+?>
 
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
