@@ -94,45 +94,37 @@
     </div>
 
     <?php
-    session_start();
+        session_start();
 
-    $host = 'localhost';
-    $username = '2is-b11_2is-b11';
-    $password = 'dTav2z8hny';
-    $database = '2is-b11_2is-b11';
+        $host = 'localhost';
+        $username = '2is-b11_2is-b11';
+        $password = 'dTav2z8hny';
+        $database = '2is-b11_2is-b11';
 
-    $mysqli = new mysqli($host, $username, $password, $database);
+        $mysqli = new mysqli($host, $username, $password, $database);
 
-    if ($mysqli->connect_errno) {
-        echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-        exit;
-    }
-
-    // Проверка, авторизован ли пользователь
-    if (!isset($_SESSION['user_id'])) {
-        $response = array("success" => false, "message" => "Вы не авторизованы.");
-        echo json_encode($response);
-        exit;
-    }
-
-    // Обработка нажатия на кнопку "Добавить в корзину"
-    if(isset($_POST['add_to_cart'])) {
-        $itemName = $_POST['item_name'];
-        $userId = $_SESSION['user_id'];
-
-        $updateQuery = "UPDATE Users SET items = CONCAT(items, ', $itemName') WHERE id = $userId";
-
-        if ($mysqli->query($updateQuery) === TRUE) {
-            $response = array("success" => true, "message" => "Товар добавлен в корзину");
-            echo json_encode($response);
-        } else {
-            $response = array("success" => false, "message" => "Ошибка при добавлении товара: " . $mysqli->error);
-            echo json_encode($response);
+        if ($mysqli->connect_errno) {
+            echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+            exit;
         }
-    }
 
-    $mysqli->close();
-?>
+        if(isset($_POST['add_to_cart'])) {
+            $itemName = $_POST['item_name'];
+
+            $userId = $_SESSION['user_id'];
+
+            $updateQuery = "UPDATE Users SET items = CONCAT(items, ', $itemName') WHERE id = $userId";
+
+            if ($mysqli->query($updateQuery) === TRUE) {
+                echo "<script>setTimeout(function() {alert('Товар добавлен в корзину');}, 1500);</script>";
+            } else {
+                echo "<script>setTimeout(function() {alert('Ошибка при добавлении товара');}, 1500);</script>" . $mysqli->error;
+            }
+            
+        }
+
+        $mysqli->close();
+    ?>
     
     <?php
         $host = 'localhost';
