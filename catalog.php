@@ -165,7 +165,7 @@
                 echo "<div>{$row['Name']}</div>";
                 echo "</div>";
                 echo "<div class='sell-right-item'>";
-                echo "<div style='font-size:1.8vw;font-weight: 100;'>{$row['Price']}&nbsp₽&nbsp/&nbsp250г</div>";
+                echo "<div style='font-size:1.8vw;font-weight:100;'>{$row['Price']}&nbsp₽&nbsp/&nbsp250г</div>";
                 echo "</div>";
                 echo "<div class='sell-right-item'>";
                 echo "</div>";
