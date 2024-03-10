@@ -150,7 +150,7 @@
 
         if ($result->num_rows > 0) {
             $num_rows = $result->num_rows;
-            echo "<div style='font-size:2vw;font-weight:bold;margin-left:6.5%;'><div>{$categoryName}: количество товаров - {$num_rows}</div></div>";
+            echo "<div style='font-size:2vw;font-weight:bold;margin-left:6.5%;'><div style='color:#EC7088;'>{$categoryName}: количество товаров - {$num_rows}</div></div>";
             echo "<div class='sell-container'>";
             $count = 0;
             while ($row = $result->fetch_assoc()) {
