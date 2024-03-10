@@ -111,24 +111,3 @@ function login() {
     };
     xhr.send("login=" + login + "&password=" + password);
 }
-
-function addToCart(productName) {
-    var xhr = new XMLHttpRequest();
-    var url = "add_to_cart.php"; // Путь к вашему PHP-скрипту для обработки добавления товара в корзину
-    var params = "product_name=" + productName;
-
-    xhr.open("POST", url, true);
-
-    // Устанавливаем заголовок Content-Type для передачи данных формы
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // После успешного обновления данных на сервере (например, вставки в базу данных),
-            // можно выполнить какие-то дополнительные действия, например, перенаправление на страницу корзины
-            window.location.href = "cart.php";
-        }
-    }
-
-    xhr.send(params);
-}

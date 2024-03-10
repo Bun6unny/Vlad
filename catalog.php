@@ -94,6 +94,52 @@
     </div>
 
     <?php
+        session_start();
+
+        // Подключение к базе данных
+        $host = 'localhost';
+        $username = '2is-b11_2is-b11';
+        $password = 'dTav2z8hny';
+        $database = '2is-b11_2is-b11';
+
+        $mysqli = new mysqli($host, $username, $password, $database);
+
+        // Проверка соединения с базой данных
+        if ($mysqli->connect_errno) {
+            echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+            exit;
+        }
+
+        // Проверка авторизации пользователя
+        if (!isset($_SESSION['user_id'])) {
+            echo "Пользователь не авторизован.";
+            exit;
+        }
+
+        // Обработка нажатия на кнопку "Добавить в корзину"
+        if(isset($_POST['add_to_cart'])) {
+            // Получение информации о товаре для добавления в корзину
+            $itemName = $_POST['item_name'];
+
+            // Получение идентификатора пользователя из сессии
+            $userId = $_SESSION['user_id'];
+
+            // SQL-запрос для обновления корзины пользователя
+            $updateQuery = "UPDATE Users SET items = CONCAT(items, ', $itemName') WHERE id = $userId";
+
+            // Выполнение SQL-запроса
+            if ($mysqli->query($updateQuery) === TRUE) {
+                echo "Товар успешно добавлен в корзину.";
+            } else {
+                echo "Ошибка при добавлении товара в корзину: " . $mysqli->error;
+            }
+        }
+
+        // Закрытие соединения с базой данных
+        $mysqli->close();
+    ?>
+    
+    <?php
         $host = 'localhost';
         $username = '2is-b11_2is-b11';
         $password = 'dTav2z8hny';
@@ -174,7 +220,10 @@
                 echo "<div style='font-size:1.8vw;font-weight:100;'>{$row['Price']}&nbsp₽&nbsp/&nbsp250г</div>";
                 echo "</div>";
                 echo "<div class='sell-right-item'>";
-                echo "<button class='sell-button' onclick='addToCart('<?php echo $row['Name']; ?>')'>Добавить в корзину</button>";
+                echo "<form method='post'>";
+        echo "<input type='hidden' name='item_name' value='{$row['Name']}'>";
+        echo "<button type='submit' class='sell-button' name='add_to_cart'>Добавить в корзину</button>";
+        echo "</form>";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
