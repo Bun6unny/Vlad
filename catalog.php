@@ -150,7 +150,7 @@
 
         if ($result->num_rows > 0) {
             $num_rows = $result->num_rows;
-            echo "<div style='font-size:2vw;font-weight:bold;margin-left:6.5%;display:inline-block;'>{$categoryName}:<div style='color:#EC7088;display:inline-block;'>&nbspколичество товаров - {$num_rows}</div></div>";
+            echo "<div style='font-size:2vw;font-weight:bold;margin-left:8%;display:inline-block;'>{$categoryName}:<div style='color:#EC7088;display:inline-block;'>&nbspколичество товаров - {$num_rows}</div></div>";
             echo "<div class='sell-container'>";
             $count = 0;
             while ($row = $result->fetch_assoc()) {
@@ -159,7 +159,7 @@
                 }
                 echo "<div class='sell-block'>";
                 echo "<div class='sell-item'>";
-                echo "<div class='sell-image'><img src='{$row['Image']}' style='max-width:90%;max-height:90%;border-radius: .3vw;' alt='{$row['Name']}'></div>";
+                echo "<div class='sell-image'><img src='{$row['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;' alt='{$row['Name']}'></div>";
                 echo "<div class='sell-right'>";
                 echo "<div class='sell-right-item'>";
                 echo "<div>{$row['Name']}</div>";
