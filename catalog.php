@@ -174,7 +174,7 @@
                 echo "<div style='font-size:1.8vw;font-weight:100;'>{$row['Price']}&nbsp₽&nbsp/&nbsp250г</div>";
                 echo "</div>";
                 echo "<div class='sell-right-item'>";
-                echo "<button class='sell-button'>Добавить в корзину</button>";
+                echo "<button class='sell-button' onclick='addToCart('<?php echo $row['Name']; ?>')'>Добавить в корзину</button>";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
