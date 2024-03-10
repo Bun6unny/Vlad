@@ -121,7 +121,7 @@
             $updateQuery = "UPDATE Users SET items = CONCAT(items, ', $itemName') WHERE id = $userId";
 
             if ($mysqli->query($updateQuery) === TRUE) {
-                echo "<script>alert('Привет, мир!');</script>";
+                echo "<script>setTimeout(function() {alert('Привет, мир!');}, 1000);</script>";
             } else {
                 echo "Ошибка при добавлении товара в корзину: " . $mysqli->error;
             }
