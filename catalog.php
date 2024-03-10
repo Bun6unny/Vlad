@@ -118,9 +118,9 @@
                 $updateQuery = "UPDATE Users SET items = CONCAT(items, ', $itemName') WHERE id = $userId";
         
                 if ($mysqli->query($updateQuery) === TRUE) {
-                    echo "<script>setTimeout(function() {alert('Товар добавлен в корзину');}, 1500);</script>";
+                    echo "<script>setTimeout(function() {alert('Товар добавлен в корзину');}, 1000);</script>";
                 } else {
-                    echo "<script>setTimeout(function() {alert('Ошибка при добавлении товара: " . $mysqli->error . "');}, 1500);</script>";
+                    echo "<script>setTimeout(function() {alert('Ошибка при добавлении товара: " . $mysqli->error . "');}, 1000);</script>";
                 }
             }
         }

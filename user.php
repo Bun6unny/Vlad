@@ -93,7 +93,7 @@ if ($result) {
 if (isset($_POST['clear_items'])) {
     $sql_clear_items = "UPDATE Users SET items = '' WHERE id = $userId";
     if ($mysqli->query($sql_clear_items) === TRUE) {
-        echo "<script>setTimeout(function() {alert('Товар добавлен в корзину');}, 500);setTimeout(function() { window.location.href = 'index.php'; }, 1000);</script>";
+        echo "<script>setTimeout(function() {alert('Товар оформлен!');}, 500);setTimeout(function() { window.location.href = 'index.php'; }, 1000);</script>";
     } else {
         echo "<script>alert('Ошибка при очистке столбца items: " . $mysqli->error . "');</script>";
     }
