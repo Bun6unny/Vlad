@@ -151,6 +151,7 @@
         if ($result->num_rows > 0) {
             $num_rows = $result->num_rows;
             echo "<div style='font-size:2vw;font-weight:bold;margin-left:8%;display:inline-block;'>{$categoryName}:<div style='color:#EC7088;display:inline-block;'>&nbspколичество товаров - {$num_rows}</div></div>";
+            echo "<div>Сортировка: По популярности Сначала Дешевле Сначала Дороже</div>";
             echo "<div class='sell-container'>";
             $count = 0;
             while ($row = $result->fetch_assoc()) {
