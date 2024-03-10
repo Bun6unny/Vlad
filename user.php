@@ -90,5 +90,18 @@ if ($result) {
     echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
 }
 
+if (isset($_POST['clear_items'])) {
+    $sql_clear_items = "UPDATE Users SET items = '' WHERE id = $userId";
+    if ($mysqli->query($sql_clear_items) === TRUE) {
+        echo "<script>alert('Столбец items успешно очищен.');</script>";
+    } else {
+        echo "<script>alert('Ошибка при очистке столбца items: " . $mysqli->error . "');</script>";
+    }
+}
+
 $mysqli->close();
 ?>
+
+<form method="post" action="user.php">
+    <button type="submit" name="clear_items">Очистить столбец items</button>
+</form>
