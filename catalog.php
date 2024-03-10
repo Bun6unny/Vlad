@@ -109,7 +109,7 @@
         }
 
         if (isset($_POST['add_to_cart']) && !isset($_SESSION['user_id'])) {
-            echo "<script>setTimeout(function() {alert('Вы не авторизованы.');}, 1500);</script>";
+            echo "<script>setTimeout(function() {alert('Вы не авторизованы.');}, 1000);</script>";
         } else {
             if (isset($_POST['add_to_cart'])) {
                 $itemName = $_POST['item_name'];
