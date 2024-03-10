@@ -93,7 +93,7 @@ if ($result) {
 if (isset($_POST['clear_items'])) {
     $sql_clear_items = "UPDATE Users SET items = '' WHERE id = $userId";
     if ($mysqli->query($sql_clear_items) === TRUE) {
-        echo "<script>setTimeout(function() {alert('Товар добавлен в корзину');}, 1500);</script>";
+        echo "<script>alert('Столбец items успешно очищен.'); setTimeout(function() { window.location.href = 'index.php'; }, 1000);</script>";
     } else {
         echo "<script>alert('Ошибка при очистке столбца items: " . $mysqli->error . "');</script>";
     }
@@ -103,16 +103,5 @@ $mysqli->close();
 ?>
 
 <form method="post" action="user.php">
-    <button id="clearItemsForm" type="submit" name="clear_items">Очистить столбец items</button>
+    <button type="submit" name="clear_items">Очистить столбец items</button>
 </form>
-
-<script>
-    // После отправки формы, подождать 1 секунду, затем показать сообщение
-    document.getElementById('clearItemsForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Отменить стандартное поведение отправки формы
-        setTimeout(function() {
-            alert('Столбец items успешно очищен.');
-            document.getElementById('clearItemsForm').submit(); // Отправить форму после отображения сообщения
-        }, 1000); // Задержка в 1 секунду
-    });
-</script>
