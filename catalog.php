@@ -161,7 +161,7 @@
                 echo "<div class='sell-item'>";
                 echo "<div class='sell-image'><img src='{$row['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;' alt='{$row['Name']}'></div>";
                 echo "<div class='sell-right'>";
-                echo "<div class='sell-right-item'>";
+                echo "<div class='sell-right-item' style='margin-top:1%;'>";
                 echo "<div>{$row['Name']}</div>";
                 echo "</div>";
                 echo "<div class='sell-right-item'>";
