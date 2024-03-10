@@ -103,7 +103,7 @@ function login() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var response = JSON.parse(xhr.responseText);
             if (response.success) {
-                window.location.href = "user.php"; // Перенаправляем на страницу user.php
+                window.location.href = "user.php";
             } else {
                 alert("Неправильный логин или пароль");
             }
