@@ -103,5 +103,16 @@ $mysqli->close();
 ?>
 
 <form method="post" action="user.php">
-    <button type="submit" name="clear_items">Очистить столбец items</button>
+    <button id="clearItemsForm" type="submit" name="clear_items">Очистить столбец items</button>
 </form>
+
+<script>
+    // После отправки формы, подождать 1 секунду, затем показать сообщение
+    document.getElementById('clearItemsForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Отменить стандартное поведение отправки формы
+        setTimeout(function() {
+            alert('Столбец items успешно очищен.');
+            document.getElementById('clearItemsForm').submit(); // Отправить форму после отображения сообщения
+        }, 1000); // Задержка в 1 секунду
+    });
+</script>
