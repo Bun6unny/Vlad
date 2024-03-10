@@ -108,11 +108,6 @@
             exit;
         }
 
-        if (!isset($_SESSION['user_id'])) {
-            echo "Пользователь не авторизован.";
-            exit;
-        }
-
         if(isset($_POST['add_to_cart'])) {
             $itemName = $_POST['item_name'];
 
