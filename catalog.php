@@ -108,27 +108,21 @@
         exit;
     }
 
-    if (isset($_POST['add_to_cart'])) {
-        // Проверка, авторизован ли пользователь
-        if (!isset($_SESSION['user_id'])) {
-            echo "<script>setTimeout(function() {alert('Вы не авторизованы.');}, 1500);</script>";
-            exit;
+    if (isset($_POST['add_to_cart']) && !isset($_SESSION['user_id'])) {
+        echo "<script>setTimeout(function() {alert('Вы не авторизованы.');}, 1500);</script>";
+    } else {
+        if (isset($_POST['add_to_cart'])) {
+            $itemName = $_POST['item_name'];
+            $userId = $_SESSION['user_id'];
+    
+            $updateQuery = "UPDATE Users SET items = CONCAT(items, ', $itemName') WHERE id = $userId";
+    
+            if ($mysqli->query($updateQuery) === TRUE) {
+                echo "<script>setTimeout(function() {alert('Товар добавлен в корзину');}, 1500);</script>";
+            } else {
+                echo "<script>setTimeout(function() {alert('Ошибка при добавлении товара: " . $mysqli->error . "');}, 1500);</script>";
+            }
         }
-    }
-
-    if(isset($_POST['add_to_cart'])) {
-        $itemName = $_POST['item_name'];
-
-        $userId = $_SESSION['user_id'];
-
-        $updateQuery = "UPDATE Users SET items = CONCAT(items, ', $itemName') WHERE id = $userId";
-
-        if ($mysqli->query($updateQuery) === TRUE) {
-            echo "<script>setTimeout(function() {alert('Товар добавлен в корзину');}, 1500);</script>";
-        } else {
-            echo "<script>setTimeout(function() {alert('Ошибка при добавлении товара');}, 1500);</script>" . $mysqli->error;
-        }
-        
     }
 
     $mysqli->close();
