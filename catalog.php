@@ -114,7 +114,7 @@
             echo "<script>setTimeout(function() {alert('Вы не авторизованы.');}, 1500);</script>";
             exit;
         }
-    
+    }
 
     if(isset($_POST['add_to_cart'])) {
         $itemName = $_POST['item_name'];
