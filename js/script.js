@@ -111,3 +111,21 @@ function login() {
     };
     xhr.send("login=" + login + "&password=" + password);
 }
+
+function addToCart(itemName) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "your_php_file.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            if (response.success) {
+                alert(response.message);
+            } else {
+                alert("Ошибка: " + response.message);
+            }
+        }
+    };
+    var params = "add_to_cart=1&item_name=" + encodeURIComponent(itemName);
+    xhr.send(params);
+}
