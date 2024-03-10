@@ -94,104 +94,114 @@
     </div>
 
     <?php
-        $host = 'localhost';
-        $username = '2is-b11_2is-b11';
-        $password = 'dTav2z8hny';
-        $database = '2is-b11_2is-b11';
+$host = 'localhost';
+$username = '2is-b11_2is-b11';
+$password = 'dTav2z8hny';
+$database = '2is-b11_2is-b11';
 
-        $mysqli = new mysqli($host, $username, $password, $database);
+$mysqli = new mysqli($host, $username, $password, $database);
 
-        if ($mysqli->connect_errno) {
-            echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+if ($mysqli->connect_errno) {
+    echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+
+$category = isset($_GET['category']) ? $_GET['category'] : '';
+$categoryName = '';
+
+switch ($category) {
+    case 'candy':
+        $categoryName = 'Конфеты';
+        $table = 'Candy';
+        break;
+    case 'drinks':
+        $categoryName = 'Напитки';
+        $table = 'Drinks';
+        break;
+    case 'chocolate':
+        $categoryName = 'Шоколад';
+        $table = 'Chocolate';
+        break;
+    case 'marmalade':
+        $categoryName = 'Мармелад';
+        $table = 'Marmalade';
+        break;
+    case 'cookies':
+        $categoryName = 'Печенье';
+        $table = 'Cookies';
+        break;
+    default:
+        echo "Неверная категория";
+        exit;
+}
+
+// Определение параметра сортировки
+$sort = isset($_GET['sort']) ? $_GET['sort'] : '';
+
+// Строка для сортировки
+$order = '';
+switch ($sort) {
+    case 'popularity':
+        // Здесь может быть логика сортировки по популярности, если есть поле "popularity" в таблице
+        break;
+    case 'price_asc':
+        $order = " ORDER BY Price ASC";
+        break;
+    case 'price_desc':
+        $order = " ORDER BY Price DESC";
+        break;
+    default:
+        // По умолчанию не сортировать
+        break;
+}
+
+$sql = "SELECT * FROM $table" . $order;
+$result = $mysqli->query($sql);
+
+if ($result->num_rows > 0) {
+    $num_rows = $result->num_rows;
+    echo "<div style='font-size:2vw;font-weight:bold;margin-left:8%;display:inline-block;'>{$categoryName}:<div style='color:#EC7088;display:inline-block;'>&nbspколичество товаров - {$num_rows}</div></div>";
+    echo "<div>Сортировка: <a href='?category=$category&sort=popularity'>По популярности</a> | <a href='?category=$category&sort=price_asc'>Сначала дешевле</a> | <a href='?category=$category&sort=price_desc'>Сначала дороже</a></div>";
+    echo "<div class='sell-container'>";
+    $count = 0;
+    while ($row = $result->fetch_assoc()) {
+        if ($count % 3 == 0) {
+            echo "<div class='sell-line'>";
         }
-
-        $category = $_GET['category'];
-
-        $categoryName = '';
-        switch ($category) {
-            case 'candy':
-                $categoryName = 'Конфеты';
-                break;
-            case 'drinks':
-                $categoryName = 'Напитки';
-                break;
-            case 'chocolate':
-                $categoryName = 'Шоколад';
-                break;
-            case 'marmalade':
-                $categoryName = 'Мармелад';
-                break;
-            case 'cookies':
-                $categoryName = 'Печенье';
-                break;
-            default:
-        }
-
-        switch ($category) {
-            case 'candy':
-                $sql = "SELECT * FROM Candy";
-                break;
-            case 'drinks':
-                $sql = "SELECT * FROM Drinks";
-                break;
-            case 'chocolate':
-                $sql = "SELECT * FROM Chocolate";
-                break;
-            case 'marmalade':
-                $sql = "SELECT * FROM Marmalade";
-                break;
-            case 'cookies':
-                $sql = "SELECT * FROM Cookies";
-                break;
-            default:
-        }
-
-        $result = $mysqli->query($sql);
-
-        if ($result->num_rows > 0) {
-            $num_rows = $result->num_rows;
-            echo "<div style='font-size:2vw;font-weight:bold;margin-left:8%;display:inline-block;'>{$categoryName}:<div style='color:#EC7088;display:inline-block;'>&nbspколичество товаров - {$num_rows}</div></div>";
-            echo "<div>Сортировка: По популярности Сначала Дешевле Сначала Дороже</div>";
-            echo "<div class='sell-container'>";
-            $count = 0;
-            while ($row = $result->fetch_assoc()) {
-                if ($count % 3 == 0) {
-                    echo "<div class='sell-line'>";
-                }
-                echo "<div class='sell-block'>";
-                echo "<div class='sell-item'>";
-                echo "<div class='sell-image'><img src='{$row['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;' alt='{$row['Name']}'></div>";
-                echo "<div class='sell-right'>";
-                echo "<div class='sell-right-item' style='margin-top:1%;'>";
-                echo "<div>{$row['Name']}</div>";
-                echo "</div>";
-                echo "<div class='sell-right-item'>";
-                echo "<div style='font-size:1.8vw;font-weight:100;'>{$row['Price']}&nbsp₽&nbsp/&nbsp250г</div>";
-                echo "</div>";
-                echo "<div class='sell-right-item'>";
-                echo "</div>";
-                echo "</div>";
-                echo "</div>";
-                echo "</div>";
-                $count++;
-                if ($count % 3 == 0) {
-                    echo "</div>";
-                }
-            }
-            if ($count % 3 != 0) {
-                $empty_blocks = 3 - ($count % 3);
-                for ($i = 0; $i < $empty_blocks; $i++) {
-                    echo "<div class='sell-block'></div>";
-                }
-                echo "</div>"; 
-            }
+        echo "<div class='sell-block'>";
+        echo "<div class='sell-item'>";
+        echo "<div class='sell-image'><img src='{$row['Image']}' style='max-width:90%;max-height:90%;border-radius:0.3vw;' alt='{$row['Name']}'></div>";
+        echo "<div class='sell-right'>";
+        echo "<div class='sell-right-item' style='margin-top:1%;'>";
+        echo "<div>{$row['Name']}</div>";
+        echo "</div>";
+        echo "<div class='sell-right-item'>";
+        echo "<div style='font-size:1.8vw;font-weight:100;'>{$row['Price']}&nbsp₽&nbsp/&nbsp250г</div>";
+        echo "</div>";
+        echo "<div class='sell-right-item'>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        $count++;
+        if ($count % 3 == 0) {
             echo "</div>";
-        } else {
-            echo "<div class='no-items'>{$categoryName}: товаров нет</div>";
         }
+    }
+    if ($count % 3 != 0) {
+        $empty_blocks = 3 - ($count % 3);
+        for ($i = 0; $i < $empty_blocks; $i++) {
+            echo "<div class='sell-block'></div>";
+        }
+        echo "</div>";
+    }
+    echo "</div>";
+} else {
+    echo "<div class='no-items'>{$categoryName}: товаров нет</div>";
+}
 
-        $mysqli->close();
-    ?>
+$mysqli->close();
+?>
+
 
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
