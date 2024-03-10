@@ -119,6 +119,12 @@
             $userId = $_SESSION['user_id'];
 
             $updateQuery = "UPDATE Users SET items = CONCAT(items, ', $itemName') WHERE id = $userId";
+
+            if ($mysqli->query($updateQuery) === TRUE) {
+                echo "Товар успешно добавлен в корзину.";
+            } else {
+                echo "Ошибка при добавлении товара в корзину: " . $mysqli->error;
+            }
         }
 
         $mysqli->close();
@@ -207,7 +213,7 @@
                 echo "<div class='sell-right-item'>";
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='item_name' value='{$row['Name']}'>";
-                echo "<button onclick='addToCart' type='submit' class='sell-button' name='add_to_cart'>Добавить в корзину</button>";
+                echo "<button type='submit' class='sell-button' name='add_to_cart'>Добавить в корзину</button>";
                 echo "</form>";
                 echo "</div>";
                 echo "</div>";

@@ -111,7 +111,3 @@ function login() {
     };
     xhr.send("login=" + login + "&password=" + password);
 }
-
-function addToCart() {
-    alert("Товар успешно добавлен в корзину");
-}
