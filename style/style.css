@@ -631,8 +631,8 @@ body {
 }
 
 .sell-item {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     background-color: #FFE8EC;
     border-radius: 0.3vw;
     display: flex;
