@@ -191,3 +191,30 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send(formData);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.change-button').addEventListener('click', function() {
+        var newEmail = document.querySelector('.user-input').value;
+
+        if (newEmail.trim() === "") {
+            alert("Пожалуйста, введите новый адрес электронной почты.");
+            return;
+        }
+
+        var formData = new FormData();
+        formData.append('newEmail', newEmail);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'update_email.php', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.responseText.trim() === 'success') {
+                    alert("Адрес электронной почты успешно изменен!");
+                } else {
+                    alert("Ошибка изменения адреса электронной почты: " + xhr.responseText);
+                }
+            }
+        };
+        xhr.send(formData);
+    });
+});

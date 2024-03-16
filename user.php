@@ -124,8 +124,8 @@
                         <div class="user-line">Сменить пароль:<input id="new-password" type="password" placeholder="..." class="user-input" style="width:33.5%;">
                             <button class="change-button" id="change-password-btn">Изменить пароль</button>
                         </div>
-                        <div class="user-line">Сменить почту:<input type="text" placeholder="..." class="user-input">
-                            <button class="change-button">Изменить почту</button>
+                        <div class="user-line">Сменить почту:<input id="new-email" type="text" placeholder="..." class="user-input">
+                            <button id="change-email-btn" class="change-button">Изменить почту</button>
                         </div>
                         <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Почта сейчас:'.$row['Mail'].'</div>
                         <div class="user-line">Сменить аватар:<input type="text" placeholder="..." class="user-input" style="width:34%;">
