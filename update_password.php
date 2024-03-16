@@ -19,24 +19,11 @@
     }
 
     $userId = $_SESSION['user_id'];
-    $newUsername = $_POST['newUsername'];
+    $newPassword = $_POST['newPassword'];
 
-    $checkQuery = "SELECT COUNT(*) as count FROM Users WHERE Login = ?";
-    $statement = $mysqli->prepare($checkQuery);
-    $statement->bind_param("s", $newUsername);
-    $statement->execute();
-    $result = $statement->get_result();
-    $row = $result->fetch_assoc();
-    $count = $row['count'];
-
-    if ($count > 0) {
-        echo "Логин уже занят. Выберите другой.";
-        exit;
-    }
-
-    $updateQuery = "UPDATE Users SET Login = ? WHERE id = ?";
+    $updateQuery = "UPDATE Users SET Password = ? WHERE id = ?";
     $statement = $mysqli->prepare($updateQuery);
-    $statement->bind_param("si", $newUsername, $userId);
+    $statement->bind_param("si", $newPassword, $userId);
     $result = $statement->execute();
 
     if ($result) {

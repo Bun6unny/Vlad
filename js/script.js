@@ -142,10 +142,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('change-username-btn').addEventListener('click', function() {
         var newUsername = document.getElementById('new-username').value;
 
-        // Проверка, что поле не пустое
         if (newUsername.trim() === "") {
             alert("Пожалуйста, введите новый логин.");
-            return; // Остановка отправки данных на сервер, если поле пустое
+            return;
         }
 
         var formData = new FormData();
@@ -164,4 +163,29 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         xhr.send(formData);
     });
+});
+
+document.getElementById('change-password-btn').addEventListener('click', function() {
+    var newPassword = document.getElementById('new-password').value;
+
+    if (newPassword.trim() === "") {
+        alert("Пожалуйста, введите новый пароль.");
+        return;
+    }
+
+    var formData = new FormData();
+    formData.append('newPassword', newPassword);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'update_password.php', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            if (xhr.responseText.trim() === 'success') {
+                alert("Пароль успешно изменен!");
+            } else {
+                alert("Ошибка изменения пароля: " + xhr.responseText);
+            }
+        }
+    };
+    xhr.send(formData);
 });
