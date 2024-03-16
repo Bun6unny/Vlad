@@ -113,36 +113,48 @@ function login() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Находим кнопку "Удалить аккаунт"
     var deleteButton = document.getElementById('delete-account');
-    
-    // Проверяем, что кнопка найдена
+
     if (deleteButton) {
-        // Добавляем обработчик события нажатия на кнопку
         deleteButton.addEventListener('click', function() {
-            // Запрашиваем подтверждение удаления
             if (confirm("Вы уверены, что хотите удалить свой аккаунт?")) {
-                // Создаем XMLHttpRequest для отправки запроса на сервер
                 var xhr = new XMLHttpRequest();
                 xhr.open('POST', 'delete_account.php', true);
                 xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                
-                // Обработка ответа от сервера
+
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState == 4) {
                         if (xhr.status == 200) {
-                            // Перенаправляем на главную страницу после успешного удаления
                             window.location.href = 'index.php';
                         } else {
-                            // Выводим сообщение об ошибке, если удаление не удалось
                             alert("Ошибка удаления аккаунта: " + xhr.responseText);
                         }
                     }
                 };
-                
-                // Отправляем запрос на сервер
+
                 xhr.send();
             }
         });
     }
+});
+
+document.getElementById('change-username-btn').addEventListener('click', function() {
+    var newUsername = document.getElementById('new-username').value;
+
+    var formData = new FormData();
+    formData.append('newUsername', newUsername);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'update_username.php', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Обработка ответа от сервера
+            if (xhr.responseText.trim() === 'success') {
+                alert("Логин успешно изменен!");
+            } else {
+                alert("Ошибка изменения логина: " + xhr.responseText);
+            }
+        }
+    };
+    xhr.send(formData);
 });
