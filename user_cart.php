@@ -102,6 +102,6 @@ if (isset($_POST['clear_items'])) {
 $mysqli->close();
 ?>
 
-<form method="post" action="user.php">
+<form method="post" action="user_cart.php">
     <button type="submit" name="clear_items">Очистить столбец items</button>
 </form>
