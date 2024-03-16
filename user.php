@@ -132,7 +132,7 @@
                             <button class="change-button">Изменить аватар</button>
                         </div>
                         <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Только URL-ссылки!</div>
-                        <button class="change-button" style="margin-left:82%;width:15%;height:10%;">Удалить аккаунт</button>
+                        <button class="change-button" style="margin-left:82%;width:15%;height:10%;" id="delete-account">Удалить аккаунт</button>
                     </div>
                 </div>';
             }

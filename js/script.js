@@ -111,3 +111,17 @@ function login() {
     };
     xhr.send("login=" + login + "&password=" + password);
 }
+
+document.getElementById('delete-account').addEventListener('click', function() {
+    if (confirm("Вы уверены, что хотите удалить свой аккаунт?")) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'delete_account.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                window.location.href = 'index.php';
+            }
+        };
+        xhr.send();
+    }
+});
