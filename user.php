@@ -99,19 +99,7 @@
                 ФИО: Ходырев Владислав Вадимович<br>
                 Группа: 2-ИС (б) Курс: 3<br>
                 Специальность: Информационные системы и программирование
-                </div>
-                <div class="footer-right">
-                    <img src="img/set1.png" onclick="NewTab(';
-                        echo 'https\://vk.com/vhtkrabbit';
-                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;"><img src="img/set2.png" onclick="NewTab(';
-                        echo 'https\://ok.ru/';
-                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set3.png" onclick="NewTab(';
-                        echo 'https\://web.telegram.org/k/';
-                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set4.png" onclick="NewTab(';
-                        echo 'https\://dzen.ru/';
-                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set5.png" onclick="NewTab(';
-                        echo 'https\://vk.com/yarus.official';
-                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;"></div></div>';
+                </div>';
             exit;
         }
 
