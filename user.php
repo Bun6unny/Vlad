@@ -89,11 +89,10 @@
 
         if (!isset($_SESSION['user_id'])) {
             echo '
-            <div class="user-not-found">Пользователь не авторизован<br>
-                <button class="reg-button" style="width:20%;height:10%;">Авторизация</button>
+            <div class="user-not-found">Пользователь не авторизован
+                <button class="reg-button" style="width:20%;height:7%;margin-top:2%;">Авторизация</button>
             </div>          
             ';
-            exit;
         }
 
         $userId = $_SESSION['user_id'];
