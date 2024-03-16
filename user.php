@@ -121,8 +121,8 @@
                         <div class="user-line" style="margin-top:2%;">Сменить логин:<input id="new-username" type="text" placeholder="..." class="user-input">
                             <button class="change-button" id="change-username-btn">Изменить логин</button>
                         </div>
-                        <div class="user-line">Сменить пароль:<input type="password" placeholder="..." class="user-input" style="width:33.5%;">
-                            <button class="change-button">Изменить пароль</button>
+                        <div class="user-line">Сменить пароль:<input id="new-password" type="password" placeholder="..." class="user-input" style="width:33.5%;">
+                            <button class="change-button" id="change-password-btn">Изменить пароль</button>
                         </div>
                         <div class="user-line">Сменить почту:<input type="text" placeholder="..." class="user-input">
                             <button class="change-button">Изменить почту</button>
