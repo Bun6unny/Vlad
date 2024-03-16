@@ -165,27 +165,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.getElementById('change-password-btn').addEventListener('click', function() {
-    var newPassword = document.getElementById('new-password').value;
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('change-password-btn').addEventListener('click', function() {
+        var newPassword = document.getElementById('new-password').value;
 
-    if (newPassword.trim() === "") {
-        alert("Пожалуйста, введите новый пароль.");
-        return;
-    }
-
-    var formData = new FormData();
-    formData.append('newPassword', newPassword);
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'update_password.php', true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            if (xhr.responseText.trim() === 'success') {
-                alert("Пароль успешно изменен!");
-            } else {
-                alert("Ошибка изменения пароля: " + xhr.responseText);
-            }
+        if (newPassword.trim() === "") {
+            alert("Пожалуйста, введите новый пароль.");
+            return;
         }
-    };
-    xhr.send(formData);
+
+        var formData = new FormData();
+        formData.append('newPassword', newPassword);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'update_password.php', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.responseText.trim() === 'success') {
+                    alert("Пароль успешно изменен!");
+                } else {
+                    alert("Ошибка изменения пароля: " + xhr.responseText);
+                }
+            }
+        };
+        xhr.send(formData);
+    });
 });
