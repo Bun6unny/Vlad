@@ -118,8 +118,8 @@
                     </div>
                     <div class="user-right">
                         <div class="user-sign">Настройки</div>
-                        <div class="user-line" style="margin-top:2%;">Сменить логин:<input type="text" placeholder="..." class="user-input">
-                            <button class="change-button">Изменить логин</button>
+                        <div class="user-line" style="margin-top:2%;">Сменить логин:<input id="new-username" type="text" placeholder="..." class="user-input">
+                            <button class="change-button" id="change-username-btn">Изменить логин</button>
                         </div>
                         <div class="user-line">Сменить пароль:<input type="password" placeholder="..." class="user-input" style="width:33.5%;">
                             <button class="change-button">Изменить пароль</button>
