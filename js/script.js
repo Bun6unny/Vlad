@@ -218,3 +218,31 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send(formData);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('change-avatar-btn').addEventListener('click', function() {
+        var newAvatar = document.getElementById('new-avatar').value;
+
+        var urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+        if (!urlPattern.test(newAvatar)) {
+            alert("Пожалуйста, введите корректный URL-адрес для аватара.");
+            return;
+        }
+
+        var formData = new FormData();
+        formData.append('newAvatar', newAvatar);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'update_avatar.php', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.responseText.trim() === 'success') {
+                    alert("Аватар успешно изменен!");
+                } else {
+                    alert("Ошибка изменения аватара: " + xhr.responseText);
+                }
+            }
+        };
+        xhr.send(formData);
+    });
+});

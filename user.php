@@ -128,8 +128,8 @@
                             <button id="change-email-btn" class="change-button">Изменить почту</button>
                         </div>
                         <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Почта сейчас:'.$row['Mail'].'</div>
-                        <div class="user-line">Сменить аватар:<input type="text" placeholder="..." class="user-input" style="width:34%;">
-                            <button class="change-button">Изменить аватар</button>
+                        <div class="user-line">Сменить аватар:<input id="new-avatar" type="text" placeholder="..." class="user-input" style="width:34%;">
+                            <button id="change-avatar-btn" class="change-button">Изменить аватар</button>
                         </div>
                         <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Только URL-ссылки!</div>
                         <button class="change-button" style="margin-left:82%;width:15%;height:10%;" id="delete-account">Удалить аккаунт</button>
