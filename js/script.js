@@ -196,8 +196,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('change-email-btn').addEventListener('click', function() {
         var newEmail = document.getElementById('new-email').value;
 
-        if (newEmail.trim() === "") {
-            alert("Пожалуйста, введите новый адрес электронной почты.");
+        if (!newEmail.includes("@")) {
+            alert("Пожалуйста, введите корректный адрес электронной почты.");
             return;
         }
 
