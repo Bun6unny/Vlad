@@ -111,10 +111,10 @@
                             </div>
                             <div class="user-menu-name">'.$row['Login'].'</div>
                             <div class="user-menu-links">
-                                <a href="#">Настройки</a>
-                                <a href="#">Корзина</a>
+                                <a href="#" onclick="User()">Настройки</a>
+                                <a href="#" onclick="Cart()">Корзина</a>
                                 <a href="#" onclick="Update()">История</a>
-                                <a href="#">Выход</a>
+                                <a href="logout.php">Выход</a>
                             </div>
                         </div>
                     </div>

@@ -33,6 +33,11 @@ function About() {
     window.location.href = url;
 }
 
+function Cart() {
+    var url = "user_cart.php";
+    window.location.href = url;
+}
+
 function Catalog(category) {
     window.location.href = 'catalog.php?category=' + category;
 }
