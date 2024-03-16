@@ -107,7 +107,7 @@
                             <div class="user-menu-avatar">
                                 <img src="https://avatars.dzeninfra.ru/get-zen_doc/3384412/pub_5fbccce44b9b1b331dc567fe_5fbcce00d81aaf181b788634/scale_1200" style="max-width:90%;max-height:90%;margin-top:5%;border-radius:0.2vw;">
                             </div>
-                            <div class="user-menu-name">Кролик</div>
+                            <div class="user-menu-name">'.$row['Login'].'Кролик</div>
                             <div class="user-menu-links">
                                 <a href="#">Настройки</a>
                                 <a href="#">Корзина</a>
