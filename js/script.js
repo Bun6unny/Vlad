@@ -264,6 +264,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'конфеты':
                     window.location.href = 'catalog.php?category=candy';
                     break;
+                case 'конфета':
+                    window.location.href = 'catalog.php?category=candy';
+                    break;
+                case 'напитки':
+                    window.location.href = 'catalog.php?category=drinks';
+                    break;
+                case 'напиток':
+                    window.location.href = 'catalog.php?category=drinks';
+                    break;
                 default:
                     alert('По вашему запросу ничего не найдено.');
             }
