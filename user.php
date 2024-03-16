@@ -22,13 +22,13 @@
         <?php
             session_start();
             if(isset($_SESSION['user_id'])) {
-                echo '<div class="header-right">';
+                echo '<div class="header-right" style="margin-right:10%;">';
                 echo '<a href="logout.php">Выход</a>';
                 echo '</div>';
             } else {
-                echo '<div class="header-right" style="margin-right:10%;">';
+                echo '<div class="header-right">';
                 echo '<a href="#" onclick="Login_But()">Авторизация</a>';
-                echo '<a href="#" onclick="Registration()" style="margin-right: 10%;">Регистрация</a>';
+                echo '<a href="#" onclick="Registration()">Регистрация</a>';
                 echo '</div>';
             }
         ?>
