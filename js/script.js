@@ -193,8 +193,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.change-button').addEventListener('click', function() {
-        var newEmail = document.querySelector('.user-input').value;
+    document.getElementById('change-email-btn').addEventListener('click', function() {
+        var newEmail = document.getElementById('new-email').value;
 
         if (newEmail.trim() === "") {
             alert("Пожалуйста, введите новый адрес электронной почты.");
