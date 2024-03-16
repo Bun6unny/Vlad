@@ -105,7 +105,7 @@
                     <div class="user-left">
                         <div class="user-menu">
                             <div class="user-menu-avatar">
-                                <img src="'.$row['Image'].'" style="max-width:90%;max-height:90%;margin-top:5%;border-radius:0.2vw;">
+                                <img src="'.$row['image'].'" style="max-width:90%;max-height:90%;margin-top:5%;border-radius:0.2vw;">
                             </div>
                             <div class="user-menu-name">'.$row['Login'].'</div>
                             <div class="user-menu-links">
