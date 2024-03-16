@@ -255,3 +255,18 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send(formData);
     });
 });
+
+document.getElementById('searchButton').addEventListener('click', function() {
+    var searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+    if (searchQuery) {
+        switch (searchQuery) {
+            case 'конфеты':
+                window.location.href = 'catalog.php?category=candy';
+                break;
+            default:
+                alert('По вашему запросу ничего не найдено.');
+        }
+    } else {
+        alert('Пожалуйста, введите запрос для поиска.');
+    }
+});
