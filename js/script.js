@@ -142,6 +142,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('change-username-btn').addEventListener('click', function() {
         var newUsername = document.getElementById('new-username').value;
 
+        // Проверка, что поле не пустое
+        if (newUsername.trim() === "") {
+            alert("Пожалуйста, введите новый логин.");
+            return; // Остановка отправки данных на сервер, если поле пустое
+        }
+
         var formData = new FormData();
         formData.append('newUsername', newUsername);
 
@@ -158,29 +164,4 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         xhr.send(formData);
     });
-});
-
-document.getElementById('change-username-btn').addEventListener('click', function() {
-    var newUsername = document.getElementById('new-username').value;
-
-    if (newUsername.trim() === "") {
-        alert("Пожалуйста, введите новый логин.");
-        return; 
-    }
-
-    var formData = new FormData();
-    formData.append('newUsername', newUsername);
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'update_username.php', true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            if (xhr.responseText.trim() === 'success') {
-                alert("Логин успешно изменен!");
-            } else {
-                alert("Ошибка изменения логина: " + xhr.responseText);
-            }
-        }
-    };
-    xhr.send(formData);
 });
