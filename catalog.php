@@ -19,17 +19,19 @@
             <a href="#" onclick="About()">О нас</a>
             <a href="#" onclick="Feedback()" style="margin-right: 0%;">Обратная связь</a>
         </div>
-        <div class="header-right">
-            <?php
-                session_start();
-                if(isset($_SESSION['user_id'])) {
-                    echo '<a href="logout.php">Выход</a>';
-                } else {
-                    echo '<a href="#" onclick="Login_But()">Авторизация</a>';
-                    echo '<a href="#" onclick="Registration()" style="margin-right: 10%;">Регистрация</a>';
-                }
-            ?>
-        </div>
+        <?php
+            session_start();
+            if(isset($_SESSION['user_id'])) {
+                echo '<div class="header-right" style="margin-right:1%;">';
+                echo '<a href="logout.php">Выход</a>';
+                echo '</div>';
+            } else {
+                echo '<div class="header-right">';
+                echo '<a href="#" onclick="Login_But()">Авторизация</a>';
+                echo '<a href="#" onclick="Registration()">Регистрация</a>';
+                echo '</div>';
+            }
+        ?>
     </div>
 
     <div class="top-menu" style="margin-top:1%;">
