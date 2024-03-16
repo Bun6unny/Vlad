@@ -52,6 +52,8 @@
             exit;
         }
 
+        $userId = $_SESSION['user_id'];
+
         $result = $mysqli->query("SELECT Login, Mail, image FROM Users WHERE id = $userId");
 
         if (!$result) {
@@ -68,8 +70,6 @@
         } else {
             echo "Пользователь не найден.";
         }
-
-        $userId = $_SESSION['user_id'];
 
         $mysqli->close();
     ?>
