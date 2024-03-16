@@ -138,13 +138,34 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('change-username-btn').addEventListener('click', function() {
+        var newUsername = document.getElementById('new-username').value;
+
+        var formData = new FormData();
+        formData.append('newUsername', newUsername);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'update_username.php', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.responseText.trim() === 'success') {
+                    alert("Логин успешно изменен!");
+                } else {
+                    alert("Ошибка изменения логина: " + xhr.responseText);
+                }
+            }
+        };
+        xhr.send(formData);
+    });
+});
+
 document.getElementById('change-username-btn').addEventListener('click', function() {
     var newUsername = document.getElementById('new-username').value;
 
-    // Проверка, что поле не пустое
     if (newUsername.trim() === "") {
         alert("Пожалуйста, введите новый логин.");
-        return; // Остановка отправки формы, если поле пустое
+        return; 
     }
 
     var formData = new FormData();
@@ -154,7 +175,6 @@ document.getElementById('change-username-btn').addEventListener('click', functio
     xhr.open('POST', 'update_username.php', true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            // Обработка ответа от сервера
             if (xhr.responseText.trim() === 'success') {
                 alert("Логин успешно изменен!");
             } else {
