@@ -84,7 +84,6 @@
 
         if ($mysqli->connect_errno) {
             echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-            exit;
         }
 
         if (!isset($_SESSION['user_id'])) {
@@ -101,7 +100,7 @@
 
         if (!$result) {
             echo "Ошибка запроса: " . $mysqli->error;
-        } else {
+        }
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -142,7 +141,7 @@
             }
         } else {
             echo "Пользователь не найден.";
-        }}
+        }
 
         $mysqli->close();
     ?>
