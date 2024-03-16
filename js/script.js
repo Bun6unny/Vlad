@@ -112,16 +112,37 @@ function login() {
     xhr.send("login=" + login + "&password=" + password);
 }
 
-document.getElementById('delete-account').addEventListener('click', function() {
-    if (confirm("Вы уверены, что хотите удалить свой аккаунт?")) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'delete_account.php', true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                window.location.href = 'index.php';
+document.addEventListener("DOMContentLoaded", function() {
+    // Находим кнопку "Удалить аккаунт"
+    var deleteButton = document.getElementById('delete-account');
+    
+    // Проверяем, что кнопка найдена
+    if (deleteButton) {
+        // Добавляем обработчик события нажатия на кнопку
+        deleteButton.addEventListener('click', function() {
+            // Запрашиваем подтверждение удаления
+            if (confirm("Вы уверены, что хотите удалить свой аккаунт?")) {
+                // Создаем XMLHttpRequest для отправки запроса на сервер
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'delete_account.php', true);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                
+                // Обработка ответа от сервера
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            // Перенаправляем на главную страницу после успешного удаления
+                            window.location.href = 'index.php';
+                        } else {
+                            // Выводим сообщение об ошибке, если удаление не удалось
+                            alert("Ошибка удаления аккаунта: " + xhr.responseText);
+                        }
+                    }
+                };
+                
+                // Отправляем запрос на сервер
+                xhr.send();
             }
-        };
-        xhr.send();
+        });
     }
 });
