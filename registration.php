@@ -62,11 +62,11 @@
                 &nbsp&nbsppozitivnishred2017@gmail.com
             </div>
         </div>
-        <button class="top-menu-button" style="margin-left:2%;">
+        <button class="top-menu-button" style="margin-left:2%;" onclick="User()">
             Личный кабинет<br>
             <img src="img/but3.png" style="max-width:60%; max-height:60%; margin-top:1%;">
         </button>
-        <button class="top-menu-button" style="margin-left:2%;">
+        <button class="top-menu-button" style="margin-left:2%;" onclick="Cart()">
             Корзина<br>
             <img src="img/but2.png" style="max-height:60%; max-width:60%; margin-top:3%;">
         </button>
