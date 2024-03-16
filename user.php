@@ -90,7 +90,7 @@
         if (!isset($_SESSION['user_id'])) {
             echo '
             <div class="user-not-found">Пользователь не авторизован
-                <button class="reg-button" style="width:20%;height:7%;margin-top:2%;">Авторизация</button>
+                <button class="reg-button" style="width:15%;height:10%;margin-top:2%;">Авторизация</button>
             </div>          
             ';
         }
@@ -101,7 +101,6 @@
 
         if (!$result) {
             echo "Ошибка запроса: " . $mysqli->error;
-            exit;
         }
 
         if ($result->num_rows > 0) {
