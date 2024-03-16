@@ -105,9 +105,9 @@
                     <div class="user-left">
                         <div class="user-menu">
                             <div class="user-menu-avatar">
-                                <img src="https://avatars.dzeninfra.ru/get-zen_doc/3384412/pub_5fbccce44b9b1b331dc567fe_5fbcce00d81aaf181b788634/scale_1200" style="max-width:90%;max-height:90%;margin-top:5%;border-radius:0.2vw;">
+                                <img src="'.$row['Image'].'" style="max-width:90%;max-height:90%;margin-top:5%;border-radius:0.2vw;">
                             </div>
-                            <div class="user-menu-name">'.$row['Login'].'Кролик</div>
+                            <div class="user-menu-name">'.$row['Login'].'</div>
                             <div class="user-menu-links">
                                 <a href="#">Настройки</a>
                                 <a href="#">Корзина</a>
@@ -127,7 +127,7 @@
                         <div class="user-line">Сменить почту:<input type="text" placeholder="..." class="user-input">
                             <button class="change-button">Изменить почту</button>
                         </div>
-                        <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Почта сейчас:№"афаф</div>
+                        <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Почта сейчас:'.$row['Mail'].'</div>
                         <div class="user-line">Сменить аватар:<input type="text" placeholder="..." class="user-input" style="width:34%;">
                             <button class="change-button">Изменить аватар</button>
                         </div>
