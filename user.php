@@ -89,8 +89,9 @@
 
         if (!isset($_SESSION['user_id'])) {
             echo '
-            <div class="user-not-found">Пользователь не авторизован</div><br>
-            <button class="reg-button">Авторизация</button>
+            <div class="user-not-found">Пользователь не авторизован<br>
+                <button class="reg-button" style="width:20%;height:10%;">Авторизация</button>
+            </div>          
             ';
             exit;
         }
