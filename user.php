@@ -88,7 +88,10 @@
         }
 
         if (!isset($_SESSION['user_id'])) {
-            echo "Пользователь не авторизован.";
+            echo '
+            <div class="user-not-found">Пользователь не авторизован</div><br>
+            <button class="reg-button">Авторизация</button>
+            ';
             exit;
         }
 
@@ -101,7 +104,7 @@
             exit;
         }
 
-        if(isset($_SESSION['user_id'])) {
+        if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="user">
                     <div class="user-left">
@@ -139,10 +142,7 @@
                 </div>';
             }
         } else {
-            echo '
-                <div class="user-not-found">Пользователь не найден</div><br>
-                <button class="reg-button">Авторизация</button>
-            ';
+            echo "Пользователь не найден.";
         }
 
         $mysqli->close();
