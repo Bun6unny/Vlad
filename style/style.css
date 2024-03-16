@@ -685,3 +685,135 @@ body {
     font-size: 3vw;
     font-weight: bold;
 }
+
+.user {
+    width: 100%;
+    height: 62%;
+    display: flex;
+}
+
+.user-left {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-right {
+    width: 80%;
+    height: 100%;
+}
+
+.user-right {
+    width: 80%;
+    height: 100%;
+}
+
+.user-sign {
+    width: 100%;
+    height: 10%;
+    font-size: 1.7vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-line {
+    width: 90%;
+    height: 15%;
+    font-size: 1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 2%;
+}
+
+.user-menu {
+    height: 90%;
+    width: 85%;
+    margin-left: 5%;
+    background-color: #FAA7B7;
+    border-radius: 0.2vw;
+}
+
+.user-menu-avatar {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-menu-name {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7vw;
+}
+
+.user-menu-links {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    background-color: #EC7088;
+    color: white;
+    line-height: 2;
+    font-weight: bold;
+    border-radius: 0.2vw;
+}
+
+.user-menu-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.user-menu-links a:hover {
+    color: #FAA7B7;
+}
+
+.user-input {
+    width: 35%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0.7%;
+    font-size: 1.5vw;
+    font-style: italic;
+    font-weight: 100;
+    margin-left: 2%;
+    background-color: #FFE8EC;
+    border: 0.2vw solid #FAA7B7;
+    border-radius: 0.5vw;
+}
+
+.user-input:focus,
+.user-input:hover {
+    outline: none;
+}
+
+.change-button {
+    width: 17%;
+    height: 70%;
+    background-color: #FAA7B7;
+    border-radius: 0.5vw;
+    border-color: #EC7088;
+    border-width: 0.2vw;
+    font-size: 1.2vw;
+    color: white;
+    font-weight: bold;
+    margin-left: 2%;
+    line-height: 1;
+}
+
+.change-button:hover {
+    background-color: #EC7088;
+}

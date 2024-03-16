@@ -32,47 +32,120 @@
         </div>
     </div>
 
+    <div class="top-menu" style="margin-top:1%;">
+        <img src="img/ss.png" onclick="Main()" style="max-height:90%;max-width:90%;cursor:pointer;">
+        <div class="top-menu-one">
+            <div class="top-menu-part">
+                +7 (922) 342-20-76
+                <div class="phone">
+                    <div style="margin-left:5%;">Обратный&nbspзвонок</div>
+                </div>
+            </div>
+            <div class="top-menu-part">
+                <div class="search">
+                    <input type="text" placeholder="Выполнить поиск по сайту..." class="search-left">
+                    <div class="search-right">
+                        <img src="img/search.png" style="max-width:95%;max-height:95%;cursor:pointer;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-menu-two">
+            <div class="top-menu-time-mail" style="margin-top:5%;">
+                <img src="img/time.png" style="max-width:50%;max-height:50%;">
+                &nbsp&nbspРаботаем 24/7
+            </div>
+            <div class="top-menu-time-mail">
+                <img src="img/mail.png" style="max-width:50%;max-height:50%;">
+                &nbsp&nbsppozitivnishred2017@gmail.com
+            </div>
+        </div>
+        <button class="top-menu-button" style="margin-left:2%;">
+            Личный кабинет<br>
+            <img src="img/but3.png" style="max-width:60%; max-height:60%; margin-top:1%;">
+        </button>
+        <button class="top-menu-button" style="margin-left:2%;">
+            Корзина<br>
+            <img src="img/but2.png" style="max-height:60%; max-width:60%; margin-top:3%;">
+        </button>
+    </div>
+
     <?php
-        session_start();
+        // session_start();
 
-        $host = 'localhost';
-        $username = '2is-b11_2is-b11';
-        $password = 'dTav2z8hny';
-        $database = '2is-b11_2is-b11';
+        // $host = 'localhost';
+        // $username = '2is-b11_2is-b11';
+        // $password = 'dTav2z8hny';
+        // $database = '2is-b11_2is-b11';
 
-        $mysqli = new mysqli($host, $username, $password, $database);
+        // $mysqli = new mysqli($host, $username, $password, $database);
 
-        if ($mysqli->connect_errno) {
-            echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-            exit;
-        }
+        // if ($mysqli->connect_errno) {
+        //     echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+        //     exit;
+        // }
 
-        if (!isset($_SESSION['user_id'])) {
-            echo "Пользователь не авторизован.";
-            exit;
-        }
+        // if (!isset($_SESSION['user_id'])) {
+        //     echo "Пользователь не авторизован.";
+        //     exit;
+        // }
 
-        $userId = $_SESSION['user_id'];
+        // $userId = $_SESSION['user_id'];
 
-        $result = $mysqli->query("SELECT Login, Mail, image FROM Users WHERE id = $userId");
+        // $result = $mysqli->query("SELECT Login, Mail, image FROM Users WHERE id = $userId");
 
-        if (!$result) {
-            echo "Ошибка запроса: " . $mysqli->error;
-            exit;
-        }
+        // if (!$result) {
+        //     echo "Ошибка запроса: " . $mysqli->error;
+        //     exit;
+        // }
 
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "Логин: " . $row['Login'] . "<br>";
-                echo "Email: " . $row['Mail'] . "<br>";
-                echo "Изображение: <img src='" . $row['image'] . "'><br>";
-            }
-        } else {
-            echo "Пользователь не найден.";
-        }
+        // if ($result->num_rows > 0) {
+        //     while ($row = $result->fetch_assoc()) {
+        //         echo "Логин: " . $row['Login'] . "<br>";
+        //         echo "Email: " . $row['Mail'] . "<br>";
+        //         echo "Изображение: <img src='" . $row['image'] . "'><br>";
+        //     }
+        // } else {
+        //     echo "Пользователь не найден.";
+        // }
 
-        $mysqli->close();
+        // $mysqli->close();
     ?>
+
+    <div class="user">
+        <div class="user-left">
+            <div class="user-menu">
+                <div class="user-menu-avatar">
+                    <img src="https://avatars.dzeninfra.ru/get-zen_doc/3384412/pub_5fbccce44b9b1b331dc567fe_5fbcce00d81aaf181b788634/scale_1200" style="max-width:90%;max-height:90%;margin-top:5%;border-radius:0.2vw;">
+                </div>
+                <div class="user-menu-name">Кролик</div>
+                <div class="user-menu-links">
+                    <a href="#">Настройки</a>
+                    <a href="#">Корзина</a>
+                    <a href="#">История</a>
+                    <a href="#">Выход</a>
+                </div>
+            </div>
+        </div>
+        <div class="user-right">
+            <div class="user-sign">Настройки</div>
+            <div class="user-line" style="margin-top:2%;">Сменить логин:<input type="text" placeholder="..." class="user-input">
+                <button class="change-button">Изменить логин</button>
+            </div>
+            <div class="user-line">Сменить пароль:<input type="password" placeholder="..." class="user-input" style="width:33.5%;">
+                <button class="change-button">Изменить пароль</button>
+            </div>
+            <div class="user-line">Сменить почту:<input type="text" placeholder="..." class="user-input">
+                <button class="change-button">Изменить почту</button>
+            </div>
+            <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Почта сейчас:№"афаф</div>
+            <div class="user-line">Сменить аватар:<input type="text" placeholder="..." class="user-input" style="width:34%;">
+                <button class="change-button">Изменить аватар</button>
+            </div>
+            <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Только URL-ссылки!</div>
+            <button class="change-button" style="margin-left:82%;width:15%;height:10%;">Удалить аккаунт</button>
+        </div>
+    </div>
 
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
