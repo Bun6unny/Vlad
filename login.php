@@ -76,7 +76,7 @@
     <div class="reg" style="height:17%;">
         <div class="reg-left">Пароль:</div>
         <div class="reg-right" style="margin-right:22%;">
-            <input type="text" id="passwordInput" style="padding-left:1%;height:40%;" class="reg-input" placeholder="...">
+            <input type="password" id="passwordInput" style="padding-left:1%;height:40%;" class="reg-input" placeholder="...">
         </div>
     </div>
     <div class="reg">
