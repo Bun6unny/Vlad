@@ -101,7 +101,7 @@
             exit;
         }
 
-        if ($result->num_rows > 0) {
+        if(isset($_SESSION['user_id'])) {
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="user">
                     <div class="user-left">
