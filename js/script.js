@@ -138,23 +138,25 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-document.getElementById('change-username-btn').addEventListener('click', function() {
-    var newUsername = document.getElementById('new-username').value;
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('change-username-btn').addEventListener('click', function() {
+        var newUsername = document.getElementById('new-username').value;
 
-    var formData = new FormData();
-    formData.append('newUsername', newUsername);
+        var formData = new FormData();
+        formData.append('newUsername', newUsername);
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'update_username.php', true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Обработка ответа от сервера
-            if (xhr.responseText.trim() === 'success') {
-                alert("Логин успешно изменен!");
-            } else {
-                alert("Ошибка изменения логина: " + xhr.responseText);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'update_username.php', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // Обработка ответа от сервера
+                if (xhr.responseText.trim() === 'success') {
+                    alert("Логин успешно изменен!");
+                } else {
+                    alert("Ошибка изменения логина: " + xhr.responseText);
+                }
             }
-        }
-    };
-    xhr.send(formData);
+        };
+        xhr.send(formData);
+    });
 });
