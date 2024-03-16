@@ -22,7 +22,7 @@
         <?php
             session_start();
             if(isset($_SESSION['user_id'])) {
-                echo '<div class="header-right" style="margin-right:10%;">';
+                echo '<div class="header-right" style="margin-right:1%;">';
                 echo '<a href="logout.php">Выход</a>';
                 echo '</div>';
             } else {
