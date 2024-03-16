@@ -139,7 +139,10 @@
                 </div>';
             }
         } else {
-            echo "Пользователь не найден.";
+            echo '
+                <div class="user-not-found">Пользователь не найден</div><br>
+                <button class="reg-button">Авторизация</button>
+            ';
         }
 
         $mysqli->close();
