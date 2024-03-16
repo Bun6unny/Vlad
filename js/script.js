@@ -273,6 +273,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'напиток':
                     window.location.href = 'catalog.php?category=drinks';
                     break;
+                case 'шоколад':
+                    window.location.href = 'catalog.php?category=chocolate';
+                    break;
+                case 'шоколадки':
+                    window.location.href = 'catalog.php?category=chocolate';
+                    break;
+                case 'мармелад':
+                    window.location.href = 'catalog.php?category=marmalade';
+                    break;
+                case 'мармеладки':
+                    window.location.href = 'catalog.php?category=marmalade';
+                    break;
+                case 'печенье':
+                    window.location.href = 'catalog.php?category=cookies';
+                    break;
+                case 'печеньки':
+                    window.location.href = 'catalog.php?category=cookies';
+                    break;
+                case 'печенька':
+                    window.location.href = 'catalog.php?category=cookies';
+                    break;
                 default:
                     alert('По вашему запросу ничего не найдено.');
             }
