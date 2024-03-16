@@ -101,7 +101,7 @@
 
         if (!$result) {
             echo "Ошибка запроса: " . $mysqli->error;
-        }
+        } else {
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -142,7 +142,7 @@
             }
         } else {
             echo "Пользователь не найден.";
-        }
+        }}
 
         $mysqli->close();
     ?>
