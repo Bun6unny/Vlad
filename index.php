@@ -43,9 +43,9 @@
             </div>
             <div class="top-menu-part">
                 <div class="search">
-                    <input type="text" placeholder="Выполнить поиск по сайту..." class="search-left">
+                    <input id="searchInput" type="text" placeholder="Выполнить поиск по сайту..." class="search-left">
                     <div class="search-right">
-                        <img src="img/search.png" style="max-width:95%;max-height:95%;cursor:pointer;">
+                        <img id="searchButton" src="img/search.png" style="max-width:95%;max-height:95%;cursor:pointer;">
                     </div>
                 </div>
             </div>
