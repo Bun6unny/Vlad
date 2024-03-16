@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
 $userId = $_SESSION['user_id'];
 $newAvatar = $_POST['newAvatar'];
 
-$updateQuery = "UPDATE Users SET Avatar = ? WHERE id = ?";
+$updateQuery = "UPDATE Users SET image = ? WHERE id = ?";
 $statement = $mysqli->prepare($updateQuery);
 $statement->bind_param("si", $newAvatar, $userId);
 $result = $statement->execute();
