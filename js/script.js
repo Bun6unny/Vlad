@@ -41,6 +41,10 @@ function NewTab(url) {
     window.open(url, '_blank');
 }
 
+function Update() {
+    alert("Находится в разработке!");
+}
+
 function register() {
     var login = document.getElementById("loginInput").value;
     var email = document.getElementById("emailInput").value;

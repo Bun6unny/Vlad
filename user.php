@@ -113,7 +113,7 @@
                             <div class="user-menu-links">
                                 <a href="#">Настройки</a>
                                 <a href="#">Корзина</a>
-                                <a href="#">История</a>
+                                <a href="#" onclick="Update()">История</a>
                                 <a href="#">Выход</a>
                             </div>
                         </div>
