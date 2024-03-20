@@ -72,7 +72,6 @@ if ($result) {
                 echo "<img src='{$row_candy['Image']}' alt='{$item}'>";
             }
 
-            Поиск в таблице Drinks (пример аналогичен поиску в таблице Candy)
             $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
             $result_drinks = $mysqli->query($sql_drinks);
             if ($result_drinks->num_rows > 0) {
