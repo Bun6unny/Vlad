@@ -48,9 +48,9 @@ if ($mysqli->connect_errno) {
 }
 
 if (!isset($_SESSION['user_id'])) {
-    echo "<div class="user-not-found">Пользователь не авторизован
+    echo '<div class="user-not-found">Пользователь не авторизован
           <button onclick="Login_But()" class="reg-button" style="width:15%;height:10%;margin-top:2%;">Авторизация</button>
-          </div>";
+          </div>';
     exit;
 }
 
