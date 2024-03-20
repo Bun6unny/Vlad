@@ -154,18 +154,22 @@
             case 'drinks':
                 $categoryName = 'Напитки';
                 $table = 'Drinks';
+                $after_price = '/ 1л';
                 break;
             case 'chocolate':
                 $categoryName = 'Шоколад';
                 $table = 'Chocolate';
+                $after_price = '/ 250г';
                 break;
             case 'marmalade':
                 $categoryName = 'Мармелад';
                 $table = 'Marmalade';
+                $after_price = '/ 250г';
                 break;
             case 'cookies':
                 $categoryName = 'Печенье';
                 $table = 'Cookies';
+                $after_price = '/ 250г';
                 break;
             default:
                 echo "Неверная категория";
