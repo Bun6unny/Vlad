@@ -54,7 +54,6 @@ if (!isset($_SESSION['user_id'])) {
 
 $userId = $_SESSION['user_id'];
 
-// Получаем список предметов для текущего пользователя
 $sql = "SELECT items FROM Users WHERE id = $userId";
 $result = $mysqli->query($sql);
 
@@ -63,11 +62,9 @@ if ($result) {
     if ($row) {
         $items = explode(", ", $row['items']);
 
-        // Для каждого предмета выполняем запрос к таблицам Candy и Drinks
         foreach ($items as $item) {
-            $item = $mysqli->real_escape_string($item); // Защита от SQL-инъекций
+            $item = $mysqli->real_escape_string($item);
 
-            // Поиск в таблице Candy
             $sql_candy = "SELECT Image FROM Candy WHERE Name = '$item'";
             $result_candy = $mysqli->query($sql_candy);
             if ($result_candy->num_rows > 0) {
@@ -75,13 +72,13 @@ if ($result) {
                 echo "<img src='{$row_candy['Image']}' alt='{$item}'>";
             }
 
-            // Поиск в таблице Drinks (пример аналогичен поиску в таблице Candy)
-            // $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
-            // $result_drinks = $mysqli->query($sql_drinks);
-            // if ($result_drinks->num_rows > 0) {
-            //     $row_drinks = $result_drinks->fetch_assoc();
-            //     echo "<img src='{$row_drinks['Image']}' alt='{$item}'>";
-            // }
+            Поиск в таблице Drinks (пример аналогичен поиску в таблице Candy)
+            $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
+            $result_drinks = $mysqli->query($sql_drinks);
+            if ($result_drinks->num_rows > 0) {
+                $row_drinks = $result_drinks->fetch_assoc();
+                echo "<img src='{$row_drinks['Image']}' alt='{$item}'>";
+            }
         }
     } else {
         echo "Для этого пользователя нет записей.";
