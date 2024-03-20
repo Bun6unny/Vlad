@@ -48,9 +48,30 @@ if ($mysqli->connect_errno) {
 }
 
 if (!isset($_SESSION['user_id'])) {
-    echo '<div class="user-not-found">Пользователь не авторизован
-          <button onclick="Login_But()" class="reg-button" style="width:15%;height:10%;margin-top:2%;">Авторизация</button>
-          </div>';
+    echo '
+    <div class="user-not-found">Пользователь не авторизован
+        <button onclick="Login_But()" class="reg-button" style="width:15%;height:10%;margin-top:2%;">Авторизация</button>
+    </div>          
+    ';
+    echo '
+    <div class="footer" style="margin-top:1%;">
+        <div class="footer-left">
+        ФИО: Ходырев Владислав Вадимович<br>
+        Группа: 2-ИС (б) Курс: 3<br>
+        Специальность: Информационные системы и программирование
+        </div>
+        <div class="footer-right">
+            <img src="img/set1.png" onclick="NewTab(';
+                echo 'https\://vk.com/vhtkrabbit';
+                echo ')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;"><img src="img/set2.png" onclick="NewTab(';
+                echo 'https\://ok.ru/';
+                echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set3.png" onclick="NewTab(';
+                echo 'https\://web.telegram.org/k/';
+                echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set4.png" onclick="NewTab(';
+                echo 'https\://dzen.ru/';
+                echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set5.png" onclick="NewTab(';
+                echo 'https\://vk.com/yarus.official';
+                echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;"></div></div>';
     exit;
 }
 
