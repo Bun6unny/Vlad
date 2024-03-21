@@ -164,3 +164,21 @@
 <form method="post" action="user_cart.php">
     <button type="submit" name="clear_items">Очистить столбец items</button>
 </form>
+
+<div class="footer" style="margin-top:1%;">
+        <div class="footer-left">
+        ФИО: Ходырев Владислав Вадимович<br>
+        Группа: 2-ИС (б) Курс: 3<br>
+        Специальность: Информационные системы и программирование
+        </div>
+        <div class="footer-right">
+            <img src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
+            <img src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
+        </div>
+    </div>
+
+</body>
+</html>
