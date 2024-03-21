@@ -290,7 +290,7 @@
                 echo "<div style='width:95%;margin-left:3%;height:12%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: flex-start;'>Общая стоимость: $totalPrice ₽</div>";
                 echo "<div style='width:95%;margin-left:3%;height:12%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: flex-start;'>Количество товаров: $totalItems</div>";
                 echo "<div style='width:95%;margin-left:3%;height:12%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: flex-start;'>Пункт выдачи: ПВЗ Оникс</div>";
-                echo "<div style='width:95%;margin-left:3%;height:12%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: flex-start;'>Оплата при получении заказа</div>";
+                echo "<div style='width:95%;margin-left:3%;height:14%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: flex-start;'>Оплата: при получении заказа</div>";
                 echo '<form method="post" action="user_cart.php">
                         <button type="submit" name="clear_items">Очистить столбец items</button>
                      </form>';
