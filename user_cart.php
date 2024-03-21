@@ -181,7 +181,7 @@
                         } else {
                             echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
                         }
-                    echo '</div></div></div></div></div>';
+                    echo '</div></div></div></div>';
             }
         } else {
             echo "Пользователь не найден.";
