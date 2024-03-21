@@ -148,6 +148,8 @@
                     </div>
                     <div class="user-right">
                         <div class="user-sign">Корзина</div>';
+                        $sql = "SELECT items FROM Users WHERE id = $userId";
+                        $result = $mysqli->query($sql);
                         if ($result) {
                             $row = $result->fetch_assoc();
                             if ($row) {
