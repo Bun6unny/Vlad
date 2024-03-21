@@ -837,7 +837,7 @@ body {
 
 .item-box {
     width: 70%;
-    height: 85%;
+    height: auto;
 }
 
 .item-line {
