@@ -28,15 +28,43 @@ if ($mysqli->connect_errno) {
     exit;
 }
 
-// Выполните SQL-запрос для обновления записи пользователя и удаления товара из корзины
-$sql = "UPDATE Users SET items = REPLACE(items, '$itemToDelete, ', '') WHERE id = $userId";
-if ($mysqli->query($sql) === TRUE) {
-    // Если запрос выполнен успешно, отправьте код состояния 200
-    http_response_code(200);
+// Получаем список товаров пользователя
+$result = $mysqli->query("SELECT items FROM Users WHERE id = $userId");
+
+if (!$result) {
+    echo "Ошибка запроса: " . $mysqli->error;
+    exit;
+}
+
+$row = $result->fetch_assoc();
+$items = $row['items'];
+
+// Разбиваем список товаров на массив
+$itemsArray = explode(", ", $items);
+
+// Ищем индекс удаляемого товара
+$index = array_search($itemToDelete, $itemsArray);
+
+if ($index !== false) {
+    // Удаляем товар из массива
+    unset($itemsArray[$index]);
+
+    // Собираем список товаров обратно в строку
+    $newItems = implode(", ", $itemsArray);
+
+    // Обновляем запись в базе данных
+    $sql = "UPDATE Users SET items = '$newItems' WHERE id = $userId";
+    if ($mysqli->query($sql) === TRUE) {
+        // Если запрос выполнен успешно, отправляем код состояния 200
+        http_response_code(200);
+    } else {
+        // Если возникла ошибка при выполнении запроса, отправляем соответствующий код состояния
+        echo "Ошибка при выполнении запроса: " . $mysqli->error;
+        http_response_code(500); // Внутренняя ошибка сервера
+    }
 } else {
-    // Если возникла ошибка при выполнении запроса, отправьте соответствующий код состояния
-    echo "Ошибка при выполнении запроса: " . $mysqli->error;
-    http_response_code(500); // Внутренняя ошибка сервера
+    // Если товар не найден в списке, возвращаем ошибку
+    http_response_code(404); // Не найдено
 }
 
 $mysqli->close();
