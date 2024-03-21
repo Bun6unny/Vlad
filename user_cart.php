@@ -248,15 +248,20 @@
             $footerMargin = 99;
         }
 
-        // Выполните SQL-запрос для обновления записи пользователя и удаления товара из корзины
-$sql = "UPDATE Users SET items = REPLACE(items, '$itemToDelete, ', '') WHERE id = $userId";
-if ($mysqli->query($sql) === TRUE) {
-    // Если запрос выполнен успешно, отправьте код состояния 200
-    http_response_code(200);
-} else {
-    // Если возникла ошибка при выполнении запроса, отправьте соответствующий код состояния
-    echo "Ошибка при выполнении запроса: " . $mysqli->error;
-    http_response_code(500); // Внутренняя ошибка сервера
+        
+if (isset($_POST['item'])) {
+    $itemToDelete = $_POST['item'];
+    // Выполните SQL-запрос для обновления записи пользователя и удаления товара из корзины
+    $sql = "UPDATE Users SET items = REPLACE(items, '$itemToDelete, ', '') WHERE id = $userId";
+    if ($mysqli->query($sql) === TRUE) {
+        // Если запрос выполнен успешно, отправьте код состояния 200
+        http_response_code(200);
+    } else {
+        // Если возникла ошибка при выполнении запроса, отправьте соответствующий код состояния
+        echo "Ошибка при выполнении запроса: " . $mysqli->error;
+        http_response_code(500); // Внутренняя ошибка сервера
+    }
+}
 
         $mysqli->close();
     ?>
