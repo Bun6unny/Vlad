@@ -183,7 +183,7 @@
                                     <div class="item-cart">';
                                 echo "<img src='{$row_drinks['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
                                 echo '</div>
-                                    <button class="cart-button">Удалить</button>
+                                    <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
                                 </div>';
                                 $totalItems++;
                             }

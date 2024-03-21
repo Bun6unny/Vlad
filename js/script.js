@@ -302,3 +302,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function deleteItem(itemName) {
+    var confirmation = confirm("Вы уверены, что хотите удалить товар '" + itemName + "' из корзины?");
+    if (confirmation) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'delete_item.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send('item=' + encodeURIComponent(itemName));
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                location.reload();
+            }
+        };
+    }
+}
