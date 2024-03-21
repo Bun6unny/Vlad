@@ -197,13 +197,13 @@
 
                 echo '</div><form method="post" action="user_cart.php">
                 <button type="submit" name="clear_items">Очистить столбец items</button>
-            </form></div></div></div>';
+                </form>';
+                echo "Всего товаров на странице: $totalItems";
+                echo '</div></div></div>';
             }
         } else {
             echo "Пользователь не найден.";
         }
-
-        echo "Всего товаров на странице: $totalItems";
 
         if (isset($_POST['clear_items'])) {
             $sql_clear_items = "UPDATE Users SET items = '' WHERE id = $userId";
@@ -264,10 +264,6 @@ if (isset($_POST['item'])) {
 
         $mysqli->close();
     ?>
-
-<form method="post" action="user_cart.php">
-    <button type="submit" name="clear_items">Очистить столбец items</button>
-</form>
 
 <div class="footer" style="margin-top:<?php echo $footerMargin; ?>%;">
         <div class="footer-left">
