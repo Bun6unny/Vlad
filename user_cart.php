@@ -149,6 +149,15 @@
             echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
         }
 
+        $userId = $_SESSION['user_id'];
+
+        $result = $mysqli->query("SELECT Login, Mail, image FROM Users WHERE id = $userId");
+
+        if (!$result) {
+            echo "Ошибка запроса: " . $mysqli->error;
+            exit;
+        }
+        
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="user">
