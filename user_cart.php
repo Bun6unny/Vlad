@@ -19,107 +19,147 @@
             <a href="#" onclick="About()">О нас</a>
             <a href="#" onclick="Feedback()" style="margin-right: 0%;">Обратная связь</a>
         </div>
-        <div class="header-right">
         <?php
             session_start();
             if(isset($_SESSION['user_id'])) {
+                echo '<div class="header-right" style="margin-right:1%;">';
                 echo '<a href="logout.php">Выход</a>';
+                echo '</div>';
             } else {
+                echo '<div class="header-right">';
                 echo '<a href="#" onclick="Login_But()">Авторизация</a>';
-                echo '<a href="#" onclick="Registration()" style="margin-right: 10%;">Регистрация</a>';
+                echo '<a href="#" onclick="Registration()">Регистрация</a>';
+                echo '</div>';
             }
         ?>
+    </div>
+
+    <div class="top-menu" style="margin-top:1%;">
+        <img src="img/ss.png" onclick="Main()" style="max-height:90%;max-width:90%;cursor:pointer;">
+        <div class="top-menu-one">
+            <div class="top-menu-part">
+                +7 (922) 342-20-76
+                <div class="phone">
+                    <div style="margin-left:5%;">Обратный&nbspзвонок</div>
+                </div>
+            </div>
+            <div class="top-menu-part">
+                <div class="search">
+                    <input id="searchInput" type="text" placeholder="Выполнить поиск по сайту..." class="search-left">
+                    <div class="search-right">
+                        <img id="searchButton" src="img/search.png" style="max-width:95%;max-height:95%;cursor:pointer;">
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="top-menu-two">
+            <div class="top-menu-time-mail" style="margin-top:5%;">
+                <img src="img/time.png" style="max-width:50%;max-height:50%;">
+                &nbsp&nbspРаботаем 24/7
+            </div>
+            <div class="top-menu-time-mail">
+                <img src="img/mail.png" style="max-width:50%;max-height:50%;">
+                &nbsp&nbsppozitivnishred2017@gmail.com
+            </div>
+        </div>
+        <button class="top-menu-button" style="margin-left:2%;" onclick="User()">
+            Личный кабинет<br>
+            <img src="img/but3.png" style="max-width:60%; max-height:60%; margin-top:1%;">
+        </button>
+        <button class="top-menu-button" style="margin-left:2%;" onclick="Cart()">
+            Корзина<br>
+            <img src="img/but2.png" style="max-height:60%; max-width:60%; margin-top:3%;">
+        </button>
     </div>
 
     <?php
-session_start();
+        session_start();
 
-$host = 'localhost';
-$username = '2is-b11_2is-b11';
-$password = 'dTav2z8hny';
-$database = '2is-b11_2is-b11';
+        $host = 'localhost';
+        $username = '2is-b11_2is-b11';
+        $password = 'dTav2z8hny';
+        $database = '2is-b11_2is-b11';
 
-$mysqli = new mysqli($host, $username, $password, $database);
+        $mysqli = new mysqli($host, $username, $password, $database);
 
-if ($mysqli->connect_errno) {
-    echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-    exit;
-}
+        if ($mysqli->connect_errno) {
+            echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+            exit;
+        }
 
-if (!isset($_SESSION['user_id'])) {
-    echo '
-    <div class="user-not-found">Пользователь не авторизован
-        <button onclick="Login_But()" class="reg-button" style="width:15%;height:10%;margin-top:2%;">Авторизация</button>
-    </div>          
-    ';
-    echo '
-    <div class="footer" style="margin-top:1%;">
-        <div class="footer-left">
-        ФИО: Ходырев Владислав Вадимович<br>
-        Группа: 2-ИС (б) Курс: 3<br>
-        Специальность: Информационные системы и программирование
-        </div>
-        <div class="footer-right">
-            <img src="img/set1.png" onclick="NewTab(';
-                echo 'https\://vk.com/vhtkrabbit';
-                echo ')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;"><img src="img/set2.png" onclick="NewTab(';
-                echo 'https\://ok.ru/';
-                echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set3.png" onclick="NewTab(';
-                echo 'https\://web.telegram.org/k/';
-                echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set4.png" onclick="NewTab(';
-                echo 'https\://dzen.ru/';
-                echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set5.png" onclick="NewTab(';
-                echo 'https\://vk.com/yarus.official';
-                echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;"></div></div>';
-    exit;
-}
+        if (!isset($_SESSION['user_id'])) {
+            echo '
+            <div class="user-not-found">Пользователь не авторизован
+                <button onclick="Login_But()" class="reg-button" style="width:15%;height:10%;margin-top:2%;">Авторизация</button>
+            </div>          
+            ';
+            echo '
+            <div class="footer" style="margin-top:1%;">
+                <div class="footer-left">
+                ФИО: Ходырев Владислав Вадимович<br>
+                Группа: 2-ИС (б) Курс: 3<br>
+                Специальность: Информационные системы и программирование
+                </div>
+                <div class="footer-right">
+                    <img src="img/set1.png" onclick="NewTab(';
+                        echo 'https\://vk.com/vhtkrabbit';
+                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;"><img src="img/set2.png" onclick="NewTab(';
+                        echo 'https\://ok.ru/';
+                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set3.png" onclick="NewTab(';
+                        echo 'https\://web.telegram.org/k/';
+                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set4.png" onclick="NewTab(';
+                        echo 'https\://dzen.ru/';
+                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img src="img/set5.png" onclick="NewTab(';
+                        echo 'https\://vk.com/yarus.official';
+                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;"></div></div>';
+            exit;
+        }
 
-$userId = $_SESSION['user_id'];
+        $userId = $_SESSION['user_id'];
 
-$sql = "SELECT items FROM Users WHERE id = $userId";
-$result = $mysqli->query($sql);
+        $sql = "SELECT items FROM Users WHERE id = $userId";
+        $result = $mysqli->query($sql);
 
-if ($result) {
-    $row = $result->fetch_assoc();
-    if ($row) {
-        $items = explode(", ", $row['items']);
+        if ($result) {
+            $row = $result->fetch_assoc();
+            if ($row) {
+                $items = explode(", ", $row['items']);
 
-        foreach ($items as $item) {
-            $item = $mysqli->real_escape_string($item);
+                foreach ($items as $item) {
+                    $item = $mysqli->real_escape_string($item);
 
-            $sql_candy = "SELECT Image FROM Candy WHERE Name = '$item'";
-            $result_candy = $mysqli->query($sql_candy);
-            if ($result_candy->num_rows > 0) {
-                $row_candy = $result_candy->fetch_assoc();
-                echo "<img src='{$row_candy['Image']}' alt='{$item}'>";
+                    $sql_candy = "SELECT Image FROM Candy WHERE Name = '$item'";
+                    $result_candy = $mysqli->query($sql_candy);
+                    if ($result_candy->num_rows > 0) {
+                        $row_candy = $result_candy->fetch_assoc();
+                        echo "<img src='{$row_candy['Image']}' alt='{$item}'>";
+                    }
+
+                    $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
+                    $result_drinks = $mysqli->query($sql_drinks);
+                    if ($result_drinks->num_rows > 0) {
+                        $row_drinks = $result_drinks->fetch_assoc();
+                        echo "<img src='{$row_drinks['Image']}' alt='{$item}'>";
+                    }
+                }
+            } else {
+                echo "Для этого пользователя нет записей.";
             }
+        } else {
+            echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
+        }
 
-            $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
-            $result_drinks = $mysqli->query($sql_drinks);
-            if ($result_drinks->num_rows > 0) {
-                $row_drinks = $result_drinks->fetch_assoc();
-                echo "<img src='{$row_drinks['Image']}' alt='{$item}'>";
+        if (isset($_POST['clear_items'])) {
+            $sql_clear_items = "UPDATE Users SET items = '' WHERE id = $userId";
+            if ($mysqli->query($sql_clear_items) === TRUE) {
+                echo "<script>setTimeout(function() {alert('Товар оформлен!');}, 500);setTimeout(function() { window.location.href = 'index.php'; }, 1000);</script>";
+            } else {
+                echo "<script>alert('Ошибка при очистке столбца items: " . $mysqli->error . "');</script>";
             }
         }
-    } else {
-        echo "Для этого пользователя нет записей.";
-    }
-} else {
-    echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
-}
 
-if (isset($_POST['clear_items'])) {
-    $sql_clear_items = "UPDATE Users SET items = '' WHERE id = $userId";
-    if ($mysqli->query($sql_clear_items) === TRUE) {
-        echo "<script>setTimeout(function() {alert('Товар оформлен!');}, 500);setTimeout(function() { window.location.href = 'index.php'; }, 1000);</script>";
-    } else {
-        echo "<script>alert('Ошибка при очистке столбца items: " . $mysqli->error . "');</script>";
-    }
-}
-
-$mysqli->close();
-?>
+        $mysqli->close();
+    ?>
 
 <form method="post" action="user_cart.php">
     <button type="submit" name="clear_items">Очистить столбец items</button>
