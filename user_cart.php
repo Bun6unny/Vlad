@@ -200,6 +200,7 @@
                 </form>';
                 echo "Всего товаров на странице: $totalItems";
                 echo '</div></div></div>';
+                echo "<div></div>";
             }
         } else {
             echo "Пользователь не найден.";
