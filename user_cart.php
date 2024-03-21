@@ -222,6 +222,14 @@
             $footerMargin = 21;
         }
 
+        if ($totalItems > 4) {
+            $footerMargin = 33;
+        }
+
+        if ($totalItems > 5) {
+            $footerMargin = 45;
+        }
+
         $mysqli->close();
     ?>
 
