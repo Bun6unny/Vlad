@@ -154,7 +154,7 @@
                     $row_items = $result_items->fetch_assoc();
                     if ($row_items) {
                         $items = explode(", ", $row_items['items']);
-                        $itemNumber = 0;
+                        $itemNumber = -1;
 
                         foreach ($items as $item) {
                             $item = $mysqli->real_escape_string($item);
@@ -179,7 +179,7 @@
                             if ($result_drinks->num_rows > 0) {
                                 $row_drinks = $result_drinks->fetch_assoc();
                                 echo '<div class="item-line" style="margin-top:2%;">
-                                    <div class="item-number">1</div>
+                                    <div class="item-number">'.$itemNumber.'</div>
                                     <div class="item-cart">';
                                 echo "<img src='{$row_drinks['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
                                 echo '</div>
