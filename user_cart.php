@@ -226,31 +226,31 @@
         }
 
         if ($totalItems > 3) {
-            $footerMargin = 21;
+            $footerMargin = 23;
         }
 
         if ($totalItems > 4) {
-            $footerMargin = 34;
+            $footerMargin = 36;
         }
 
         if ($totalItems > 5) {
-            $footerMargin = 47;
+            $footerMargin = 49;
         }
 
         if ($totalItems > 6) {
-            $footerMargin = 60;
+            $footerMargin = 62;
         }
 
         if ($totalItems > 7) {
-            $footerMargin = 73;
+            $footerMargin = 75;
         }
 
         if ($totalItems > 8) {
-            $footerMargin = 86;
+            $footerMargin = 88;
         }
 
         if ($totalItems > 9) {
-            $footerMargin = 99;
+            $footerMargin = 101;
         }
 
         
