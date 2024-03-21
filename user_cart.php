@@ -120,35 +120,6 @@
         $sql = "SELECT items FROM Users WHERE id = $userId";
         $result = $mysqli->query($sql);
 
-        if ($result) {
-            $row = $result->fetch_assoc();
-            if ($row) {
-                $items = explode(", ", $row['items']);
-
-                foreach ($items as $item) {
-                    $item = $mysqli->real_escape_string($item);
-
-                    $sql_candy = "SELECT Image FROM Candy WHERE Name = '$item'";
-                    $result_candy = $mysqli->query($sql_candy);
-                    if ($result_candy->num_rows > 0) {
-                        $row_candy = $result_candy->fetch_assoc();
-                        echo "<img src='{$row_candy['Image']}' alt='{$item}'>";
-                    }
-
-                    $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
-                    $result_drinks = $mysqli->query($sql_drinks);
-                    if ($result_drinks->num_rows > 0) {
-                        $row_drinks = $result_drinks->fetch_assoc();
-                        echo "<img src='{$row_drinks['Image']}' alt='{$item}'>";
-                    }
-                }
-            } else {
-                echo "Для этого пользователя нет записей.";
-            }
-        } else {
-            echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
-        }
-
         $userId = $_SESSION['user_id'];
 
         $result = $mysqli->query("SELECT Login, Mail, image FROM Users WHERE id = $userId");
@@ -176,9 +147,36 @@
                         </div>
                     </div>
                     <div class="user-right">
-                        <div class="user-sign">Корзина</div>
-                    </div>
-                </div>';
+                        <div class="user-sign">Корзина</div>'
+                        if ($result) {
+                            $row = $result->fetch_assoc();
+                            if ($row) {
+                                $items = explode(", ", $row['items']);
+                
+                                foreach ($items as $item) {
+                                    $item = $mysqli->real_escape_string($item);
+                
+                                    $sql_candy = "SELECT Image FROM Candy WHERE Name = '$item'";
+                                    $result_candy = $mysqli->query($sql_candy);
+                                    if ($result_candy->num_rows > 0) {
+                                        $row_candy = $result_candy->fetch_assoc();
+                                        echo "<img src='{$row_candy['Image']}' alt='{$item}'>";
+                                    }
+                
+                                    $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
+                                    $result_drinks = $mysqli->query($sql_drinks);
+                                    if ($result_drinks->num_rows > 0) {
+                                        $row_drinks = $result_drinks->fetch_assoc();
+                                        echo "<img src='{$row_drinks['Image']}' alt='{$item}'>";
+                                    }
+                                }
+                            } else {
+                                echo "Для этого пользователя нет записей.";
+                            }
+                        } else {
+                            echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
+                        }
+                    echo '</div></div>';
             }
         } else {
             echo "Пользователь не найден.";
