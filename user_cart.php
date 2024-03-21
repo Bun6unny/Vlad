@@ -160,21 +160,23 @@
                             $item = $mysqli->real_escape_string($item);
                             $itemNumber++;
 
-                            $sql_candy = "SELECT Image FROM Candy WHERE Name = '$item'";
+                            $sql_candy = "SELECT Name, Price, Image FROM Candy WHERE Name = '$item'";
                             $result_candy = $mysqli->query($sql_candy);
                             if ($result_candy->num_rows > 0) {
                                 $row_candy = $result_candy->fetch_assoc();
                                 echo '<div class="item-line" style="margin-top:2%;">
                                     <div class="item-number">'.$itemNumber.'</div>
                                     <div class="item-cart">';
-                                echo "<img src='{$row_candy['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
+                                echo "<img src='{$row_candy['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>
+                                    {$row_candy['Name']}
+                                    {$row_candy['Price']}";
                                 echo '</div>
                                     <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
                                 </div>';
                                 $totalItems++;
                             }
 
-                            $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
+                            $sql_drinks = "SELECT Name, Price, Image FROM Drinks WHERE Name = '$item'";
                             $result_drinks = $mysqli->query($sql_drinks);
                             if ($result_drinks->num_rows > 0) {
                                 $row_drinks = $result_drinks->fetch_assoc();
