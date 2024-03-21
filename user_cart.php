@@ -195,7 +195,29 @@
                                     {$row_drinks['Name']}
                                     </div>
                                     <div class='item-price' style='font-size:1.5vw;'>  
-                                    {$row_drinks['Price']} ₽ / 250г
+                                    {$row_drinks['Price']} ₽ / 1л
+                                    </div>
+                                    </div>";
+                                echo '</div>
+                                    <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
+                                </div>';
+                                $totalItems++;
+                            }
+
+                            $sql_chocolate = "SELECT Name, Price, Image FROM Chocolate WHERE Name = '$item'";
+                            $result_chocolate = $mysqli->query($sql_chocolate);
+                            if ($result_chocolate->num_rows > 0) {
+                                $row_chocolate = $result_chocolate->fetch_assoc();
+                                echo '<div class="item-line" style="margin-top:2%;">
+                                    <div class="item-number">'.$itemNumber.'</div>
+                                    <div class="item-cart">';
+                                echo "<div class='item-image'><img src='{$row_chocolate['Image']}' alt='{$item}' style='max-width:90%;max-height:90%;border-radius:0.3vw;'></div>
+                                    <div class='item-right'>
+                                    <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
+                                    {$row_chocolate['Name']}
+                                    </div>
+                                    <div class='item-price' style='font-size:1.5vw;'>  
+                                    {$row_chocolate['Price']} ₽ / 1л
                                     </div>
                                     </div>";
                                 echo '</div>
