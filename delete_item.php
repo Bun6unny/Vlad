@@ -2,14 +2,12 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    // Если пользователь не авторизован, не выполняем никаких действий
-    http_response_code(403); // Ошибка доступа запрещена
+    http_response_code(403);
     exit;
 }
 
 if (!isset($_POST['item'])) {
-    // Если параметр 'item' не был передан, возвращаем ошибку
-    http_response_code(400); // Ошибка неверного запроса
+    http_response_code(400); 
     exit;
 }
 
@@ -28,7 +26,6 @@ if ($mysqli->connect_errno) {
     exit;
 }
 
-// Получаем список товаров пользователя
 $result = $mysqli->query("SELECT items FROM Users WHERE id = $userId");
 
 if (!$result) {
@@ -39,32 +36,24 @@ if (!$result) {
 $row = $result->fetch_assoc();
 $items = $row['items'];
 
-// Разбиваем список товаров на массив
 $itemsArray = explode(", ", $items);
 
-// Ищем индекс удаляемого товара
 $index = array_search($itemToDelete, $itemsArray);
 
 if ($index !== false) {
-    // Удаляем товар из массива
     unset($itemsArray[$index]);
 
-    // Собираем список товаров обратно в строку
     $newItems = implode(", ", $itemsArray);
 
-    // Обновляем запись в базе данных
     $sql = "UPDATE Users SET items = '$newItems' WHERE id = $userId";
     if ($mysqli->query($sql) === TRUE) {
-        // Если запрос выполнен успешно, отправляем код состояния 200
         http_response_code(200);
     } else {
-        // Если возникла ошибка при выполнении запроса, отправляем соответствующий код состояния
         echo "Ошибка при выполнении запроса: " . $mysqli->error;
-        http_response_code(500); // Внутренняя ошибка сервера
+        http_response_code(500);
     }
 } else {
-    // Если товар не найден в списке, возвращаем ошибку
-    http_response_code(404); // Не найдено
+    http_response_code(404);
 }
 
 $mysqli->close();
