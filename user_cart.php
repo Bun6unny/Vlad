@@ -172,7 +172,9 @@
                                     <div class='item-price'>   
                                     {$row_candy['Name']}
                                     </div>
+                                    <div class='item-price'>  
                                     {$row_candy['Price']}
+                                    </div>
                                     </div>";
                                 echo '</div>
                                     <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
