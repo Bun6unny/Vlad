@@ -173,7 +173,9 @@
                                         $row_drinks = $result_drinks->fetch_assoc();
                                         echo '<div class="item-line" style="margin-top:2%;">
                                                 <div class="item-number">1</div>
-                                                <div class="item-cart"></div>
+                                                <div class="item-cart">'
+                                                echo "<img src='{$row_drinks['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
+                                                echo '</div>
                                                 <button class="cart-button">Удалить</button>
                                             </div>';
                                     }
