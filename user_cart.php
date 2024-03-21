@@ -167,7 +167,7 @@
                                 echo '<div class="item-line" style="margin-top:2%;">
                                     <div class="item-number">'.$itemNumber.'</div>
                                     <div class="item-cart">';
-                                echo "<img src='{$row_candy['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>
+                                echo "<div class='item-image'><img src='{$row_candy['Image']}' alt='{$item}' style='max-width:90%;max-height:90%;'></div>
                                     {$row_candy['Name']}
                                     {$row_candy['Price']}";
                                 echo '</div>
