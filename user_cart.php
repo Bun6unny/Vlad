@@ -176,22 +176,7 @@
                         </div>
                     </div>
                     <div class="user-right">
-                        <div class="user-sign">Настройки</div>
-                        <div class="user-line" style="margin-top:2%;">Сменить логин:<input id="new-username" type="text" placeholder="..." class="user-input">
-                            <button class="change-button" id="change-username-btn">Изменить логин</button>
-                        </div>
-                        <div class="user-line">Сменить пароль:<input id="new-password" type="password" placeholder="..." class="user-input" style="width:33.5%;">
-                            <button class="change-button" id="change-password-btn">Изменить пароль</button>
-                        </div>
-                        <div class="user-line">Сменить почту:<input id="new-email" type="text" placeholder="..." class="user-input">
-                            <button id="change-email-btn" class="change-button">Изменить почту</button>
-                        </div>
-                        <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Почта сейчас:'.$row['Mail'].'</div>
-                        <div class="user-line">Сменить аватар:<input id="new-avatar" type="text" placeholder="..." class="user-input" style="width:34%;">
-                            <button id="change-avatar-btn" class="change-button">Изменить аватар</button>
-                        </div>
-                        <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Только URL-ссылки!</div>
-                        <button class="change-button" style="margin-left:82%;width:15%;height:10%;" id="delete-account">Удалить аккаунт</button>
+                        
                     </div>
                 </div>';
             }
