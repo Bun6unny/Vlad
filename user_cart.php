@@ -125,6 +125,7 @@
         }
         
         $totalItems = 0;
+        $totalPrice = 0;
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -180,6 +181,7 @@
                                     <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
                                 </div>';
                                 $totalItems++;
+                                $totalPrice = $totalPrice + {$row_candy['Price']};
                             }
 
                             $sql_drinks = "SELECT Name, Price, Image FROM Drinks WHERE Name = '$item'";
@@ -247,6 +249,28 @@
                                 </div>';
                                 $totalItems++;
                             }
+
+                            $sql_cookies = "SELECT Name, Price, Image FROM Cookies WHERE Name = '$item'";
+                            $result_cookies = $mysqli->query($sql_cookies);
+                            if ($result_cookies->num_rows > 0) {
+                                $row_cookies = $result_cookies->fetch_assoc();
+                                echo '<div class="item-line" style="margin-top:2%;">
+                                    <div class="item-number">'.$itemNumber.'</div>
+                                    <div class="item-cart">';
+                                echo "<div class='item-image'><img src='{$row_cookies['Image']}' alt='{$item}' style='max-width:90%;max-height:90%;border-radius:0.3vw;'></div>
+                                    <div class='item-right'>
+                                    <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
+                                    {$row_cookies['Name']}
+                                    </div>
+                                    <div class='item-price' style='font-size:1.5vw;'>  
+                                    {$row_cookies['Price']} ₽ / 250г
+                                    </div>
+                                    </div>";
+                                echo '</div>
+                                    <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
+                                </div>';
+                                $totalItems++;
+                            }
                         }
                     } else {
                         echo "Для этого пользователя нет записей.";
@@ -261,6 +285,7 @@
                     <button type="submit" name="clear_items">Очистить столбец items</button>
                 </form>';
                 echo "Всего товаров на странице: $totalItems";
+                echo "Цена: $totalPrice";
                 echo '</div>';
                 echo '</div></div></div>';
             }
