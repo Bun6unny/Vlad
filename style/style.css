@@ -854,6 +854,15 @@ body {
     display: flex;
 }
 
+.item-order {
+    font-size: 1vw;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .item-number {
     width:4%;
     height: 19%;

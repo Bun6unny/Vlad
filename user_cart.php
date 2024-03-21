@@ -284,7 +284,7 @@
                 }
 
                 echo '</div>';
-                echo '<div style="font-size:1vw">
+                echo '<div class="item-order">
                 <form method="post" action="user_cart.php">
                     <button type="submit" name="clear_items">Очистить столбец items</button>
                 </form>';
