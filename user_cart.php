@@ -162,7 +162,7 @@
                                         echo '<div class="item-line" style="margin-top:2%;">
                                              <div class="item-number">1</div>
                                              <div class="item-cart"><img src='{$row_candy['Image']}'></div>
-                                             <button class="cart-button">Удалить</button>';
+                                             <button class="cart-button">Удалить</button></div>';
                                     }
                 
                                     $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
@@ -172,7 +172,7 @@
                                         echo '<div class="item-line" style="margin-top:2%;">
                                              <div class="item-number">1</div>
                                              <div class="item-cart"><img src='{$row_candy['Image']}'></div>
-                                             <button class="cart-button">Удалить</button>';
+                                             <button class="cart-button">Удалить</button></div>';
                                     }
                                 }
                             } else {
