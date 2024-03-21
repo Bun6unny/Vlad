@@ -217,7 +217,29 @@
                                     {$row_chocolate['Name']}
                                     </div>
                                     <div class='item-price' style='font-size:1.5vw;'>  
-                                    {$row_chocolate['Price']} ₽ / 1л
+                                    {$row_chocolate['Price']} ₽ / 250г
+                                    </div>
+                                    </div>";
+                                echo '</div>
+                                    <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
+                                </div>';
+                                $totalItems++;
+                            }
+
+                            $sql_marmalade = "SELECT Name, Price, Image FROM Marmalade WHERE Name = '$item'";
+                            $result_marmalade = $mysqli->query($sql_marmalade);
+                            if ($result_marmalade->num_rows > 0) {
+                                $row_marmalade = $result_marmalade->fetch_assoc();
+                                echo '<div class="item-line" style="margin-top:2%;">
+                                    <div class="item-number">'.$itemNumber.'</div>
+                                    <div class="item-cart">';
+                                echo "<div class='item-image'><img src='{$row_marmalade['Image']}' alt='{$item}' style='max-width:90%;max-height:90%;border-radius:0.3vw;'></div>
+                                    <div class='item-right'>
+                                    <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
+                                    {$row_marmalade['Name']}
+                                    </div>
+                                    <div class='item-price' style='font-size:1.5vw;'>  
+                                    {$row_marmalade['Price']} ₽ / 250г
                                     </div>
                                     </div>";
                                 echo '</div>
