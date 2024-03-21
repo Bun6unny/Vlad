@@ -850,7 +850,7 @@ body {
 
 .item-wrap {
     width: 100%;
-    height: auto;
+    height: 85%;
     display: flex;
 }
 
