@@ -219,7 +219,7 @@
         }
 
         if ($totalItems > 3) {
-            $footerMargin = 18;
+            $footerMargin = 21;
         }
 
         $mysqli->close();
