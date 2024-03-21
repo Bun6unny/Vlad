@@ -210,6 +210,10 @@
             }
         }
 
+        if ($totalItems > 2) {
+            $footerMargin = 20;
+        }
+
         $mysqli->close();
     ?>
 
@@ -217,7 +221,7 @@
     <button type="submit" name="clear_items">Очистить столбец items</button>
 </form>
 
-<div class="footer" style="margin-top:1%;">
+<div class="footer" style="margin-top:<?php echo $footerMargin; ?>%;">
         <div class="footer-left">
         ФИО: Ходырев Владислав Вадимович<br>
         Группа: 2-ИС (б) Курс: 3<br>
