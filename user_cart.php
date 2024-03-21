@@ -222,7 +222,7 @@
         }
         
         if ($totalItems > 2) {
-            $footerMargin = 9;
+            $footerMargin = 11;
         }
 
         if ($totalItems > 3) {
