@@ -204,6 +204,7 @@
                                     <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
                                 </div>';
                                 $totalItems++;
+                                $totalPrice = $totalPrice + $row_candy['Price'];
                             }
 
                             $sql_chocolate = "SELECT Name, Price, Image FROM Chocolate WHERE Name = '$item'";
@@ -226,6 +227,7 @@
                                     <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
                                 </div>';
                                 $totalItems++;
+                                $totalPrice = $totalPrice + $row_candy['Price'];
                             }
 
                             $sql_marmalade = "SELECT Name, Price, Image FROM Marmalade WHERE Name = '$item'";
@@ -248,6 +250,7 @@
                                     <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
                                 </div>';
                                 $totalItems++;
+                                $totalPrice = $totalPrice + $row_candy['Price'];
                             }
 
                             $sql_cookies = "SELECT Name, Price, Image FROM Cookies WHERE Name = '$item'";
@@ -270,6 +273,7 @@
                                     <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
                                 </div>';
                                 $totalItems++;
+                                $totalPrice = $totalPrice + $row_candy['Price'];
                             }
                         }
                     } else {
