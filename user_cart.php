@@ -238,6 +238,14 @@
             $footerMargin = 73;
         }
 
+        if ($totalItems > 8) {
+            $footerMargin = 86;
+        }
+
+        if ($totalItems > 9) {
+            $footerMargin = 99;
+        }
+
         $mysqli->close();
     ?>
 
