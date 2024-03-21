@@ -217,7 +217,7 @@
                 $items = $row['items'];
                 
                 if (empty($items)) {
-                    echo "<script>alert('Товаров нет!');</script>";
+                    echo "<script>setTimeout(function() {alert('Товаров нет!');}, 500);</script>";
                 } else {
                     $sql_clear_items = "UPDATE Users SET items = '' WHERE id = $userId";
                     if ($mysqli->query($sql_clear_items) === TRUE) {
