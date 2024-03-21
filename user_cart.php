@@ -195,11 +195,13 @@
                     echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
                 }
 
-                echo '</div>
+                echo '</div>';
+                echo '<div style="font-size:1vw">
                 <form method="post" action="user_cart.php">
                     <button type="submit" name="clear_items">Очистить столбец items</button>
                 </form>';
                 echo "Всего товаров на странице: $totalItems";
+                echo '</div>';
                 echo '</div></div></div>';
             }
         } else {
