@@ -287,7 +287,7 @@
                 echo '<div class="item-order">';
                 echo '<div class="item-order-box">';
                 echo '<div style="width:100%;height:25%;line-height:1.2;font-size:1.8vw;text-align:center;display: flex;align-items: center;justify-content: center;">Оформление товара</div>';
-                echo "<div style='width:100%;height:15%;line-height:1.2;font-size:1.5vw;text-align:center;display: flex;align-items: center;justify-content: center;'>Общая стоимость: $totalPrice ₽</div>";
+                echo "<div style='width:100%;height:15%;line-height:1.2;font-size:1.2vw;text-align:center;display: flex;align-items: center;justify-content: center;'>Общая стоимость: $totalPrice ₽</div>";
                 echo "Всего товаров на странице: $totalItems";
                 echo '<form method="post" action="user_cart.php">
                         <button type="submit" name="clear_items">Очистить столбец items</button>
