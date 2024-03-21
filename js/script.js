@@ -302,19 +302,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-function deleteItem(item) {
-    // Отправляем AJAX-запрос на сервер для удаления товара
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'delete_item.php', true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Обработка ответа сервера
-            alert(xhr.responseText); // Выводим сообщение об успешном удалении товара
-            // Перезагрузка страницы или другие действия после удаления товара
-            location.reload(); // Например, перезагрузка страницы
-        }
-    };
-    xhr.send('item=' + item); // Передаем название товара для удаления на сервер
-}

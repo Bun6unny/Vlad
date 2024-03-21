@@ -148,61 +148,52 @@
                             <div class="item-wrap">
                             <div class="item-box">';
                 
-                            $sql = "SELECT items FROM Users WHERE id = $userId";
-                            $result_items = $mysqli->query($sql);
-                            if ($result_items) {
-                                $row_items = $result_items->fetch_assoc();
-                                if ($row_items) {
-                                    $items = explode(", ", $row_items['items']);
-                                    
-                                    foreach ($items as $item) {
-                                        $item = $mysqli->real_escape_string($item);
-                            
-                                        // Инициализация переменной для номера товара
-                                        $itemNumber = 0;
-                            
-                                        // Выполняем запрос для получения изображения товара
-                                        $sql_candy = "SELECT Image FROM Candy WHERE Name = '$item'";
-                                        $result_candy = $mysqli->query($sql_candy);
-                                        if ($result_candy && $result_candy->num_rows > 0) {
-                                            $row_candy = $result_candy->fetch_assoc();
-                                            // Увеличиваем номер товара
-                                            $itemNumber++;
-                                            // Выводим информацию о товаре
-                                            echo '<div class="item-line" style="margin-top:2%;">
-                                                <div class="item-number">'.$itemNumber.'</div>
-                                                <div class="item-cart">';
-                                            echo "<img src='{$row_candy['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
-                                            echo '</div>
-                                                <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
-                                            </div>';
-                                            $totalItems++;
-                                        }
-                            
-                                        // Выполняем запрос для получения изображения напитка
-                                        $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
-                                        $result_drinks = $mysqli->query($sql_drinks);
-                                        if ($result_drinks && $result_drinks->num_rows > 0) {
-                                            $row_drinks = $result_drinks->fetch_assoc();
-                                            // Увеличиваем номер товара
-                                            $itemNumber++;
-                                            // Выводим информацию о товаре
-                                            echo '<div class="item-line" style="margin-top:2%;">
-                                                <div class="item-number">'.$itemNumber.'</div>
-                                                <div class="item-cart">';
-                                            echo "<img src='{$row_drinks['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
-                                            echo '</div>
-                                                <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
-                                            </div>';
-                                            $totalItems++;
-                                        }
-                                    }
-                                } else {
-                                    echo "Для этого пользователя нет записей.";
-                                }
-                            } else {
-                                echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
+                $sql = "SELECT items FROM Users WHERE id = $userId";
+                $result_items = $mysqli->query($sql);
+                if ($result_items) {
+                    $row_items = $result_items->fetch_assoc();
+                    if ($row_items) {
+                        $items = explode(", ", $row_items['items']);
+                        $itemNumber = -1;
+
+                        foreach ($items as $item) {
+                            $item = $mysqli->real_escape_string($item);
+                            $itemNumber++;
+
+                            $sql_candy = "SELECT Image FROM Candy WHERE Name = '$item'";
+                            $result_candy = $mysqli->query($sql_candy);
+                            if ($result_candy->num_rows > 0) {
+                                $row_candy = $result_candy->fetch_assoc();
+                                echo '<div class="item-line" style="margin-top:2%;">
+                                    <div class="item-number">'.$itemNumber.'</div>
+                                    <div class="item-cart">';
+                                echo "<img src='{$row_candy['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
+                                echo '</div>
+                                    <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
+                                </div>';
+                                $totalItems++;
                             }
+
+                            $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
+                            $result_drinks = $mysqli->query($sql_drinks);
+                            if ($result_drinks->num_rows > 0) {
+                                $row_drinks = $result_drinks->fetch_assoc();
+                                echo '<div class="item-line" style="margin-top:2%;">
+                                    <div class="item-number">'.$itemNumber.'</div>
+                                    <div class="item-cart">';
+                                echo "<img src='{$row_drinks['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
+                                echo '</div>
+                                    <button class="cart-button">Удалить</button>
+                                </div>';
+                                $totalItems++;
+                            }
+                        }
+                    } else {
+                        echo "Для этого пользователя нет записей.";
+                    }
+                } else {
+                    echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
+                }
 
                 echo '</div></div></div></div>';
             }
