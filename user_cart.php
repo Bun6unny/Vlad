@@ -210,8 +210,12 @@
             }
         }
 
+        if ($totalItems < 2) {
+            $footerMargin = 1;
+        }
+        
         if ($totalItems > 2) {
-            $footerMargin = 20;
+            $footerMargin = 10;
         }
 
         $mysqli->close();
