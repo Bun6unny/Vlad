@@ -154,7 +154,7 @@
                     $row_items = $result_items->fetch_assoc();
                     if ($row_items) {
                         $items = explode(", ", $row_items['items']);
-                        $itemNumber = 0;
+                        $itemNumber = -1;
 
                         foreach ($items as $item) {
                             $item = $mysqli->real_escape_string($item);
