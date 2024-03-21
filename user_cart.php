@@ -144,11 +144,7 @@
                     <div class="user-right">
                         <div class="user-sign">Корзина</div>
                         <div class="item-wrap">
-                        <div class="item-box">
-                            <div class="item-line" style="margin-top:2%;">
-                                <div class="item-number">1</div>
-                                <div class="item-cart"></div>
-                                <button class="cart-button">Удалить</button>';
+                        <div class="item-box">';
                         $sql = "SELECT items FROM Users WHERE id = $userId";
                         $result = $mysqli->query($sql);
                         if ($result) {
@@ -163,14 +159,20 @@
                                     $result_candy = $mysqli->query($sql_candy);
                                     if ($result_candy->num_rows > 0) {
                                         $row_candy = $result_candy->fetch_assoc();
-                                        echo "<img src='{$row_candy['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
+                                        echo '<div class="item-line" style="margin-top:2%;">
+                                             <div class="item-number">1</div>
+                                             <div class="item-cart"><img src='{$row_candy['Image']}'></div>
+                                             <button class="cart-button">Удалить</button>';
                                     }
                 
                                     $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
                                     $result_drinks = $mysqli->query($sql_drinks);
                                     if ($result_drinks->num_rows > 0) {
                                         $row_drinks = $result_drinks->fetch_assoc();
-                                        echo "<img src='{$row_drinks['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
+                                        echo '<div class="item-line" style="margin-top:2%;">
+                                             <div class="item-number">1</div>
+                                             <div class="item-cart"><img src='{$row_candy['Image']}'></div>
+                                             <button class="cart-button">Удалить</button>';
                                     }
                                 }
                             } else {
