@@ -154,6 +154,7 @@
                 
                                 foreach ($items as $item) {
                                     $item = $mysqli->real_escape_string($item);
+                                    $itemCount = 0;
                 
                                     $sql_candy = "SELECT Image FROM Candy WHERE Name = '$item'";
                                     $result_candy = $mysqli->query($sql_candy);
@@ -166,6 +167,8 @@
                                         echo '</div>
                                             <button class="cart-button">Удалить</button>
                                         </div>';
+                                        $itemCount = $itemCount + 1;
+                                        echo 'Товаров сейчас'.$itemCount;
                                     }
                 
                                     $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
@@ -179,6 +182,8 @@
                                         echo '</div>
                                             <button class="cart-button">Удалить</button>
                                         </div>';
+                                        $itemCount = $itemCount + 1;
+                                        echo 'Товаров сейчас'.$itemCount;
                                     }
                                 }
                             } else {
