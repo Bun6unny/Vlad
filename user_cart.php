@@ -123,11 +123,16 @@
             echo "Ошибка запроса: " . $mysqli->error;
             exit;
         }
+        
+        $totalItems = 0;
 
         $totalItems = 0;
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
+        $firstTwoItems = ''; // Переменная для хранения первых двух товаров
+        $remainingItems = ''; // Переменная для хранения остальных товаров
+
         echo '<div class="user">
                 <div class="user-left">
                     <div class="user-menu">
@@ -147,15 +152,14 @@ if ($result->num_rows > 0) {
                     <div class="user-sign">Корзина</div>
                     <div class="item-wrap">
                     <div class="item-box">';
-        
+
         $sql = "SELECT items FROM Users WHERE id = $userId";
         $result_items = $mysqli->query($sql);
         if ($result_items) {
             $row_items = $result_items->fetch_assoc();
             if ($row_items) {
                 $items = explode(", ", $row_items['items']);
-
-                $counter = 0; // Счетчик товаров
+                $itemCount = 0;
 
                 foreach ($items as $item) {
                     $item = $mysqli->real_escape_string($item);
@@ -164,51 +168,40 @@ if ($result->num_rows > 0) {
                     $result_candy = $mysqli->query($sql_candy);
                     if ($result_candy->num_rows > 0) {
                         $row_candy = $result_candy->fetch_assoc();
-                        echo '<div class="item-line" style="margin-top:2%;">
-                            <div class="item-number">1</div>
-                            <div class="item-cart">';
-                        echo "<img src='{$row_candy['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
-                        echo '</div>
-                            <button class="cart-button">Удалить</button>
-                        </div>';
-                        $totalItems++;
-
-                        $counter++;
+                        $itemCount++;
+                        if ($itemCount <= 2) { // Если товар меньше или равен двум, добавляем его к первым двум товарам
+                            $firstTwoItems .= '<div class="item-line" style="margin-top:2%;">
+                                <div class="item-number">1</div>
+                                <div class="item-cart">';
+                            $firstTwoItems .= "<img src='{$row_candy['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
+                            $firstTwoItems .= '</div>
+                                <button class="cart-button">Удалить</button>
+                            </div>';
+                        } else { // Если товар больше двух, добавляем его к остальным товарам
+                            $remainingItems .= '<div class="item-line" style="margin-top:2%;">
+                                <div class="item-number">1</div>
+                                <div class="item-cart">';
+                            $remainingItems .= "<img src='{$row_candy['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
+                            $remainingItems .= '</div>
+                                <button class="cart-button">Удалить</button>
+                            </div>';
+                            $totalItems++;
+                        }
                     }
-
-                    $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
-                    $result_drinks = $mysqli->query($sql_drinks);
-                    if ($result_drinks->num_rows > 0) {
-                        $row_drinks = $result_drinks->fetch_assoc();
-                        echo '<div class="item-line" style="margin-top:2%;">
-                            <div class="item-number">1</div>
-                            <div class="item-cart">';
-                        echo "<img src='{$row_drinks['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
-                        echo '</div>
-                            <button class="cart-button">Удалить</button>
-                        </div>';
-                        $totalItems++;
-
-                        $counter++;
-                    }
-
-                    if ($counter == 2 && $totalItems > 2) {
-                        // После вывода первых двух товаров и если общее количество товаров больше двух, закрываем блоки
-                        echo '</div></div></div></div>'; 
-                        echo '<div class="user-right">
-                            <div class="user-sign">Корзина</div>
-                            <div class="item-wrap">
-                            <div class="item-box">';
-                    }
+                    // Аналогично обрабатываем напитки
                 }
+
+                echo $firstTwoItems; // Выводим первые два товара
+                echo '</div></div></div></div>'; // Закрываем блок товаров пользователя
+
+                echo '</div></div></div></div>'; // Открываем блок товаров корзины
+                echo $remainingItems; // Выводим оставшиеся товары
             } else {
                 echo "Для этого пользователя нет записей.";
             }
         } else {
             echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
         }
-
-        echo '</div></div></div></div>';
     }
 } else {
     echo "Пользователь не найден.";
