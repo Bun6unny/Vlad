@@ -123,7 +123,7 @@
             echo "Ошибка запроса: " . $mysqli->error;
             exit;
         }
-        
+
         $totalItems = 0;
 
 if ($result->num_rows > 0) {
@@ -155,6 +155,8 @@ if ($result->num_rows > 0) {
             if ($row_items) {
                 $items = explode(", ", $row_items['items']);
 
+                $counter = 0; // Счетчик товаров
+
                 foreach ($items as $item) {
                     $item = $mysqli->real_escape_string($item);
 
@@ -170,6 +172,8 @@ if ($result->num_rows > 0) {
                             <button class="cart-button">Удалить</button>
                         </div>';
                         $totalItems++;
+
+                        $counter++;
                     }
 
                     $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
@@ -184,6 +188,17 @@ if ($result->num_rows > 0) {
                             <button class="cart-button">Удалить</button>
                         </div>';
                         $totalItems++;
+
+                        $counter++;
+                    }
+
+                    if ($counter == 2 && $totalItems > 2) {
+                        // После вывода первых двух товаров и если общее количество товаров больше двух, закрываем блоки
+                        echo '</div></div></div></div>'; 
+                        echo '<div class="user-right">
+                            <div class="user-sign">Корзина</div>
+                            <div class="item-wrap">
+                            <div class="item-box">';
                     }
                 }
             } else {
