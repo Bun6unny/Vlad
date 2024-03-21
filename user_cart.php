@@ -181,7 +181,7 @@
                                     <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
                                 </div>';
                                 $totalItems++;
-                                $totalPrice = $totalPrice + {$row_candy['Price']};
+                                $totalPrice = $totalPrice + $row_candy['Price'];
                             }
 
                             $sql_drinks = "SELECT Name, Price, Image FROM Drinks WHERE Name = '$item'";
