@@ -863,6 +863,13 @@ body {
     justify-content: center;
 }
 
+.item-order-box {
+    width: 80%;
+    height: 60%;
+    background-color: #FFE8EC;
+    border-radius: 0.3vw;
+}
+
 .item-number {
     width:4%;
     height: 19%;

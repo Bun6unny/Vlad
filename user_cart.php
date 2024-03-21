@@ -284,13 +284,14 @@
                 }
 
                 echo '</div>';
-                echo '<div class="item-order">
+                echo '<div class="item-order">';
+                echo '<div class="item-order-box">
                 <form method="post" action="user_cart.php">
                     <button type="submit" name="clear_items">Очистить столбец items</button>
                 </form>';
                 echo "Всего товаров на странице: $totalItems";
                 echo "Цена: $totalPrice";
-                echo '</div>';
+                echo '</div></div>';
                 echo '</div></div></div>';
             }
         } else {
