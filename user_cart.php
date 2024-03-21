@@ -154,16 +154,18 @@
                     $row_items = $result_items->fetch_assoc();
                     if ($row_items) {
                         $items = explode(", ", $row_items['items']);
+                        $itemNumber = 0;
 
                         foreach ($items as $item) {
                             $item = $mysqli->real_escape_string($item);
+                            $itemNumber++;
 
                             $sql_candy = "SELECT Image FROM Candy WHERE Name = '$item'";
                             $result_candy = $mysqli->query($sql_candy);
                             if ($result_candy->num_rows > 0) {
                                 $row_candy = $result_candy->fetch_assoc();
                                 echo '<div class="item-line" style="margin-top:2%;">
-                                    <div class="item-number">1</div>
+                                    <div class="item-number">'.$itemNumber.'</div>
                                     <div class="item-cart">';
                                 echo "<img src='{$row_candy['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
                                 echo '</div>
