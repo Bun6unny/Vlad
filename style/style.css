@@ -883,6 +883,12 @@ body {
     justify-content: center;
 }
 
+.item-right {
+    width: 38%;
+    height: 100%;
+    font-size: 1vw;
+}
+
 .cart-button {
     width: 18%;
     height: 30%;

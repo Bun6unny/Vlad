@@ -167,9 +167,11 @@
                                 echo '<div class="item-line" style="margin-top:2%;">
                                     <div class="item-number">'.$itemNumber.'</div>
                                     <div class="item-cart">';
-                                echo "<div class='item-image'><img src='{$row_candy['Image']}' alt='{$item}' style='max-width:90%;max-height:90%;'></div>
+                                echo "<div class='item-image'><img src='{$row_candy['Image']}' alt='{$item}' style='max-width:90%;max-height:90%;border-radius:0.3vw;'></div>
+                                    <div class='item-right'>    
                                     {$row_candy['Name']}
-                                    {$row_candy['Price']}";
+                                    {$row_candy['Price']}
+                                    </div>";
                                 echo '</div>
                                     <button class="cart-button" onclick="deleteItem(\''.$item.'\')">Удалить</button>
                                 </div>';
