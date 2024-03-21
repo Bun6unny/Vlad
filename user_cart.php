@@ -117,11 +117,6 @@
 
         $userId = $_SESSION['user_id'];
 
-        $sql = "SELECT items FROM Users WHERE id = $userId";
-        $result = $mysqli->query($sql);
-
-        $userId = $_SESSION['user_id'];
-
         $result = $mysqli->query("SELECT Login, Mail, image FROM Users WHERE id = $userId");
 
         if (!$result) {
@@ -162,14 +157,14 @@
                                     $result_candy = $mysqli->query($sql_candy);
                                     if ($result_candy->num_rows > 0) {
                                         $row_candy = $result_candy->fetch_assoc();
-                                        echo "<img src='{$row_candy['Image']}' alt='{$item}'> style='max-width:50%;max-height:50%;'";
+                                        echo "<img src='{$row_candy['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
                                     }
                 
                                     $sql_drinks = "SELECT Image FROM Drinks WHERE Name = '$item'";
                                     $result_drinks = $mysqli->query($sql_drinks);
                                     if ($result_drinks->num_rows > 0) {
                                         $row_drinks = $result_drinks->fetch_assoc();
-                                        echo "<img src='{$row_drinks['Image']}' alt='{$item}'> style='max-width:50%;max-height:50%;'";
+                                        echo "<img src='{$row_drinks['Image']}' alt='{$item}' style='max-width:50%;max-height:50%;'>";
                                     }
                                 }
                             } else {
