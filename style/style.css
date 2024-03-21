@@ -856,7 +856,7 @@ body {
 
 .item-order {
     font-size: 1vw;
-    width: 30%;
+    width: 25%;
     height: 100%;
     display: flex;
     align-items: start;
@@ -868,6 +868,7 @@ body {
     height: 60%;
     background-color: #FFE8EC;
     border-radius: 0.3vw;
+    margin-top: 5%;
 }
 
 .item-number {
