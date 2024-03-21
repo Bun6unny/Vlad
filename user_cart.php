@@ -176,7 +176,7 @@
                         </div>
                     </div>
                     <div class="user-right">
-                        
+                        <div class="user-sign">Корзина</div>
                     </div>
                 </div>';
             }
