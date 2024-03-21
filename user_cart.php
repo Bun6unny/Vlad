@@ -226,11 +226,11 @@
         }
 
         if ($totalItems > 3) {
-            $footerMargin = 23;
+            $footerMargin = 25;
         }
 
         if ($totalItems > 4) {
-            $footerMargin = 36;
+            $footerMargin = 38;
         }
 
         if ($totalItems > 5) {
