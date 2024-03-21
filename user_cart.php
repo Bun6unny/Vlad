@@ -209,11 +209,25 @@
         }
 
         if (isset($_POST['clear_items'])) {
-            $sql_clear_items = "UPDATE Users SET items = '' WHERE id = $userId";
-            if ($mysqli->query($sql_clear_items) === TRUE) {
-                echo "<script>setTimeout(function() {alert('Товар оформлен!');}, 500);setTimeout(function() { window.location.href = 'index.php'; }, 1000);</script>";
+            $sql_check_items = "SELECT items FROM Users WHERE id = $userId";
+            $result = $mysqli->query($sql_check_items);
+            
+            if ($result && $result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $items = $row['items'];
+                
+                if (empty($items)) {
+                    echo "<script>alert('Товаров нет!');</script>";
+                } else {
+                    $sql_clear_items = "UPDATE Users SET items = '' WHERE id = $userId";
+                    if ($mysqli->query($sql_clear_items) === TRUE) {
+                        echo "<script>setTimeout(function() {alert('Товар оформлен!');}, 500);setTimeout(function() { window.location.href = 'index.php'; }, 1000);</script>";
+                    } else {
+                        echo "<script>alert('Ошибка при очистке столбца items: " . $mysqli->error . "');</script>";
+                    }
+                }
             } else {
-                echo "<script>alert('Ошибка при очистке столбца items: " . $mysqli->error . "');</script>";
+                echo "<script>alert('Ошибка при проверке наличия товаров: " . $mysqli->error . "');</script>";
             }
         }
 
