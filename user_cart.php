@@ -195,7 +195,12 @@
                     echo "Ошибка при выполнении запроса к базе данных: " . $mysqli->error;
                 }
 
-                echo '</div></div></div></div>';
+                echo '</div>
+                <form method="post" action="user_cart.php">
+                    <button type="submit" name="clear_items">Очистить столбец items</button>
+                </form>';
+                echo "Всего товаров на странице: $totalItems";
+                echo '</div></div></div>';
             }
         } else {
             echo "Пользователь не найден.";
@@ -262,10 +267,6 @@ if (isset($_POST['item'])) {
 
         $mysqli->close();
     ?>
-
-<form method="post" action="user_cart.php">
-    <button type="submit" name="clear_items">Очистить столбец items</button>
-</form>
 
 <div class="footer" style="margin-top:<?php echo $footerMargin; ?>%;">
         <div class="footer-left">
