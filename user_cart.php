@@ -206,8 +206,6 @@
             echo "Пользователь не найден.";
         }
 
-        echo "Всего товаров на странице: $totalItems";
-
         if (isset($_POST['clear_items'])) {
             $sql_clear_items = "UPDATE Users SET items = '' WHERE id = $userId";
             if ($mysqli->query($sql_clear_items) === TRUE) {
