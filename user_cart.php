@@ -248,7 +248,7 @@
         }
 
         if ($totalItems > 9) {
-            $footerMargin = 99;
+            $footerMargin = 50;
         }
 
         
@@ -266,7 +266,7 @@ if (isset($_POST['item'])) {
         $mysqli->close();
     ?>
 
-<div class="footer" style="margin-top:<?php echo $footerMargin; ?>%;">
+<div class="footer" style="margin-top:<?php echo $footerMargin; ?>vw;">
         <div class="footer-left">
         ФИО: Ходырев Владислав Вадимович<br>
         Группа: 2-ИС (б) Курс: 3<br>
