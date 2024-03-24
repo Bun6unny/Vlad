@@ -953,3 +953,7 @@ body {
 .order-button:hover {
     background-color: #EC7088;
 }
+
+.test {
+    width: 50%;
+}
