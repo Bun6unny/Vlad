@@ -154,11 +154,11 @@
                         <div class="user-line"><div style="width:17%;display:flex;align-items:center;justify-content:flex-end;">Сменить почту:</div><input id="new-email" type="text" placeholder="..." class="user-input">
                             <button id="change-email-btn" class="change-button">Изменить почту</button>
                         </div>
-                        <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Почта сейчас:'.$row['Mail'].'</div>
+                        <div class="user-line" style="height:7%;width:48.5%;justify-content:flex-end;font-size:1vw;">Почта сейчас:'.$row['Mail'].'</div>
                         <div class="user-line"><div style="width:17%;display:flex;align-items:center;justify-content:flex-end;">Сменить аватар:</div><input id="new-avatar" type="text" placeholder="..." class="user-input">
                             <button id="change-avatar-btn" class="change-button">Изменить аватар</button>
                         </div>
-                        <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Только URL-ссылки!</div>
+                        <div class="user-line" style="height:7%;width:48.5%;justify-content:flex-end;font-size:1vw;">Только URL-ссылки!</div>
                         <button class="change-button" style="margin-left:82%;width:15%;height:10%;" id="delete-account">Удалить аккаунт</button>
                     </div>
                 </div>';
