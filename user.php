@@ -148,14 +148,14 @@
                         <div class="user-line" style="margin-top:2%;"><div style="width:17%;display:flex;align-items:center;justify-content:flex-end;">Сменить логин:</div><input id="new-username" type="text" placeholder="..." class="user-input">
                             <button class="change-button" id="change-username-btn">Изменить логин</button>
                         </div>
-                        <div class="user-line"><div style="width:17%;display:flex;align-items:center;justify-content:flex-end;">Сменить пароль:</div><input id="new-password" type="password" placeholder="..." class="user-input" style="width:33.5%;">
+                        <div class="user-line"><div style="width:17%;display:flex;align-items:center;justify-content:flex-end;">Сменить пароль:</div><input id="new-password" type="password" placeholder="..." class="user-input">
                             <button class="change-button" id="change-password-btn">Изменить пароль</button>
                         </div>
                         <div class="user-line"><div style="width:17%;display:flex;align-items:center;justify-content:flex-end;">Сменить почту:</div><input id="new-email" type="text" placeholder="..." class="user-input">
                             <button id="change-email-btn" class="change-button">Изменить почту</button>
                         </div>
                         <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Почта сейчас:'.$row['Mail'].'</div>
-                        <div class="user-line"><div style="width:17%;display:flex;align-items:center;justify-content:flex-end;">Сменить аватар:</div><input id="new-avatar" type="text" placeholder="..." class="user-input" style="width:34%;">
+                        <div class="user-line"><div style="width:17%;display:flex;align-items:center;justify-content:flex-end;">Сменить аватар:</div><input id="new-avatar" type="text" placeholder="..." class="user-input">
                             <button id="change-avatar-btn" class="change-button">Изменить аватар</button>
                         </div>
                         <div class="user-line" style="height:7%;width:47%;justify-content:flex-end;font-size:1vw;">Только URL-ссылки!</div>
