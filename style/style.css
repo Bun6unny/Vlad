@@ -637,7 +637,6 @@ body {
     border-radius: 0.3vw;
     display: flex;
     transition: box-shadow 0.3s ease;
-    cursor: pointer;
 }
 
 .sell-item:hover {
