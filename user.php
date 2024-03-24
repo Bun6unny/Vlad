@@ -73,7 +73,9 @@
     </div>
 
     <?php
-        session_start();
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
 
         $host = 'localhost';
         $username = '2is-b11_2is-b11';
