@@ -318,10 +318,8 @@ function deleteItem(itemName) {
     }
 }
 
-function sendForm() {
-    // Отображаем алерт
-    alert("Ваше сообщение отправлено");
-
-    // Отправляем форму
-    document.getElementById("myForm").submit();
+function SendMs() {
+    setTimeout(function() {
+        alert("Ваше сообщение отправлено");
+    }, 500);
 }
