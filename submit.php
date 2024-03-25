@@ -19,9 +19,9 @@
 
         $sql = "INSERT INTO Messages (Mail, Message) VALUES ('$mail', '$message')";
         if ($mysqli->query($sql) === TRUE) {
-            echo "Сообщение успешно отправлено!";
+            echo "<script>window.location.href = 'index.php';</script>";
         } else {
-            echo "Ошибка: " . $sql . "<br>" . $mysqli->error;
+            echo "<script>window.location.href = 'index.php';</script>" . $sql . "<br>" . $mysqli->error;
         }
 
         $mysqli->close();
