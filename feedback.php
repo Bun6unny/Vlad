@@ -83,7 +83,7 @@
             <form method="post" action="submit.php" name="myForm" onsubmit="return validateForm()">
                 <input type="text" name="mail" class="feedback-mail" placeholder="...">
                 <textarea name="message" cols="30" rows="10" class="feedback-message" placeholder="..."></textarea>
-                <button onclick="SendMs()" type="submit" class="fb-button" name="submit">Отправить сообщение</button>
+                <button type="submit" class="fb-button" name="submit">Отправить сообщение</button>
             </form>
         </div>
         <div class="feedback-side">

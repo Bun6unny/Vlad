@@ -318,15 +318,20 @@ function deleteItem(itemName) {
     }
 }
 
-function SendMs() {
-    alert("Ваше сообщение отправлено");
-}
-
 function validateForm() {
     var email = document.forms["myForm"]["mail"].value;
+    var message = document.forms["myForm"]["message"].value;
+
     if (!email.includes('@')) {
         alert("Пожалуйста, введите корректный адрес электронной почты.");
         return false;
     }
+
+    if (message.trim() === '') {
+        alert("Пожалуйста, введите ваше сообщение.");
+        return false;
+    }
+
+    alert("Ваше сообщение отправлено");
     return true;
 }
