@@ -321,3 +321,12 @@ function deleteItem(itemName) {
 function SendMs() {
     alert("Ваше сообщение отправлено");
 }
+
+function validateForm() {
+    var email = document.forms["myForm"]["mail"].value;
+    if (!email.includes('@')) {
+        alert("Пожалуйста, введите корректный адрес электронной почты.");
+        return false;
+    }
+    return true;
+}
