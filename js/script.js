@@ -324,7 +324,7 @@ document.getElementById('feedback-form').addEventListener('submit', function(eve
     var formData = new FormData(this);
 
     // Отправляем данные на сервер с помощью AJAX
-    fetch(window.location.href, { // Отправляем данные на текущую страницу
+    fetch('submit.php', { // Обращаемся к файлу submit.php
         method: 'POST',
         body: formData
     })
