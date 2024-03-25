@@ -11,13 +11,15 @@
     }
 
     if (isset($_POST['submit'])) {
-        $mail = $mysqli->real_escape_string($_POST['mail']);
-        $message = $mysqli->real_escape_string($_POST['message']);
+        $mail = $_POST['mail'];
+        $message = $_POST['message'];
+
+        $mail = $mysqli->real_escape_string($mail);
+        $message = $mysqli->real_escape_string($message);
 
         $sql = "INSERT INTO Messages (Mail, Message) VALUES ('$mail', '$message')";
         if ($mysqli->query($sql) === TRUE) {
-            header("Location: index.php");
-            exit();
+            echo "Сообщение успешно отправлено!";
         } else {
             echo "Ошибка: " . $sql . "<br>" . $mysqli->error;
         }
