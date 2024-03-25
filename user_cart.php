@@ -9,6 +9,7 @@
     <link rel="icon" href="img/ss.ico" type="image/x-icon">
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/phone-style.css">
 </head>
 <body>
 

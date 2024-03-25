@@ -1,4 +1,4 @@
-@media (orientation: landscape) {
+@media (orientation: portrait) {
 
 body {
     padding: 0%;
@@ -8,11 +8,11 @@ body {
 }
 
 .phone {
-    display: none;
+    display: block;
 }
 
 .computer {
-    display: block;
+    display: none;
 }
 
 .header {
