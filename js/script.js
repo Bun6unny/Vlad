@@ -317,3 +317,27 @@ function deleteItem(itemName) {
         };
     }
 }
+
+document.getElementById('feedback-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Отменяем стандартное поведение формы (перенаправление на другую страницу)
+
+    var formData = new FormData(this);
+
+    // Отправляем данные на сервер с помощью AJAX
+    fetch(window.location.href, { // Отправляем данные на текущую страницу
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Сообщение успешно отправлено!');
+            window.location.href = 'index.php'; // Перенаправляем пользователя на index.php после нажатия на ОК в уведомлении
+        } else {
+            alert('Ошибка при отправке сообщения');
+        }
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+        alert('Ошибка при отправке сообщения');
+    });
+});
