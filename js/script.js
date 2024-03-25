@@ -317,3 +317,9 @@ function deleteItem(itemName) {
         };
     }
 }
+
+function SendMs() {
+    setTimeout(function() {
+        alert("Ваше сообщение отправлено");
+    }, 500);
+}

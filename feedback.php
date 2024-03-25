@@ -83,7 +83,7 @@
             <form method="post" action="submit.php">
                 <input type="text" name="mail" class="feedback-mail" placeholder="...">
                 <textarea name="message" cols="30" rows="10" class="feedback-message" placeholder="..."></textarea>
-                <button type="submit" class="fb-button" name="submit"><script>setTimeout(function() {alert('Товаров нет!');}, 500);</script>Отправить сообщение</button>
+                <button onclick="SendMs" type="submit" class="fb-button" name="submit">Отправить сообщение</button>
             </form>
         </div>
         <div class="feedback-side">
