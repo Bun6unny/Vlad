@@ -1,17 +1,18 @@
 <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Подключение к базе данных
-        $host = 'localhost';
-        $username = '2is-b11_2is-b11';
-        $password = 'dTav2z8hny';
-        $database = '2is-b11_2is-b11';
+    // Подключение к базе данных
+    $host = 'localhost';
+    $username = '2is-b11_2is-b11';
+    $password = 'dTav2z8hny';
+    $database = '2is-b11_2is-b11';
 
-        $mysqli = new mysqli($host, $username, $password, $database);
+    $mysqli = new mysqli($host, $username, $password, $database);
 
-        if ($mysqli->connect_errno) {
-            echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-        }
+    if ($mysqli->connect_errno) {
+        echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    }
 
+    // Проверка, была ли отправлена форма
+    if (isset($_POST['submit'])) {
         // Получение данных из формы
         $mail = $_POST['mail'];
         $message = $_POST['message'];
@@ -23,14 +24,12 @@
         // Выполнение запроса на добавление данных в базу
         $sql = "INSERT INTO Messages (Mail, Message) VALUES ('$mail', '$message')";
         if ($mysqli->query($sql) === TRUE) {
-            http_response_code(200); // Возвращаем код успешного выполнения
+            echo "Сообщение успешно отправлено!";
         } else {
-            http_response_code(500); // Возвращаем код ошибки сервера
+            echo "Ошибка: " . $sql . "<br>" . $mysqli->error;
         }
 
         // Закрытие соединения с базой данных
         $mysqli->close();
-    } else {
-        http_response_code(405); // Возвращаем код ошибки "Метод не поддерживается"
     }
 ?>

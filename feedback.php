@@ -80,10 +80,10 @@
             <div class="mail-title" style="height:14%;">Сообщение:</div>
         </div>
         <div class="feedback-center">
-            <form id="feedback-form">
+            <form method="post" action="submit.php"> <!-- Форма для отправки данных на сервер -->
                 <input type="text" name="mail" class="feedback-mail" placeholder="...">
                 <textarea name="message" cols="30" rows="10" class="feedback-message" placeholder="..."></textarea>
-                <button type="submit" class="fb-button">Отправить сообщение</button>
+                <button type="submit" class="fb-button" name="submit">Отправить сообщение</button>
             </form>
         </div>
         <div class="feedback-side">
