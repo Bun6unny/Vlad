@@ -138,31 +138,32 @@
     </div>
     </div>
     </div>
+
     <div class="phone-div">
     <div class="slider">
-    <div id="carouselExample" class="carousel slide">
+    <div id="carouselExample2" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="img/1.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            <img src="img/1.jpg" class="d-block d-flex m-auto h-100 rounded" style="max-width: 75%; height: auto;">
             </div>
             <div class="carousel-item">
-            <img src="img/2.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            <img src="img/2.jpg" class="d-block d-flex m-auto h-100 rounded" style="max-width: 75%; height: auto;">
             </div>
             <div class="carousel-item">
-            <img src="img/3.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            <img src="img/3.jpg" class="d-block d-flex m-auto h-100 rounded" style="max-width: 75%; height: auto;">
             </div>
             <div class="carousel-item">
-            <img src="img/4.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            <img src="img/4.jpg" class="d-block d-flex m-auto h-100 rounded" style="max-width: 75%; height: auto;">
             </div>
             <div class="carousel-item">
-            <img src="img/5.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            <img src="img/5.jpg" class="d-block d-flex m-auto h-100 rounded" style="max-width: 75%; height: auto;">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
             <i class="bi bi-arrow-left-circle-fill" style="color: #EC7088"></i>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
             <i class="bi bi-arrow-right-circle-fill" style="color: #EC7088"></i>
             <span class="visually-hidden">Next</span>
         </button>
@@ -174,30 +175,30 @@
 
     <div class="candy-spot" style="margin-top:1%;">
         <div class="candy-left">
-            <img class="phone-img" src="img/candy1.png" style="max-height: 50%; max-width: auto;">
+            <img class="phone-img" src="img/candy1.png" style="max-height: 80%; max-width: auto;margin-top:10%;">
             <img class="computer-img" src="img/candy1.png" style="max-height: 100%; max-width: auto;">
         </div>
-        <div class="candy-right" style="width: 40%; height: 65%;display:block;">
+        <div class="candy-right" style="width: 40%; height: 65%;display:block;margin-left:1%;">
             <div class="candy-title">Вкусные Шедевры</div>
             Наши сладости - это не просто продукты, это настоящее искусство в каждом кусочке! Мы гордимся своим качеством и тщательно подбираем лучшие ингредиенты для наших продуктов. Независимо от того, ищете ли вы что-то классическое или эксклюзивное, у нас есть все, чтобы порадовать ваш вкусовой рецептор.
         </div>
     </div>
     <div class="candy-spot">
-        <div class="candy-left" style="text-align:right; width: 40%; height: 65%;display:block;">
+        <div class="candy-left" style="text-align:right; width: 40%; height: 65%;display:block;margin-right:1%;">
             <div class="candy-title">Разнообразие вкусов</div>
             Вдохновляйтесь нашим разнообразием и выбирайте то, что подходит вашему настроению и вкусу. От нежных шоколадных конфет до хрустящих карамелек, мы предлагаем бесконечные варианты сладких удовольствий. Дарите радость себе и своим близким с нашими вкусными подарками!
         </div>
         <div class="candy-right">
-            <img class="phone-img" src="img/candy2.png" style="max-height: 50%; max-width: auto;">
+            <img class="phone-img" src="img/candy2.png" style="max-height: 75%; max-width: auto;margin-top:10%;">
             <img class="computer-img" src="img/candy2.png" style="max-height: 100%; max-width: auto;">
         </div>
     </div>
     <div class="candy-spot">
         <div class="candy-left">
-            <img class="phone-img" src="img/candy3.png" style="max-height: 50%; max-width: auto;">
+            <img class="phone-img" src="img/candy3.png" style="max-height: 80%; max-width: auto;margin-top:10%;">
             <img class="computer-img" src="img/candy3.png" style="max-height: 100%; max-width: auto;">
         </div>
-        <div class="candy-right" style="width: 40%; height: 65%;display:block;">
+        <div class="candy-right" style="width: 40%; height: 65%;display:block;margin-left:1%;">
             <div class="candy-title">Сладкая Роскошь</div>    
             Помимо великолепного вкуса, мы также обеспечиваем безупречное качество и сервис. Наша команда стремится сделать ваше покупательное путешествие приятным и незабываемым. Мы уверены, что каждый, кто попробует наши сладости, найдет что-то особенное и уникальное для себя.
         </div>
@@ -236,11 +237,11 @@
         Специальность: Информационные системы и программирование
         </div>
         <div class="footer-right">
-            <img class="phone-img" src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 27%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
-            <img class="phone-img" src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 27%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img class="phone-img" src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 27%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img class="phone-img" src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 27%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img class="phone-img" src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 27%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 33%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
             <img class="computer-img" src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
             <img class="computer-img" src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
             <img class="computer-img" src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
