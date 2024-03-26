@@ -36,11 +36,22 @@
     </div>
 
     <div class="top-menu" style="margin-top:1%;">
-        <img src="img/ss.png" onclick="Main()" style="max-height:90%;max-width:90%;cursor:pointer;">
-        <div class="top-menu-one">
+        <img class="phone-img" src="img/ss.png" onclick="Main()" style="max-height:65%;max-width:65%;cursor:pointer;">
+        <img class="computer-img" src="img/ss.png" onclick="Main()" style="max-height:90%;max-width:90%;cursor:pointer;">
+        <div class="top-menu-one phone-div">
             <div class="top-menu-part">
-                +7 (922) 342-20-76
-                <div class="phone">
+                <div class="search">
+                    <input id="searchInput" type="text" placeholder="Выполнить поиск по сайту..." class="search-left">
+                    <div class="search-right">
+                        <img id="searchButton" src="img/search.png" style="max-width:95%;max-height:95%;cursor:pointer;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-menu-one computer-div">
+            <div class="top-menu-part">
+                <div class="computer-div">+7 (922) 342-20-76</div>
+                <div class="phone computer-div">
                     <div style="margin-left:5%;">Обратный&nbspзвонок</div>
                 </div>
             </div>
@@ -53,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="top-menu-two">
+        <div class="top-menu-two computer-div">
             <div class="top-menu-time-mail" style="margin-top:5%;">
                 <img src="img/time.png" style="max-width:50%;max-height:50%;">
                 &nbsp&nbspРаботаем 24/7
@@ -96,6 +107,7 @@
         </button>
     </div>
 
+    <div class="computer-div">
     <div class="slider">
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
@@ -125,12 +137,45 @@
         </button>
     </div>
     </div>
+    </div>
+    <div class="phone-div">
+    <div class="slider">
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="img/1.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            </div>
+            <div class="carousel-item">
+            <img src="img/2.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            </div>
+            <div class="carousel-item">
+            <img src="img/3.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            </div>
+            <div class="carousel-item">
+            <img src="img/4.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            </div>
+            <div class="carousel-item">
+            <img src="img/5.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <i class="bi bi-arrow-left-circle-fill" style="color: #EC7088"></i>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <i class="bi bi-arrow-right-circle-fill" style="color: #EC7088"></i>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </div>
+    </div>
 
     <div class="title">О нас</div>
 
     <div class="candy-spot" style="margin-top:1%;">
         <div class="candy-left">
-            <img src="img/candy1.png" style="max-height: 100%; max-width: auto;">
+            <img class="phone-img" src="img/candy1.png" style="max-height: 50%; max-width: auto;">
+            <img class="computer-img" src="img/candy1.png" style="max-height: 100%; max-width: auto;">
         </div>
         <div class="candy-right" style="width: 40%; height: 65%;display:block;">
             <div class="candy-title">Вкусные Шедевры</div>
@@ -143,12 +188,14 @@
             Вдохновляйтесь нашим разнообразием и выбирайте то, что подходит вашему настроению и вкусу. От нежных шоколадных конфет до хрустящих карамелек, мы предлагаем бесконечные варианты сладких удовольствий. Дарите радость себе и своим близким с нашими вкусными подарками!
         </div>
         <div class="candy-right">
-            <img src="img/candy2.png" style="max-height: 100%; max-width: auto;">
+            <img class="phone-img" src="img/candy2.png" style="max-height: 50%; max-width: auto;">
+            <img class="computer-img" src="img/candy2.png" style="max-height: 100%; max-width: auto;">
         </div>
     </div>
     <div class="candy-spot">
         <div class="candy-left">
-            <img src="img/candy3.png" style="max-height: 100%; max-width: auto;">
+            <img class="phone-img" src="img/candy3.png" style="max-height: 50%; max-width: auto;">
+            <img class="computer-img" src="img/candy3.png" style="max-height: 100%; max-width: auto;">
         </div>
         <div class="candy-right" style="width: 40%; height: 65%;display:block;">
             <div class="candy-title">Сладкая Роскошь</div>    
@@ -188,19 +235,17 @@
         Группа: 2-ИС (б) Курс: 3<br>
         Специальность: Информационные системы и программирование
         </div>
-        <div class="footer-right computer">
-            <img src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
-            <img src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
-        </div>
-        <div class="footer-right phone">
-            <img src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
-            <img src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
+        <div class="footer-right">
+            <img class="phone-img" src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 27%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 27%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 27%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 27%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 27%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
+            <img class="computer-img" src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
+            <img class="computer-img" src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="computer-img" src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="computer-img" src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="computer-img" src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
         </div>
     </div>
 

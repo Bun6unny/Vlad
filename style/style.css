@@ -7,11 +7,19 @@ body {
     overflow-x: hidden;
 }
 
-.phone {
+.phone-img {
     display: none;
 }
 
-.computer {
+.computer-img {
+    display: inline;
+}
+
+.phone-div {
+    display: none;
+}
+
+.computer-div {
     display: block;
 }
 
