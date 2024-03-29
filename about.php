@@ -36,24 +36,35 @@
     </div>
 
     <div class="top-menu" style="margin-top:1%;">
-        <img src="img/ss.png" onclick="Main()" style="max-height:90%;max-width:90%;cursor:pointer;">
-        <div class="top-menu-one">
+        <img class="phone-img" src="img/ss.png" onclick="Main()" style="max-height:65%;max-width:65%;cursor:pointer;">
+        <img class="computer-img" src="img/ss.png" onclick="Main()" style="max-height:90%;max-width:90%;cursor:pointer;">
+        <div class="top-menu-one phone-div">
             <div class="top-menu-part">
-                +7 (922) 342-20-76
-                <div class="phone">
+                <div class="search">
+                    <input type="text" placeholder="Выполнить поиск по сайту..." class="search-left">
+                    <div class="search-right">
+                        <img src="img/search.png" style="max-width:95%;max-height:95%;cursor:pointer;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-menu-one computer-div">
+            <div class="top-menu-part">
+                <div class="computer-div">+7 (922) 342-20-76</div>
+                <div class="phone computer-div">
                     <div style="margin-left:5%;">Обратный&nbspзвонок</div>
                 </div>
             </div>
             <div class="top-menu-part">
                 <div class="search">
-                    <input id="searchInput" type="text" placeholder="Выполнить поиск по сайту..." class="search-left">
+                    <input type="text" placeholder="Выполнить поиск по сайту..." class="search-left">
                     <div class="search-right">
-                        <img id="searchButton" src="img/search.png" style="max-width:95%;max-height:95%;cursor:pointer;">
+                        <img src="img/search.png" style="max-width:95%;max-height:95%;cursor:pointer;">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="top-menu-two">
+        <div class="top-menu-two computer-div">
             <div class="top-menu-time-mail" style="margin-top:5%;">
                 <img src="img/time.png" style="max-width:50%;max-height:50%;">
                 &nbsp&nbspРаботаем 24/7
@@ -73,7 +84,12 @@
         </button>
     </div>
 
+    <div class="phone-div">
+    <div class="title" style="border:none;height:3%;">О нас</div>
+    </div>
+    <div class="computer-div">
     <div class="title" style="border:none;height:7%;">О нас</div>
+    </div>
 
     <div class="about-line" style="margin-top:1%;">
         <div class="about-block">
@@ -122,11 +138,16 @@
         Специальность: Информационные системы и программирование
         </div>
         <div class="footer-right">
-            <img src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
-            <img src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 33%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="phone-img" src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
+            <img class="computer-img" src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
+            <img class="computer-img" src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="computer-img" src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="computer-img" src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
+            <img class="computer-img" src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
         </div>
     </div>
 

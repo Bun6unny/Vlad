@@ -257,49 +257,40 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('searchButton').addEventListener('click', function() {
-        var searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
-        if (searchQuery) {
-            switch (searchQuery) {
-                case 'конфеты':
-                    window.location.href = 'catalog.php?category=candy';
-                    break;
-                case 'конфета':
-                    window.location.href = 'catalog.php?category=candy';
-                    break;
-                case 'напитки':
-                    window.location.href = 'catalog.php?category=drinks';
-                    break;
-                case 'напиток':
-                    window.location.href = 'catalog.php?category=drinks';
-                    break;
-                case 'шоколад':
-                    window.location.href = 'catalog.php?category=chocolate';
-                    break;
-                case 'шоколадки':
-                    window.location.href = 'catalog.php?category=chocolate';
-                    break;
-                case 'мармелад':
-                    window.location.href = 'catalog.php?category=marmalade';
-                    break;
-                case 'мармеладки':
-                    window.location.href = 'catalog.php?category=marmalade';
-                    break;
-                case 'печенье':
-                    window.location.href = 'catalog.php?category=cookies';
-                    break;
-                case 'печеньки':
-                    window.location.href = 'catalog.php?category=cookies';
-                    break;
-                case 'печенька':
-                    window.location.href = 'catalog.php?category=cookies';
-                    break;
-                default:
-                    alert('По вашему запросу ничего не найдено.');
+    var searchButtons = document.querySelectorAll('.search-right img');
+    searchButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var searchQuery = this.parentElement.previousElementSibling.value.trim().toLowerCase();
+            if (searchQuery) {
+                switch (searchQuery) {
+                    case 'конфеты':
+                    case 'конфета':
+                        window.location.href = 'catalog.php?category=candy';
+                        break;
+                    case 'напитки':
+                    case 'напиток':
+                        window.location.href = 'catalog.php?category=drinks';
+                        break;
+                    case 'шоколад':
+                    case 'шоколадки':
+                        window.location.href = 'catalog.php?category=chocolate';
+                        break;
+                    case 'мармелад':
+                    case 'мармеладки':
+                        window.location.href = 'catalog.php?category=marmalade';
+                        break;
+                    case 'печенье':
+                    case 'печеньки':
+                    case 'печенька':
+                        window.location.href = 'catalog.php?category=cookies';
+                        break;
+                    default:
+                        alert('По вашему запросу ничего не найдено.');
+                }
+            } else {
+                alert('Пожалуйста, введите запрос для поиска.');
             }
-        } else {
-            alert('Пожалуйста, введите запрос для поиска.');
-        }
+        });
     });
 });
 

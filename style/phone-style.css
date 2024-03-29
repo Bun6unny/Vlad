@@ -968,14 +968,14 @@ body {
 
 .about-line {
     width: 100%;
-    height: 70%;
+    height: 41%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .about-block {
-    width: 25%;
+    width: 28%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -985,7 +985,7 @@ body {
 
 .about-image {
     width: 100%;
-    height: 33%;
+    height: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -993,22 +993,22 @@ body {
 
 .about-name {
     width: 100%;
-    height: 11%;
+    height: 6%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5vw;
+    font-size: 2.8vw;
     font-weight: bold;
 }
 
 .about-text {
     width: 90%;
-    height: 52%;
+    height: 76%;
     display: flex;
     align-items: start;
     justify-content: center;
-    font-size: 1.3vw;
-    line-height: 1.3;
+    font-size: 2.5vw;
+    line-height: 1.2;
     text-align: justify;
     margin-top: 2%;
 }
