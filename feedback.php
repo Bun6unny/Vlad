@@ -104,7 +104,7 @@
             </div>
             <div class="phone-div">
             <div class="mail-title">Ваша почта:</div>
-            <div class="mail-title" style="height:7%;">Сообщение:</div>
+            <div class="mail-title" style="height:9%;">Сообщение:</div>
             </div>
         </div>
         <div class="feedback-center">
