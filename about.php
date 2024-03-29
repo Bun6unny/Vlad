@@ -91,6 +91,7 @@
     <div class="title" style="border:none;height:7%;">О нас</div>
     </div>
 
+    <div class="computer-div">
     <div class="about-line" style="margin-top:1%;">
         <div class="about-block">
             <div class="about-image"><img src="img/about1.jpg" style="max-width:100%;max-height:100%;border-radius:0.4vw;"></div>
@@ -123,6 +124,45 @@
             </div>
         </div>
         <div class="about-block" style="margin-left:5%;">
+            <div class="about-image"><img src="img/about5.jpg" style="max-width:100%;max-height:100%;border-radius:0.4vw;"></div>
+            <div class="about-name">Мармелад</div>
+            <div class="about-text">
+                Наш мармелад — это не просто сладость, это искусство вкуса и текстуры. Мы предлагаем широкий выбор мармелада различных форм, цветов и вкусов, чтобы каждый мог найти что-то по своему вкусу. От классических фруктовых вариантов до экзотических ароматов и форм, у нас есть всё для того, чтобы удовлетворить любые ваши желания и предпочтения.
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="phone-div">
+        <div class="about-block" style="margin-left:10%;margin-top:3%;">
+            <div class="about-image"><img src="img/about1.jpg" style="max-width:100%;max-height:100%;border-radius:0.4vw;"></div>
+            <div class="about-name">Наши склады</div>
+            <div class="about-text">
+                Наши склады — это сердце и душа нашей фабрики Sugar Shack. Расположенные в стратегически удобных местах, они представляют собой современные и высокоорганизованные пространства, где каждый этап производственного процесса тщательно контролируется и оптимизируется для обеспечения качества и эффективности.
+            </div>
+        </div>
+        <div class="about-block" style="margin-left:10%;margin-top:3%;">
+            <div class="about-image"><img src="img/about2.jpg" style="max-width:100%;max-height:100%;border-radius:0.4vw;"></div>
+            <div class="about-name">Шоколад</div>
+            <div class="about-text">
+                Наша коллекция шоколада, поставляемого от самых реномированных производителей со всего мира, — это настоящее искусство вкуса и качества. Мы гордимся тем, что предлагаем нашим клиентам только самые изысканные и утонченные варианты шоколадных изделий, которые поражают своим великолепием и непревзойденным вкусом.
+            </div>
+        </div>
+        <div class="about-block" style="margin-left:10%;margin-top:3%;">
+            <div class="about-image"><img src="img/about3.jpg" style="max-width:100%;max-height:100%;border-radius:0.4vw;"></div>
+            <div class="about-name">Контроль качества</div>
+            <div class="about-text">
+                Наши процессы контроля качества начинаются с тщательного отбора сырьевых материалов. Мы работаем только с надежными и сертифицированными поставщиками, чтобы гарантировать свежесть, чистоту и натуральность всех ингредиентов, используемых в нашей продукции.
+            </div>
+        </div>
+        <div class="about-block" style="margin-left:10%;margin-top:3%;">
+            <div class="about-image"><img src="img/about4.jpg" style="max-width:100%;max-height:100%;border-radius:0.4vw;"></div>
+            <div class="about-name">Напитки</div>
+            <div class="about-text">
+                В Sugar Shack мы предлагаем широкий ассортимент напитков от различных производителей, чтобы удовлетворить самые изысканные вкусовые предпочтения наших клиентов. Наша коллекция напитков — это уникальное сочетание аутентичных вкусов, высокого качества и мастерства приготовления, представленное лучшими производителями со всего мира.
+            </div>
+        </div>
+        <div class="about-block" style="margin-left:10%;margin-top:3%;">
             <div class="about-image"><img src="img/about5.jpg" style="max-width:100%;max-height:100%;border-radius:0.4vw;"></div>
             <div class="about-name">Мармелад</div>
             <div class="about-text">
