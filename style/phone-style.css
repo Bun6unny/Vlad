@@ -563,23 +563,23 @@ body {
 
 .log {
     width: 100%;
-    height: 17%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .reg-left {
-    width: 40%;
+    width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    font-size: 1.4vw;
+    font-size: 3.2vw;
 }
 
 .reg-right {
-    width: 40%;
+    width: 70%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -588,8 +588,12 @@ body {
     margin-right: 7%;
 }
 
+.reg-right-margin {
+    margin-right: 5%;
+}
+
 .reg-input {
-    width: 70%;
+    width: 95%;
     height: 60%;
     display: flex;
     align-items: center;
@@ -601,19 +605,38 @@ body {
     border: 0.2vw solid #FAA7B7;
 }
 
+.log-input {
+    width: 95%;
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2vw;
+    font-weight: 100;
+    background-color: #FFE8EC;
+    border-radius: 1.2vw;
+    border: 0.2vw solid #FAA7B7;
+    padding-left: 1%;
+}
+
 .reg-input:focus,
 .reg-input:hover {
     outline: none;
 }
 
+.log-input:focus,
+.log-input:hover {
+    outline: none;
+}
+
 .reg-button {
-    width: 20%;
-    height: 80%;
+    width: 35%;
+    height: 60%;
     background-color: #FAA7B7;
-    border-radius: 0.5vw;
+    border-radius: 1.3vw;
     border-color: #EC7088;
     border-width: 0.2vw;
-    font-size: 1.5vw;
+    font-size: 3.5vw;
     color: white;
     font-weight: bold;
 }
@@ -628,7 +651,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    font-size: 1.3vw;
+    font-size: 3.5vw;
 }
 
 .sell-line {

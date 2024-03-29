@@ -88,16 +88,16 @@
         Авторизация
     </div>
 
-    <div class="log" style="height:17%;">
+    <div class="log">
         <div class="reg-left">Логин:</div>
-        <div class="reg-right" style="margin-right:22%;">
-            <input type="text" id="loginInput" style="padding-left:1%;height:40%;" class="reg-input" placeholder="...">
+        <div class="reg-right reg-right-margin">
+            <input type="text" id="loginInput" class="log-input" placeholder="...">
         </div>
     </div>
-    <div class="log" style="height:17%;">
+    <div class="log">
         <div class="reg-left">Пароль:</div>
-        <div class="reg-right" style="margin-right:22%;">
-            <input type="password" id="passwordInput" style="padding-left:1%;height:40%;" class="reg-input" placeholder="...">
+        <div class="reg-right reg-right-margin">
+            <input type="password" id="passwordInput" class="log-input" placeholder="...">
         </div>
     </div>
     <div class="reg">
@@ -106,6 +106,11 @@
     <div class="reg">
         <div class="already">Нету аккаунта?&nbsp<a href="registration.php" style="color:#EC7088;">Зарегистрируйтесь</a>!</div>
     </div>
+
+    <div class="phone-div">
+    <div style="height:27%;"></div>
+    </div>
+    <div class="computer-div"></div>
 
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
