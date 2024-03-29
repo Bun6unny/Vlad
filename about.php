@@ -141,14 +141,14 @@
                 Наши склады — это сердце и душа нашей фабрики Sugar Shack. Расположенные в стратегически удобных местах, они представляют собой современные и высокоорганизованные пространства, где каждый этап производственного процесса тщательно контролируется и оптимизируется для обеспечения качества и эффективности.
             </div>
         </div>
-        <div class="about-block" style="margin-left:10%;margin-top:3%;">
+        <div class="about-block" style="margin-left:10%;margin-top:6%;">
             <div class="about-image"><img src="img/about2.jpg" style="max-width:100%;max-height:100%;border-radius:0.4vw;"></div>
             <div class="about-name">Шоколад</div>
             <div class="about-text">
                 Наша коллекция шоколада, поставляемого от самых реномированных производителей со всего мира, — это настоящее искусство вкуса и качества. Мы гордимся тем, что предлагаем нашим клиентам только самые изысканные и утонченные варианты шоколадных изделий, которые поражают своим великолепием и непревзойденным вкусом.
             </div>
         </div>
-        <div class="about-block" style="margin-left:10%;margin-top:3%;">
+        <div class="about-block" style="margin-left:10%;margin-top:6%;">
             <div class="about-image"><img src="img/about3.jpg" style="max-width:100%;max-height:100%;border-radius:0.4vw;"></div>
             <div class="about-name">Контроль качества</div>
             <div class="about-text">
@@ -162,7 +162,7 @@
                 В Sugar Shack мы предлагаем широкий ассортимент напитков от различных производителей, чтобы удовлетворить самые изысканные вкусовые предпочтения наших клиентов. Наша коллекция напитков — это уникальное сочетание аутентичных вкусов, высокого качества и мастерства приготовления, представленное лучшими производителями со всего мира.
             </div>
         </div>
-        <div class="about-block" style="margin-left:10%;margin-top:3%;">
+        <div class="about-block" style="margin-left:10%;margin-top:7%;margin-bottom:6%;">
             <div class="about-image"><img src="img/about5.jpg" style="max-width:100%;max-height:100%;border-radius:0.4vw;"></div>
             <div class="about-name">Мармелад</div>
             <div class="about-text">
