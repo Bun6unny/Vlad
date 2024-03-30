@@ -468,7 +468,7 @@ body {
 }
 
 .news-block {
-    width: 90%;
+    width: 95%;
     height: 90%;
     background-color: #FFE8EC;
     border-radius: 0.3vw;
@@ -515,7 +515,7 @@ body {
     display: flex;
     align-items: start;
     justify-content: flex-end;
-    font-size: 1vw;
+    font-size: 2vw;
     color: #EC7088;
     font-weight: bold;
 }
