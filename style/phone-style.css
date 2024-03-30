@@ -23,6 +23,20 @@ body {
     display: none;
 }
 
+.ss-img {
+    max-width:65%;
+    max-height: 65%;
+    cursor:pointer;
+}
+
+@media (min-width: 641px) and (max-width: 1025px) {
+    .ss-img {
+        max-width:90%;
+        max-height: 90%;
+        cursor:pointer;
+    }
+}
+
 .header {
     width: 100%;
     height: 5%;
@@ -603,6 +617,12 @@ body {
     text-align: center;
 }
 
+@media (min-width: 641px) and (max-width: 1025px) {
+    .reg-left {
+        font-size: 2.8vw;
+    }
+}
+
 .reg-right {
     width: 65%;
     height: 100%;
@@ -678,6 +698,12 @@ body {
     align-items: center;
     justify-content: flex-end;
     font-size: 3.5vw;
+}
+
+@media (min-width: 641px) and (max-width: 1025px) {
+    .already {
+        font-size: 2.8vw;
+    }
 }
 
 .sell-line {
@@ -1132,6 +1158,12 @@ body {
     font-weight: bold;
     margin-top: 7%;
     margin-left: 19%;
+}
+
+@media (min-width: 641px) and (max-width: 1025px) {
+    .fb-button {
+        font-size: 2.5vw;
+    }
 }
 
 .fb-button:hover {
