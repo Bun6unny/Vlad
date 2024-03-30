@@ -175,7 +175,7 @@
 
     <div class="candy-spot" style="margin-top:1%;">
         <div class="candy-left">
-            <img class="phone-img" src="img/candy1.png" style="max-height: 80%; max-width: auto;margin-top:10%;">
+            <img class="phone-img" src="img/candy1.png" style="max-height: 80%; max-width: 95%;margin-top:10%;">
             <img class="computer-img" src="img/candy1.png" style="max-height: 100%; max-width: auto;">
         </div>
         <div class="candy-right" style="width: 40%; height: 65%;display:block;margin-left:1%;">
@@ -189,13 +189,13 @@
             Вдохновляйтесь нашим разнообразием и выбирайте то, что подходит вашему настроению и вкусу. От нежных шоколадных конфет до хрустящих карамелек, мы предлагаем бесконечные варианты сладких удовольствий. Дарите радость себе и своим близким с нашими вкусными подарками!
         </div>
         <div class="candy-right">
-            <img class="phone-img" src="img/candy2.png" style="max-height: 75%; max-width: auto;margin-top:10%;">
+            <img class="phone-img" src="img/candy2.png" style="max-height: 75%; max-width: 95%;margin-top:10%;">
             <img class="computer-img" src="img/candy2.png" style="max-height: 100%; max-width: auto;">
         </div>
     </div>
     <div class="candy-spot">
         <div class="candy-left">
-            <img class="phone-img" src="img/candy3.png" style="max-height: 80%; max-width: auto;margin-top:10%;">
+            <img class="phone-img" src="img/candy3.png" style="max-height: 80%; max-width: 95%;margin-top:10%;">
             <img class="computer-img" src="img/candy3.png" style="max-height: 100%; max-width: auto;">
         </div>
         <div class="candy-right" style="width: 40%; height: 65%;display:block;margin-left:1%;">
