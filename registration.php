@@ -36,7 +36,7 @@
     </div>
 
     <div class="top-menu" style="margin-top:1%;">
-        <img class="phone-img" src="img/ss.png" onclick="Main()" style="max-height:65%;max-width:65%;cursor:pointer;">
+        <img class="phone-img ss-img" src="img/ss.png" onclick="Main()">
         <img class="computer-img" src="img/ss.png" onclick="Main()" style="max-height:90%;max-width:90%;cursor:pointer;">
         <div class="top-menu-one phone-div">
             <div class="top-menu-part">
