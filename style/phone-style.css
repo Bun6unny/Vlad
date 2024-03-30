@@ -535,6 +535,16 @@ body {
     font-weight: bold;
 }
 
+@media (min-width: 641px) and (max-width: 1025px) {
+    .news-next {
+        font-size: 1.5vw;
+    }
+
+    .news-name {
+        font-size: 1.5vw;
+    }
+}
+
 .space {
     height: 12%;
 }
