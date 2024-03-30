@@ -457,6 +457,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 .news-spot {
@@ -472,7 +474,6 @@ body {
     background-color: #FFE8EC;
     border-radius: 1.2vw;
     border:0.1vw solid #FAA7B7;
-    margin-top: 5%;
 }
 
 .news-name {
