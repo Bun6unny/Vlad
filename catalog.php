@@ -86,23 +86,28 @@
 
     <div class="menu">
         <button class="menu-left-button" onclick="Catalog('candy')">
-            <img style="max-height: 70%; max-width: 95%;" src="img/candy.png">
+            <img class="phone-img" style="max-height: 60%; max-width: 85%;" src="img/candy.png">
+            <img class="computer-img" style="max-height: 70%; max-width: 95%;" src="img/candy.png">
             <div>Конфеты</div>
         </button>
         <button class="menu-button" onclick="Catalog('drinks')">
-            <img style="max-height: 70%; max-width: 95%;" src="img/cola.png">
+            <img class="phone-img" style="max-height: 60%; max-width: 85%;" src="img/cola.png">
+            <img class="computer-img" style="max-height: 70%; max-width: 95%;" src="img/cola.png">
             <div>Напитки</div>
         </button>
         <button class="menu-button" onclick="Catalog('chocolate')">
-            <img style="max-height: 70%; max-width: 95%;" src="img/chock.png">
+            <img class="phone-img" style="max-height: 60%; max-width: 85%;" src="img/chock.png">
+            <img class="computer-img" style="max-height: 70%; max-width: 95%;" src="img/chock.png">
             <div>Шоколад</div>
         </button>
         <button class="menu-button" onclick="Catalog('marmalade')"> 
-            <img style="max-height: 70%; max-width: 95%;" src="img/marm.png">
+            <img class="phone-img" style="max-height: 60%; max-width: 85%;" src="img/marm.png">
+            <img class="computer-img" style="max-height: 70%; max-width: 95%;" src="img/marm.png">
             <div>Мармелад</div>
         </button>
         <button class="menu-right-button" onclick="Catalog('cookies')">
-            <img style="max-height: 70%; max-width: 95%;" src="img/cokie.png">
+            <img class="phone-img" style="max-height: 60%; max-width: 85%;" src="img/cokie.png">
+            <img class="computer-img" style="max-height: 70%; max-width: 95%;" src="img/cokie.png">
             <div>Печенье</div>
         </button>
     </div>
