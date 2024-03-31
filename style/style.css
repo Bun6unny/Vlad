@@ -11,6 +11,10 @@ body {
     font-size: 1.2vw;
 }
 
+.order-font-name {
+    font-size: 1.8vw;
+}
+
 .user-line-down {
     height:7%;
     width:50.5%;
