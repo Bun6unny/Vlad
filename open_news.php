@@ -109,7 +109,7 @@
         echo "<div class='phone-div news-adaptive'><img class='phone-img' src='{$row['Image']}' alt='Изображение новости' style='max-width:95%;max-height:95%;border-radius:0.3vw;border:0.1vw solid #EC7088;'></div>";
         echo "<div class='open-news-text'>{$row['full']}</div>";
         echo "</div>";
-        echo "<div style='width:100%;height:15%;display:flex;align-items: center;justify-content: center;'>";
+        echo "<div style='margin-top:15%;width:100%;height:15%;display:flex;align-items: center;justify-content: center;'>";
         echo "<div class='open-news-left' style='width:35%;'>";
         echo "<div class='back-to-news' onclick='News()'>Назад</div>";
         echo "</div>";
