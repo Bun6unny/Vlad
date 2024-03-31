@@ -202,7 +202,7 @@
                                     <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
                                     {$row_candy['Name']}
                                     </div>
-                                    <div class='item-price' style='font-size:1.5vw;'>  
+                                    <div class='item-price'>  
                                     {$row_candy['Price']} ₽ / 250г
                                     </div>
                                     </div>";
@@ -225,7 +225,7 @@
                                     <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
                                     {$row_drinks['Name']}
                                     </div>
-                                    <div class='item-price' style='font-size:1.5vw;'>  
+                                    <div class='item-price'>  
                                     {$row_drinks['Price']} ₽ / 1л
                                     </div>
                                     </div>";
@@ -248,7 +248,7 @@
                                     <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
                                     {$row_chocolate['Name']}
                                     </div>
-                                    <div class='item-price' style='font-size:1.5vw;'>  
+                                    <div class='item-price'>  
                                     {$row_chocolate['Price']} ₽ / 250г
                                     </div>
                                     </div>";
@@ -271,7 +271,7 @@
                                     <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
                                     {$row_marmalade['Name']}
                                     </div>
-                                    <div class='item-price' style='font-size:1.5vw;'>  
+                                    <div class='item-price'>  
                                     {$row_marmalade['Price']} ₽ / 250г
                                     </div>
                                     </div>";
