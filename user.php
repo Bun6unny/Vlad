@@ -157,7 +157,7 @@
                     </div>
                     <div class="user-right">
                         <div class="user-sign">Настройки</div>
-                        <div class="user-line" style="margin-top:2%;"><div class="user-line-adaptive" style="width:17%;display:flex;align-items:center;justify-content:flex-end;">Сменить логин:</div><input id="new-username" type="text" placeholder="..." class="user-input">
+                        <div class="user-line" style="margin-top:2%;"><div class="user-line-adaptive" style="display:flex;align-items:center;justify-content:flex-end;">Сменить логин:</div><input id="new-username" type="text" placeholder="..." class="user-input">
                             <button class="change-button" id="change-username-btn">Изменить логин</button>
                         </div>
                         <div class="user-line"><div style="width:17%;display:flex;align-items:center;justify-content:flex-end;">Сменить пароль:</div><input id="new-password" type="password" placeholder="..." class="user-input">
