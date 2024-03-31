@@ -804,9 +804,9 @@ body {
     width: 95%;
     height: 80%;
     background-color: #FAA7B7;
-    border-radius: 0.5vw;
+    border-radius: 1.2vw;
     border-color: #EC7088;
-    border-width: 1.2vw;
+    border-width: 0.2vw;
     font-size: 2vw;
     color: white;
     font-weight: bold;
