@@ -885,7 +885,7 @@ body {
     width: 85%;
     margin-left: 5%;
     background-color: #FAA7B7;
-    border-radius: 0.2vw;
+    border-radius: 1.2vw;
 }
 
 .user-menu-avatar {
@@ -917,7 +917,7 @@ body {
     color: white;
     line-height: 2;
     font-weight: bold;
-    border-radius: 0.2vw;
+    border-radius: 1.2vw;
 }
 
 .user-menu-links a {
@@ -942,7 +942,7 @@ body {
     margin-left: 2%;
     background-color: #FFE8EC;
     border: 0.2vw solid #FAA7B7;
-    border-radius: 0.5vw;
+    border-radius: 1.2vw;
 }
 
 .user-input:focus,
@@ -954,7 +954,7 @@ body {
     width: 25%;
     height: 80%;
     background-color: #FAA7B7;
-    border-radius: 0.5vw;
+    border-radius: 1.2vw;
     border-color: #EC7088;
     border-width: 0.2vw;
     font-size: 2.5vw;

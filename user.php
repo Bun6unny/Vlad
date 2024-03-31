@@ -184,7 +184,7 @@
 
     <div class="computer-div"></div>
     <div class="phone-div">
-        <div style="height:40%;"></div>
+        <div style="height:42%;"></div>
     </div>
 
     <div class="footer" style="margin-top:1%;">
