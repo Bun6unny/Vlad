@@ -125,7 +125,7 @@
                         echo 'https\://dzen.ru/';
                         echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;"><img class="computer-img" src="img/set5.png" onclick="NewTab(';
                         echo 'https\://vk.com/yarus.official';
-                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;"></div></div>';
+                        echo ')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;">';
                         echo '<img class="phone-img" src="img/set1.png" onclick="NewTab(';
                         echo 'https\://vk.com/vhtkrabbit';
                         echo ')" style="max-height: 33%; width: auto; height: auto; margin-right:2%; cursor:pointer;">';
@@ -140,7 +140,7 @@
                         echo ')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">';
                         echo '<img class="phone-img" src="img/set5.png" onclick="NewTab(';
                         echo 'https\://vk.com/yarus.official';
-                        echo ')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; cursor:pointer;">';
+                        echo ')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; cursor:pointer;"></div></div>';
             exit;
         }
 
