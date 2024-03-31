@@ -7,6 +7,12 @@ body {
     overflow-x: hidden;
 }
 
+.delete {
+    width:15%;
+    height:10%;
+    margin-left: 82%;
+}
+
 .user-line-down {
     height:7%;
     width:50.5%;

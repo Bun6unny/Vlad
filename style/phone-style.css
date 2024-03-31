@@ -7,6 +7,12 @@ body {
     overflow-x: hidden;
 }
 
+.delete {
+    width:20%;
+    height:20%;
+    margin-left: 70%;
+}
+
 .user-line-down {
     height:7%;
     width:67.5%;
@@ -858,7 +864,7 @@ body {
 
 .user-left {
     width: 30%;
-    height: 120%;
+    height: 130%;
     display: flex;
     align-items: center;
     justify-content: center;
