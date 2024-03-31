@@ -294,7 +294,7 @@
                                     <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
                                     {$row_cookies['Name']}
                                     </div>
-                                    <div class='item-price' style='font-size:1.5vw;'>  
+                                    <div class='item-price'>  
                                     {$row_cookies['Price']} ₽ / 250г
                                     </div>
                                     </div>";
