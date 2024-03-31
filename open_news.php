@@ -122,6 +122,11 @@
     $mysqli->close();
 ?>
 
+    <div class="phone-div">
+        <div style="height:10%;"></div>
+    </div>
+    <div class="computer-div"></div>
+
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
         ФИО: Ходырев Владислав Вадимович<br>
