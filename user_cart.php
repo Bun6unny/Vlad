@@ -314,18 +314,7 @@
 
                 echo '</div>';
                 echo '<div class="item-order">';
-                echo '<div class="item-order-box phone-div">';
-                echo '<div style="width:100%;height:25%;line-height:1.2;font-size:1.8vw;text-align:center;display: flex;align-items: center;justify-content: center;">Оформление товара</div>';
-                echo "<div style='width:95%;margin-left:3%;height:12%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: flex-start;'>Общая стоимость: $totalPrice ₽</div>";
-                echo "<div style='width:95%;margin-left:3%;height:12%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: flex-start;'>Количество товаров: $totalItems</div>";
-                echo "<div style='width:95%;margin-left:3%;height:12%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: flex-start;'>Пункт выдачи: ПВЗ Оникс</div>";
-                echo "<div style='width:95%;margin-left:3%;height:14%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: flex-start;'>Оплата: при получении заказа</div>";
-                echo "<div style='width:95%;margin-left:3%;height:25%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: center;'>";
-                echo '<form method="post" action="user_cart.php" style="width:100%;height:100%;display: flex;align-items: center;justify-content: center;padding-left:7%;padding-top:5%;">
-                        <button class="order-button" type="submit" name="clear_items">Заказать</button>
-                     </form>';
-                echo '</div></div></div>';
-                echo '<div class="item-order-box computer-div">';
+                echo '<div class="item-order-box">';
                 echo '<div style="width:100%;height:25%;line-height:1.2;font-size:1.8vw;text-align:center;display: flex;align-items: center;justify-content: center;">Оформление товара</div>';
                 echo "<div style='width:95%;margin-left:3%;height:12%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: flex-start;'>Общая стоимость: $totalPrice ₽</div>";
                 echo "<div style='width:95%;margin-left:3%;height:12%;line-height:1.2;font-size:1.2vw;text-align:left;display: flex;align-items: center;justify-content: flex-start;'>Количество товаров: $totalItems</div>";
