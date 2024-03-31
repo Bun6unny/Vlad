@@ -199,7 +199,7 @@
                                     <div class="item-cart">';
                                 echo "<div class='item-image'><img src='{$row_candy['Image']}' alt='{$item}' style='max-width:90%;max-height:90%;border-radius:0.3vw;'></div>
                                     <div class='item-right'>
-                                    <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
+                                    <div class='item-name'>   
                                     {$row_candy['Name']}
                                     </div>
                                     <div class='item-price'>  
@@ -222,7 +222,7 @@
                                     <div class="item-cart">';
                                 echo "<div class='item-image'><img src='{$row_drinks['Image']}' alt='{$item}' style='max-width:90%;max-height:90%;border-radius:0.3vw;'></div>
                                     <div class='item-right'>
-                                    <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
+                                    <div class='item-name'>   
                                     {$row_drinks['Name']}
                                     </div>
                                     <div class='item-price'>  
@@ -245,7 +245,7 @@
                                     <div class="item-cart">';
                                 echo "<div class='item-image'><img src='{$row_chocolate['Image']}' alt='{$item}' style='max-width:90%;max-height:90%;border-radius:0.3vw;'></div>
                                     <div class='item-right'>
-                                    <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
+                                    <div class='item-name'>   
                                     {$row_chocolate['Name']}
                                     </div>
                                     <div class='item-price'>  
@@ -268,7 +268,7 @@
                                     <div class="item-cart">';
                                 echo "<div class='item-image'><img src='{$row_marmalade['Image']}' alt='{$item}' style='max-width:90%;max-height:90%;border-radius:0.3vw;'></div>
                                     <div class='item-right'>
-                                    <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
+                                    <div class='item-name'>   
                                     {$row_marmalade['Name']}
                                     </div>
                                     <div class='item-price'>  
@@ -291,7 +291,7 @@
                                     <div class="item-cart">';
                                 echo "<div class='item-image'><img src='{$row_cookies['Image']}' alt='{$item}' style='max-width:90%;max-height:90%;border-radius:0.3vw;'></div>
                                     <div class='item-right'>
-                                    <div class='item-price' style='font-size:1.8vw;font-weight:bold;margin-top:5%;'>   
+                                    <div class='item-name'>   
                                     {$row_cookies['Name']}
                                     </div>
                                     <div class='item-price'>  
