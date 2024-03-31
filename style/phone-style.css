@@ -7,6 +7,14 @@ body {
     overflow-x: hidden;
 }
 
+.catalog-adaptive-one {
+    font-size: 3vw;
+}
+
+.catalog-adaptive-two {
+    font-size: 2.5vw;
+}
+
 .news-adaptive {
     width:35%;
     height:80%;

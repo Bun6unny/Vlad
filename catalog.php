@@ -216,8 +216,8 @@
 
         if ($result->num_rows > 0) {
             $num_rows = $result->num_rows;
-            echo "<div style='font-size:2vw;font-weight:bold;margin-left:8%;display:inline-block;'>{$categoryName}:<div style='color:#EC7088;display:inline-block;'>&nbspколичество товаров - {$num_rows}</div></div>";
-            echo "<div style='font-size:1.5vw;font-weight:100;margin-left:8%;margin-top:1%;'>Сортировка: <a style='color:#EC7088;' href='?category=$category&sort=popularity'>По популярности</a> | <a style='color:#EC7088;' href='?category=$category&sort=price_asc'>Сначала дешевле</a> | <a style='color:#EC7088;' href='?category=$category&sort=price_desc'>Сначала дороже</a></div>";
+            echo "<div class='catalog-adaptive-one' style='font-weight:bold;margin-left:8%;display:inline-block;'>{$categoryName}:<div style='color:#EC7088;display:inline-block;'>&nbspколичество товаров - {$num_rows}</div></div>";
+            echo "<div class='catalog-adaptive-two' style='font-weight:100;margin-left:8%;margin-top:1%;'>Сортировка: <a style='color:#EC7088;' href='?category=$category&sort=popularity'>По популярности</a> | <a style='color:#EC7088;' href='?category=$category&sort=price_asc'>Сначала дешевле</a> | <a style='color:#EC7088;' href='?category=$category&sort=price_desc'>Сначала дороже</a></div>";
             echo "<div class='sell-container'>";
             $count = 0;
             while ($row = $result->fetch_assoc()) {
