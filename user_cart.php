@@ -410,13 +410,13 @@ if (isset($_POST['item'])) {
         <div style="height:42%;"></div>
     </div>    
 
-    <div class="footer" style="margin-top:1%;">
+    <div class="footer" style="margin-top:<?php echo $footerMargin; ?>%">
         <div class="footer-left">
         ФИО: Ходырев Владислав Вадимович<br>
         Группа: 2-ИС (б) Курс: 3<br>
         Специальность: Информационные системы и программирование
         </div>
-        <div class="footer-right" style="margin-top:<?php echo $footerMargin; ?>%">
+        <div class="footer-right">
             <img class="phone-img" src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 33%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
             <img class="phone-img" src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
             <img class="phone-img" src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
