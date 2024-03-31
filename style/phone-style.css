@@ -8,7 +8,7 @@ body {
 }
 
 .user-line-adaptive {
-    width: 28%;
+    width: 32%;
 }
 
 .sell-adaptive {
@@ -848,16 +848,16 @@ body {
 }
 
 .user-left {
-    width: 20%;
-    height: 100%;
+    width: 30%;
+    height: 120%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .user-right {
-    width: 80%;
-    height: 100%;
+    width: 70%;
+    height: 150%;
 }
 
 .user-sign {
@@ -931,7 +931,7 @@ body {
 
 .user-input {
     width: 35%;
-    height: 70%;
+    height: 55%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
