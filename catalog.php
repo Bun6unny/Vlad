@@ -265,7 +265,7 @@
 
     <div class="computer-div"></div>
     <div class="phone-div">
-        <div style="height:50%"></div>
+        <div style="height:39%"></div>
     </div>
 
     <div class="footer" style="margin-top:1%;">
