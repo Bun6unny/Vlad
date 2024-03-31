@@ -166,7 +166,7 @@
                         <div class="user-line"><div class="user-line-adaptive" style="display:flex;align-items:center;justify-content:flex-end;">Сменить почту:</div><input id="new-email" type="text" placeholder="..." class="user-input">
                             <button id="change-email-btn" class="change-button">Изменить почту</button>
                         </div>
-                        <div class="user-line" style="height:7%;width:48.5%;justify-content:flex-end;font-size:1vw;">Почта сейчас:'.$row['Mail'].'</div>
+                        <div class="user-line-down">Почта сейчас:'.$row['Mail'].'</div>
                         <div class="user-line"><div class="user-line-adaptive" style="display:flex;align-items:center;justify-content:flex-end;">Сменить аватар:</div><input id="new-avatar" type="text" placeholder="..." class="user-input">
                             <button id="change-avatar-btn" class="change-button">Изменить аватар</button>
                         </div>
