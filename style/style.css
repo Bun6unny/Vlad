@@ -7,6 +7,10 @@ body {
     overflow-x: hidden;
 }
 
+.sell-adaptive {
+    font-size: 1.8vw;
+}
+
 .catalog-adaptive-one {
     font-size: 2vw;
 }

@@ -232,7 +232,7 @@
                 echo "<div>{$row['Name']}</div>";
                 echo "</div>";
                 echo "<div class='sell-right-item'>";
-                echo "<div style='font-size:1.8vw;font-weight:100;'>{$row['Price']}&nbsp₽&nbsp$after_price</div>";
+                echo "<div class='sell-adaptive' style='font-weight:100;'>{$row['Price']}&nbsp₽&nbsp$after_price</div>";
                 echo "</div>";
                 echo "<div class='sell-right-item'>";
                 echo "<form method='post'>";
