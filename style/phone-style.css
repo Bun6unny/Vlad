@@ -569,7 +569,7 @@ body {
 }
 
 .open-news-text {
-    font-size: 1.2vw;
+    font-size: 2.5vw;
     width: 50%;
     height: 100%;
     display: flex;
@@ -587,7 +587,7 @@ body {
 }
 
 .open-news-right {
-    font-size: 1.4vw;
+    font-size: 2.5vw;
     width: 36%;
     height: 100%;
     font-weight: bold;
@@ -597,10 +597,10 @@ body {
 }
 
 .back-to-news {
-    width: 35%;
+    width: 65%;
     height: 40%;
     background-color: #FAA7B7;
-    font-size: 1.4vw;
+    font-size: 3vw;
     color: white;
     display: flex;
     align-items: center;
