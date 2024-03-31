@@ -123,7 +123,7 @@
 ?>
 
     <div class="phone-div">
-        <div style="height:12%;"></div>
+        <div style="height:7%;"></div>
     </div>
     <div class="computer-div"></div>
 
