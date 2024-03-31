@@ -7,6 +7,10 @@ body {
     overflow-x: hidden;
 }
 
+.order-font {
+    font-size: 1.2vw;
+}
+
 .user-line-down {
     height:7%;
     width:50.5%;
