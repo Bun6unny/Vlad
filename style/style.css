@@ -688,6 +688,23 @@ body {
     background-color: #EC7088;
 }
 
+.not-log {
+    width: 15%;
+    height: 10%;
+    background-color: #FAA7B7;
+    border-radius: 1.3vw;
+    border-color: #EC7088;
+    border-width: 0.2vw;
+    font-size: 3.5vw;
+    color: white;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.not-log:hover {
+    background-color: #EC7088;
+}
+
 .already {
     width: 94%;
     height: 100%;
