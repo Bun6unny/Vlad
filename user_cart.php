@@ -405,6 +405,11 @@ if (isset($_POST['item'])) {
         $mysqli->close();
     ?>
 
+    <div class="computer-div"></div>
+    <div class="phone-div">
+        <div style="height:42%;"></div>
+    </div>    
+
     <div class="footer" style="margin-top:1%;">
         <div class="footer-left">
         ФИО: Ходырев Владислав Вадимович<br>
