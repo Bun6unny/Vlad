@@ -171,7 +171,7 @@
                             <button id="change-avatar-btn" class="change-button">Изменить аватар</button>
                         </div>
                         <div class="user-line-down">Только URL-ссылки!</div>
-                        <button class="change-button" style="margin-left:82%;width:15%;height:10%;" id="delete-account">Удалить аккаунт</button>
+                        <button class="delete-button" id="delete-account">Удалить аккаунт</button>
                     </div>
                 </div>';
             }

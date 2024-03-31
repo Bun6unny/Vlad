@@ -7,12 +7,6 @@ body {
     overflow-x: hidden;
 }
 
-.delete {
-    width:20%;
-    height:20%;
-    margin-left: 70%;
-}
-
 .user-line-down {
     height:7%;
     width:67.5%;
@@ -980,6 +974,24 @@ body {
 }
 
 .change-button:hover {
+    background-color: #EC7088;
+}
+
+.delete-button {
+    width: 25%;
+    height: 20%;
+    background-color: #FAA7B7;
+    border-radius: 0.5vw;
+    border-color: #EC7088;
+    border-width: 0.2vw;
+    font-size: 1.2vw;
+    color: white;
+    font-weight: bold;
+    margin-left: 70%;
+    line-height: 1;
+}
+
+.delete-button:hover {
     background-color: #EC7088;
 }
 
