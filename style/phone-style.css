@@ -1097,7 +1097,7 @@ body {
 }
 
 .item-image {
-    width: 50%;
+    width: 40%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -1105,7 +1105,7 @@ body {
 }
 
 .item-right {
-    width: 48%;
+    width: 58%;
     height: 100%;
     font-size: 1vw;
 }
