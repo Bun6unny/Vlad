@@ -7,6 +7,13 @@ body {
     overflow-x: hidden;
 }
 
+.user-down-line {
+    height:7%;
+    width:48.5%;
+    justify-content: flex-end;
+    font-size:1vw;
+}
+
 .user-line-adaptive {
     width: 17%;
 }

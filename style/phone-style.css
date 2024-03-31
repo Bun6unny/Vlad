@@ -7,6 +7,13 @@ body {
     overflow-x: hidden;
 }
 
+.user-down-line {
+    height:7%;
+    width:55%;
+    justify-content: flex-end;
+    font-size:2.5vw;
+}
+
 .user-line-adaptive {
     width: 32%;
 }
@@ -871,7 +878,7 @@ body {
 }
 
 .user-line {
-    width: 90%;
+    width: 95%;
     height: 15%;
     font-size: 2.3vw;
     display: flex;
