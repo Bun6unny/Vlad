@@ -839,7 +839,7 @@ body {
 
 .user {
     width: 100%;
-    height: 62%;
+    height: 32%;
     display: flex;
 }
 
@@ -859,7 +859,7 @@ body {
 .user-sign {
     width: 100%;
     height: 10%;
-    font-size: 1.7vw;
+    font-size: 3vw;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -877,7 +877,7 @@ body {
 }
 
 .user-menu {
-    height: 90%;
+    height: 70%;
     width: 85%;
     margin-left: 5%;
     background-color: #FAA7B7;
@@ -898,7 +898,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.7vw;
+    font-size: 2.8vw;
 }
 
 .user-menu-links {
@@ -908,7 +908,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 1.5vw;
+    font-size: 2.3vw;
     background-color: #EC7088;
     color: white;
     line-height: 2;
