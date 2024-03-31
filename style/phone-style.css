@@ -539,7 +539,11 @@ body {
     .news-next {
         font-size: 1.6vw;
     }
-    
+
+    .news-text {
+        font-size: 1.6vw;
+    }
+
     .news-name {
         font-size: 1.8vw;
     }
