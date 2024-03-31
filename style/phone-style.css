@@ -7,6 +7,10 @@ body {
     overflow-x: hidden;
 }
 
+.user-line-adaptive {
+    width: 25%;
+}
+
 .sell-adaptive {
     font-size: 2.8vw;
 }
