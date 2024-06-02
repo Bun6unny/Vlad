@@ -2,256 +2,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <title>Sugar Shack</title>
-    <link rel="icon" href="img/ss.ico" type="image/x-icon">
-    <script src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+    <script src="script/script-location.js"></script>
+    <script src="script/script-menu.js"></script>
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/phone-style.css">
+    <title>Главная</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
 </head>
 <body>
 
-    <div class="header">
-        <div class="header-left">
-            <a href="#" onclick="Main()" style="margin-left: 0%;">Главная</a>
-            <a href="#" onclick="News()">Новости</a>
-            <a href="#" onclick="About()">О нас</a>
-            <a href="#" onclick="Feedback()" style="margin-right: 0%;">Обратная связь</a>
-        </div>
-        <?php
-            session_start();
-            if(isset($_SESSION['user_id'])) {
-                echo '<div class="header-right" style="margin-right:1%;">';
-                echo '<a href="logout.php">Выход</a>';
-                echo '</div>';
-            } else {
-                echo '<div class="header-right">';
-                echo '<a href="#" onclick="Login_But()">Авторизация</a>';
-                echo '<a href="#" onclick="Registration()">Регистрация</a>';
-                echo '</div>';
-            }
-        ?>
-    </div>
+    <?php
+        require 'header/header.php';
+        echo $header;
+    ?>
 
-    <div class="top-menu" style="margin-top:1%;">
-        <img class="phone-img ss-img" src="img/ss.png" onclick="Main()">
-        <img class="computer-img" src="img/ss.png" onclick="Main()" style="max-height:90%;max-width:90%;cursor:pointer;">
-        <div class="top-menu-one phone-div">
-            <div class="top-menu-part">
-                <div class="search">
-                    <input type="text" placeholder="Выполнить поиск по сайту..." class="search-left">
-                    <div class="search-right">
-                        <img src="img/search.png" style="max-width:95%;max-height:95%;cursor:pointer;">
-                    </div>
+    <div class="offer">
+        <div class="content-flex">
+            <div class="offer-left">
+                <div class="offer-left-top">Добро пожаловать в театр "ЗА МОСТОМ" – мир искусства и вдохновения!</div>
+                <div class="offer-left-middle">Открывая новые горизонты театрального искусства</div>
+                <div class="offer-left-bottom">
+                    <button class="standart-button" id="about">О нашем театре</button>
                 </div>
             </div>
-        </div>
-        <div class="top-menu-one computer-div">
-            <div class="top-menu-part">
-                <div class="computer-div">+7 (922) 342-20-76</div>
-                <div class="phone computer-div">
-                    <div style="margin-left:5%;">Обратный&nbspзвонок</div>
-                </div>
-            </div>
-            <div class="top-menu-part">
-                <div class="search">
-                    <input type="text" placeholder="Выполнить поиск по сайту..." class="search-left">
-                    <div class="search-right">
-                        <img src="img/search.png" style="max-width:95%;max-height:95%;cursor:pointer;">
-                    </div>
-                </div>
+            <div class="offer-right">
+                <img src="img/offer.png" class="img100" style="height: 100%;">
             </div>
         </div>
-        <div class="top-menu-two computer-div">
-            <div class="top-menu-time-mail" style="margin-top:5%;">
-                <img src="img/time.png" style="max-width:50%;max-height:50%;">
-                &nbsp&nbspРаботаем 24/7
-            </div>
-            <div class="top-menu-time-mail">
-                <img src="img/mail.png" style="max-width:50%;max-height:50%;">
-                &nbsp&nbsppozitivnishred2017@gmail.com
+    </div>
+    
+    <div class="title">
+        <div class="content-flex">
+            <div class="name">
+                Популярные спектакли
             </div>
         </div>
-        <button class="top-menu-button" style="margin-left:2%;" onclick="User()">
-            Личный кабинет<br>
-            <img src="img/but3.png" style="max-width:60%; max-height:60%; margin-top:1%;">
-        </button>
-        <button class="top-menu-button" style="margin-left:2%;" onclick="Cart()">
-            Корзина<br>
-            <img src="img/but2.png" style="max-height:60%; max-width:60%; margin-top:3%;">
-        </button>
     </div>
 
-    <div class="menu">
-        <button class="menu-left-button" onclick="Catalog('candy')">
-            <img class="phone-img" style="max-height: 60%; max-width: 85%;" src="img/candy.png">
-            <img class="computer-img" style="max-height: 70%; max-width: 95%;" src="img/candy.png">
-            <div>Конфеты</div>
-        </button>
-        <button class="menu-button" onclick="Catalog('drinks')">
-            <img class="phone-img" style="max-height: 60%; max-width: 85%;" src="img/cola.png">
-            <img class="computer-img" style="max-height: 70%; max-width: 95%;" src="img/cola.png">
-            <div>Напитки</div>
-        </button>
-        <button class="menu-button" onclick="Catalog('chocolate')">
-            <img class="phone-img" style="max-height: 60%; max-width: 85%;" src="img/chock.png">
-            <img class="computer-img" style="max-height: 70%; max-width: 95%;" src="img/chock.png">
-            <div>Шоколад</div>
-        </button>
-        <button class="menu-button" onclick="Catalog('marmalade')"> 
-            <img class="phone-img" style="max-height: 60%; max-width: 85%;" src="img/marm.png">
-            <img class="computer-img" style="max-height: 70%; max-width: 95%;" src="img/marm.png">
-            <div>Мармелад</div>
-        </button>
-        <button class="menu-right-button" onclick="Catalog('cookies')">
-            <img class="phone-img" style="max-height: 60%; max-width: 85%;" src="img/cokie.png">
-            <img class="computer-img" style="max-height: 70%; max-width: 95%;" src="img/cokie.png">
-            <div>Печенье</div>
-        </button>
-    </div>
-
-    <div class="computer-div">
-    <div class="slider">
-    <div id="carouselExample" class="carousel slide">
+    <div class="slider-place">
+    <div id="carouselExampleControls" class="carousel slide mt-5" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="img/1.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
-            </div>
-            <div class="carousel-item">
-            <img src="img/2.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
-            </div>
-            <div class="carousel-item">
-            <img src="img/3.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
-            </div>
-            <div class="carousel-item">
-            <img src="img/4.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
-            </div>
-            <div class="carousel-item">
-            <img src="img/5.jpg" class="d-block d-flex m-auto rounded" style="max-width: 80%; height: auto;">
-            </div>
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/slider1.png" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/slider2.png" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/slider3.png" alt="Third slide">
+          </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <i class="bi bi-arrow-left-circle-fill" style="color: #EC7088"></i>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <i class="bi bi-arrow-right-circle-fill" style="color: #EC7088"></i>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" style="color:white;font-size: 70px;" role="button" data-slide="prev">
+          <span class="bi bi-caret-left-fill" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" style="color:white;font-size: 70px;" role="button" data-slide="next">
+          <span class="bi bi-caret-right-fill" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
     </div>
     </div>
 
-    <div class="phone-div">
-    <div class="slider">
-    <div id="carouselExample2" class="carousel slide">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="img/1.jpg" class="d-block d-flex m-auto h-100 rounded" style="max-width: 75%; height: auto;">
-            </div>
-            <div class="carousel-item">
-            <img src="img/2.jpg" class="d-block d-flex m-auto h-100 rounded" style="max-width: 75%; height: auto;">
-            </div>
-            <div class="carousel-item">
-            <img src="img/3.jpg" class="d-block d-flex m-auto h-100 rounded" style="max-width: 75%; height: auto;">
-            </div>
-            <div class="carousel-item">
-            <img src="img/4.jpg" class="d-block d-flex m-auto h-100 rounded" style="max-width: 75%; height: auto;">
-            </div>
-            <div class="carousel-item">
-            <img src="img/5.jpg" class="d-block d-flex m-auto h-100 rounded" style="max-width: 75%; height: auto;">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
-            <i class="bi bi-arrow-left-circle-fill" style="color: #EC7088"></i>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
-            <i class="bi bi-arrow-right-circle-fill" style="color: #EC7088"></i>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    </div>
-    </div>
-
-    <div class="title">О нас</div>
-
-    <div class="candy-spot" style="margin-top:1%;">
-        <div class="candy-left">
-            <img class="phone-img" src="img/candy1.png" style="max-height: 80%; max-width: 95%;margin-top:10%;">
-            <img class="computer-img" src="img/candy1.png" style="max-height: 100%; max-width: auto;">
-        </div>
-        <div class="candy-right" style="width: 40%; height: 65%;display:block;margin-left:1%;">
-            <div class="candy-title">Вкусные Шедевры</div>
-            Наши сладости - это не просто продукты, это настоящее искусство в каждом кусочке! Мы гордимся своим качеством и тщательно подбираем лучшие ингредиенты для наших продуктов. Независимо от того, ищете ли вы что-то классическое или эксклюзивное, у нас есть все, чтобы порадовать ваш вкусовой рецептор.
-        </div>
-    </div>
-    <div class="candy-spot">
-        <div class="candy-left" style="text-align:right; width: 40%; height: 65%;display:block;margin-right:1%;">
-            <div class="candy-title">Разнообразие вкусов</div>
-            Вдохновляйтесь нашим разнообразием и выбирайте то, что подходит вашему настроению и вкусу. От нежных шоколадных конфет до хрустящих карамелек, мы предлагаем бесконечные варианты сладких удовольствий. Дарите радость себе и своим близким с нашими вкусными подарками!
-        </div>
-        <div class="candy-right">
-            <img class="phone-img" src="img/candy2.png" style="max-height: 75%; max-width: 95%;margin-top:10%;">
-            <img class="computer-img" src="img/candy2.png" style="max-height: 100%; max-width: auto;">
-        </div>
-    </div>
-    <div class="candy-spot">
-        <div class="candy-left">
-            <img class="phone-img" src="img/candy3.png" style="max-height: 80%; max-width: 95%;margin-top:10%;">
-            <img class="computer-img" src="img/candy3.png" style="max-height: 100%; max-width: auto;">
-        </div>
-        <div class="candy-right" style="width: 40%; height: 65%;display:block;margin-left:1%;">
-            <div class="candy-title">Сладкая Роскошь</div>    
-            Помимо великолепного вкуса, мы также обеспечиваем безупречное качество и сервис. Наша команда стремится сделать ваше покупательное путешествие приятным и незабываемым. Мы уверены, что каждый, кто попробует наши сладости, найдет что-то особенное и уникальное для себя.
+    <div class="slider-button">
+        <div class="slider-button">
+            <button class="standart-button" id="poster">Наши спектакли</button>
         </div>
     </div>
 
-    <div class="action">
-        <button class="action-button" onclick="About()">Больше о нас</button>
-    </div>
-
-    <div class="title">Где нас найти</div>
-
-    <div class="maps-spot">
-        <div class="map-block" style="margin-right:10%;">
-            <div class="place-up">
-                <img src="img/onix.jpg" style="max-width:95%;max-height:95%; margin-top:3%;border:0.2vw solid #EC7088;border-radius:0.5vw">
-            </div>
-            <div class="place-down">
-                Телефон: +7 (922) 342-20-76<br>
-                Почта: pozitivnishred2017@gmail.com
-            </div>
-        </div>
-        <div class="map-block">
-            <div class="map-up">
+    <div class="title-black" style="margin-top: 3rem;">
+        <div class="content-flex">
+            <div class="name">
                 Мы на карте
             </div>
-            <div id="map1" style="position:relative;overflow:hidden;">
-                <iframe src="https://yandex.ru/map-widget/v1/?ll=56.221003%2C58.003263&mode=whatshere&whatshere%5Bpoint%5D=56.221003%2C58.003263&whatshere%5Bzoom%5D=17&z=17" width="96%" height="76%" frameborder="1" allowfullscreen="true" style="border:0.2vw solid #EC7088;border-radius:0.5vw; margin-left:2%;"></iframe>
+        </div>
+    </div>
+
+    <div class="map">
+        <div style="position:relative;overflow:hidden;width: 100%;"><a href="https://yandex.ru/maps/org/oniks/1064300558/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Оникс</a><a href="https://yandex.ru/maps/50/perm/category/college/184106236/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Колледж в Перми</a><a href="https://yandex.ru/maps/50/perm/category/further_education/184106162/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Дополнительное образование в Перми</a><iframe src="https://yandex.ru/map-widget/v1/?ll=56.221098%2C58.002892&mode=search&oid=1064300558&ol=biz&z=17.06" width="100%" height="100%" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>  
+    </div>
+
+    <div class="title-black">
+        <div class="content-flex">
+            <div class="name">
+                <button class="standart-button" id="location">Где нас найти?</button>
             </div>
         </div>
     </div>
 
-    <div class="footer" style="margin-top:1%;">
-        <div class="footer-left">
-        ФИО: Ходырев Владислав Вадимович<br>
-        Группа: 2-ИС (б) Курс: 3<br>
-        Специальность: Информационные системы и программирование
-        </div>
-        <div class="footer-right">
-            <img class="phone-img" src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 33%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
-            <img class="phone-img" src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img class="phone-img" src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img class="phone-img" src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img class="phone-img" src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 33%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
-            <img class="computer-img" src="img/set1.png" onclick="NewTab('https\://vk.com/vhtkrabbit')" style="max-height: 60%; width: auto; height: auto; margin-right:2%; cursor:pointer;">
-            <img class="computer-img" src="img/set2.png" onclick="NewTab('https\://ok.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img class="computer-img" src="img/set3.png" onclick="NewTab('https\://web.telegram.org/k/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img class="computer-img" src="img/set4.png" onclick="NewTab('https\://dzen.ru/')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; margin-right:2%; cursor:pointer;">
-            <img class="computer-img" src="img/set5.png" onclick="NewTab('https\://vk.com/yarus.official')" style="max-height: 60%; width: auto; height: auto; margin-left:2%; cursor:pointer;">
+    <div class="footer">
+        <div class="content-flex">
+            <div class="footer-content">
+                Ходырев Владислав Вадимович 2-ИС
+            </div>
+            <div class="footer-content">
+                <a href="https://vk.com/vhtkrabbit"><img src="img/vk.png" class="img70"></a>
+                <a href="https://www.youtube.com/"><img src="img/ut.png" class="img70"></a>
+                <a href="https://rutube.ru/"><img src="img/rt.png" class="img70"></a>
+                <a href="https://dzen.ru/"><img src="img/dzen.png" class="img70"></a>
+                <a href="https://web.telegram.org/k/"><img src="img/teleg.png" class="img70"></a>
+            </div>
         </div>
     </div>
 
