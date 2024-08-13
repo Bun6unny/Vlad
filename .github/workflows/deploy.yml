@@ -1,26 +1,21 @@
-name: Deploy to FTP Server
 
-on:
+on: 
   push:
-    branches:
-      - main
-
+    branches: [main]
+name: FTP Deploy
 jobs:
-  deploy:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Install ftp-deploy
-      run: npm install -g ftp-deploy
-
-    - name: Deploy via FTP
-      env:
-        FTP_SERVER: ${{ secrets.FTP_server }}
-        FTP_USERNAME: ${{ secrets.FTP_username }}
-        FTP_PASSWORD: ${{ secrets.FTP_password }}
-      run: |
-        echo "Deploying to FTP server..."
-        ftp-deploy --server $FTP_SERVER --username $FTP_USERNAME --password $FTP_PASSWORD --local ./ --remote /Home/web/2is-b11.12is.ru/public_html
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 2
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server-dir: web/${{ secrets.ftp_username }}.12is.ru/public_html/
+        server: ${{ secrets.ftp_server }}
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
